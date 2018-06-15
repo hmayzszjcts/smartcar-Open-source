@@ -1,0 +1,904 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.30.1.53127/W32 for ARM              18/Jul/2014  00:25:18 #
+# Copyright 2007-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s       #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Exe\fire_gpio_d #
+#                    emo.out                                                  #
+#    Map file     =  C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s       #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\List\fire_gpio_ #
+#                    demo.map                                                 #
+#    Command line =  "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\AT24C02.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\About_Image #
+#                    .o" "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s  #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\BSP.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\Car_init.o" #
+#                     "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s     #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\FTM.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\IIC.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\ISR_fun.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\LCD.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\LED.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\OV7725.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\PIT.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\Process.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\SCCB.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\SD_SendDriv #
+#                    er.o" "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812 #
+#                    s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\SmallS_Cr #
+#                    oss.o" "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.81 #
+#                    2s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\Startlin #
+#                    e_Ren_Block.o" "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1Ë #
+#                    Äµµ28.812s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\ #
+#                    adc.o" "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.81 #
+#                    2s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\alloc.o" #
+#                     "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s     #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\app.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\app_hooks.o #
+#                    " "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s    #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\arm_cm4.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\assert.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\crt0.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\delay.o"    #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\diskio.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\dma.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\exti.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\ff.o"       #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\flash.o"    #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\gpio.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\i2c.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\io.o"       #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\isr.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\lptmr.o"    #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\main.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\mcg.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\memtest.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_core.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_cpu_a.o" #
+#                     "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s     #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_cpu_c.o" #
+#                     "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s     #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_dbg.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_flag.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_mbox.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_mem.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_mutex.o" #
+#                     "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s     #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_q.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_sem.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_task.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_time.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\os_tmr.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\port.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\printf.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\queue.o"    #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\sdhc.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\start.o"    #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\startup.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\stdlib.o"   #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\sysinit.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\uart.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\uif.o"      #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\vectors.o"  #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj\wdog.o"     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\src\LIB\CMSIS\iar_cortexM4l_math.a" -o     #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Exe\fire_gpio_d #
+#                    emo.out" --map "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1Ë #
+#                    Äµµ28.812s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\List #
+#                    \fire_gpio_demo.map" --config                            #
+#                    "C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s      #
+#                    µç³ØµçÑ¹8.0V)\build\fire_demo\..\config                  #
+#                    files\fire_ROM_K60N512.icf" --semihosting --entry        #
+#                    __iar_program_start --vfe                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00040000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fff0410 to 0x20010000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x410
+  .intvec              const    0x00000000   0x410  vectors.o [1]
+                              - 0x00000410   0x410
+
+"A2":                                         0x3c
+  .noinit              ro code  0x00000410    0x3c  crt0.o [1]
+                              - 0x0000044c    0x3c
+
+"P1":                                       0xc35c
+  .text                ro code  0x0000044c  0x17d8  ff.o [1]
+  .text                ro code  0x00001c24   0x6c0  diskio.o [1]
+  .text                ro code  0x000022e4   0xadc  sdhc.o [1]
+  .text                ro code  0x00002dc0    0x48  lptmr.o [1]
+  .text                ro code  0x00002e08  0x112a  IIC.o [1]
+  .text                ro code  0x00003f32    0x22  zero_init3.o [5]
+  .text                ro code  0x00003f54    0xc4  gpio.o [1]
+  .text                ro code  0x00004018    0x30  I32ToDbl.o [4]
+  .text                ro code  0x00004048   0x246  DblDiv.o [4]
+  .text                ro code  0x00004290   0x1a2  DblMul.o [4]
+  .text                ro code  0x00004434    0x2e  DblCmpGe.o [4]
+  .text                ro code  0x00004464    0x2e  DblCmpLe.o [4]
+  .text                ro code  0x00004494    0x20  assert.o [1]
+  .text                ro code  0x000044b4    0xb4  LED.o [1]
+  .text                ro code  0x00004568   0x55c  printf.o [1]
+  .text                ro code  0x00004ac4    0x24  delay.o [1]
+  .text                ro code  0x00004ae8    0x20  stdlib.o [1]
+  .text                ro code  0x00004b08   0xc9c  LCD.o [1]
+  .text                ro code  0x000057a4    0x44  FltToS32.o [4]
+  .data_init                    0x000057e8   0xc48  <Block>
+    Initializer bytes  ro data  0x000057e8   0xc48  <for .data-1>
+  .text                ro code  0x00006430   0xa6c  Startline_Ren_Block.o [1]
+  .text                ro code  0x00006e9c   0x4ec  Process.o [1]
+  .text                ro code  0x00007388    0x4c  DblToI32.o [4]
+  .text                ro code  0x000073d4   0x1e8  SmallS_Cross.o [1]
+  Veneer               ro code  0x000075bc     0x8  - Linker created -
+  Veneer               ro code  0x000075c4     0x8  - Linker created -
+  .text                ro code  0x000075cc   0x3e8  SD_SendDriver.o [1]
+  .text                ro code  0x000079b4    0x58  About_Image.o [1]
+  .text                ro code  0x00007a0c    0xd8  FltMul.o [4]
+  .text                ro code  0x00007ae4   0x97c  ISR_fun.o [1]
+  .text                ro code  0x00008460    0x90  DblToFlt.o [4]
+  .text                ro code  0x000084f0    0x84  FltAdd.o [4]
+  .text                ro code  0x00008574    0x4e  FltToDbl.o [4]
+  .text                ro code  0x000085c4    0xe8  DblAdd.o [4]
+  .text                ro code  0x000086ac    0xfc  asin.o [4]
+  .text                ro code  0x000087a8    0x24  FltCmpGe.o [4]
+  .text                ro code  0x000087cc    0x24  FltCmpLe.o [4]
+  .text                ro code  0x000087f0    0x2e  I32ToFlt.o [4]
+  .text                ro code  0x00008820    0xe6  FltSub.o [4]
+  .text                ro code  0x00008908    0xfc  FltDiv.o [4]
+  .text                ro code  0x00008a04    0x24  FltToU32.o [4]
+  .text                ro code  0x00008a28   0x3e8  FTM.o [1]
+  .text                ro code  0x00008e10   0x180  DblSub.o [4]
+  .text                ro code  0x00008f90    0xf0  sqrt.o [4]
+  .text                ro code  0x00009080     0xc  errno.o [3]
+  .text                ro code  0x00009090   0x1f8  xatan.o [4]
+  .text                ro code  0x00009288     0xc  iarEdom.o [5]
+  .text                ro code  0x00009294     0x2  xtls.o [3]
+  Veneer               ro code  0x00009298     0x8  - Linker created -
+  Veneer               ro code  0x000092a0     0x8  - Linker created -
+  .text                ro code  0x000092a8   0x8f0  Car_init.o [1]
+  .text                ro code  0x00009b98   0x398  uart.o [1]
+  .text                ro code  0x00009f30    0x70  PIT.o [1]
+  .text                ro code  0x00009fa0   0x15c  arm_cm4.o [1]
+  .text                ro code  0x0000a0fc   0x1e0  OV7725.o [1]
+  .text                ro code  0x0000a2dc   0x344  dma.o [1]
+  .text                ro code  0x0000a620    0x58  port.o [1]
+  .text                ro code  0x0000a678   0x40a  SCCB.o [1]
+  .text                ro code  0x0000aa84   0x5ba  isr.o [1]
+  .text                ro code  0x0000b040   0x520  start.o [1]
+  .text                ro code  0x0000b560    0x38  wdog.o [1]
+  .text                ro code  0x0000b598    0xc0  startup.o [1]
+  .text                ro code  0x0000b658    0x5c  sysinit.o [1]
+  .text                ro code  0x0000b6b4    0x2c  main.o [1]
+  Veneer               ro code  0x0000b6e0     0x8  - Linker created -
+  .text                ro code  0x0000b6e8   0x2f4  mcg.o [1]
+  CodeRelocate                  0x0000b9dc   0x27c  <Block>
+    Initializer bytes  ro data  0x0000b9dc   0x27c  <for CodeRelocateRam-1>
+  .rodata              const    0x0000bc58   0x100  sdhc.o [1]
+  .rodata              const    0x0000bd58    0x64  flash.o [1]
+  .rodata              const    0x0000bdbc    0x60  FTM.o [1]
+  .rodata              const    0x0000be1c    0x60  dma.o [1]
+  .rodata              const    0x0000be7c    0x60  gpio.o [1]
+  .rodata              const    0x0000bedc    0x4c  assert.o [1]
+  .rodata              const    0x0000bf28    0x48  start.o [1]
+  .rodata              const    0x0000bf70    0x40  arm_cm4.o [1]
+  .rodata              const    0x0000bfb0    0x40  start.o [1]
+  .rodata              const    0x0000bff0    0x3c  arm_cm4.o [1]
+  .rodata              const    0x0000c02c    0x3c  arm_cm4.o [1]
+  .rodata              const    0x0000c068    0x38  arm_cm4.o [1]
+  .rodata              const    0x0000c0a0    0x30  vectors.o [1]
+  .rodata              const    0x0000c0d0    0x2c  start.o [1]
+  .text                ro code  0x0000c0fc    0x2c  data_init3.o [5]
+  .rodata              const    0x0000c128    0x28  start.o [1]
+  .rodata              const    0x0000c150    0x28  start.o [1]
+  .rodata              const    0x0000c178    0x24  OV7725.o [1]
+  .iar.init_table      const    0x0000c19c    0x18  - Linker created -
+  .rodata              const    0x0000c1b4    0x20  OV7725.o [1]
+  .rodata              const    0x0000c1d4    0x20  OV7725.o [1]
+  .rodata              const    0x0000c1f4    0x20  isr.o [1]
+  .rodata              const    0x0000c214    0x20  start.o [1]
+  .rodata              const    0x0000c234    0x20  start.o [1]
+  .rodata              const    0x0000c254    0x20  start.o [1]
+  .rodata              const    0x0000c274    0x20  start.o [1]
+  .rodata              const    0x0000c294    0x20  start.o [1]
+  .text                ro code  0x0000c2b4    0x20  vectors.o [1]
+  .rodata              const    0x0000c2d4    0x1c  start.o [1]
+  .rodata              const    0x0000c2f0    0x1c  start.o [1]
+  .rodata              const    0x0000c30c    0x1c  start.o [1]
+  .rodata              const    0x0000c328    0x18  OV7725.o [1]
+  .rodata              const    0x0000c340    0x18  start.o [1]
+  .rodata              const    0x0000c358    0x18  start.o [1]
+  .rodata              const    0x0000c370    0x18  start.o [1]
+  .rodata              const    0x0000c388    0x18  start.o [1]
+  .rodata              const    0x0000c3a0    0x18  start.o [1]
+  .rodata              const    0x0000c3b8    0x18  start.o [1]
+  .rodata              const    0x0000c3d0    0x18  start.o [1]
+  .rodata              const    0x0000c3e8    0x18  start.o [1]
+  .text                ro code  0x0000c400    0x16  cmain.o [5]
+  .text                ro code  0x0000c416     0x4  low_level_init.o [3]
+  .text                ro code  0x0000c41a     0x4  exit.o [3]
+  .text                ro code  0x0000c420     0xa  cexit.o [5]
+  .text                ro code  0x0000c42c    0x14  exit.o [6]
+  .rodata              const    0x0000c440    0x14  OV7725.o [1]
+  .rodata              const    0x0000c454    0x14  SD_SendDriver.o [1]
+  .rodata              const    0x0000c468    0x14  SD_SendDriver.o [1]
+  .rodata              const    0x0000c47c    0x14  start.o [1]
+  .rodata              const    0x0000c490    0x14  start.o [1]
+  .rodata              const    0x0000c4a4    0x14  start.o [1]
+  .rodata              const    0x0000c4b8    0x14  start.o [1]
+  .rodata              const    0x0000c4cc    0x14  start.o [1]
+  .rodata              const    0x0000c4e0    0x14  start.o [1]
+  .rodata              const    0x0000c4f4    0x14  start.o [1]
+  .rodata              const    0x0000c508    0x14  start.o [1]
+  .rodata              const    0x0000c51c    0x10  Car_init.o [1]
+  .rodata              const    0x0000c52c    0x10  Car_init.o [1]
+  .rodata              const    0x0000c53c    0x10  Car_init.o [1]
+  .rodata              const    0x0000c54c    0x10  Car_init.o [1]
+  .rodata              const    0x0000c55c    0x10  Car_init.o [1]
+  .rodata              const    0x0000c56c    0x10  OV7725.o [1]
+  .rodata              const    0x0000c57c    0x10  Process.o [1]
+  .rodata              const    0x0000c58c    0x10  ff.o [1]
+  .rodata              const    0x0000c59c    0x10  isr.o [1]
+  .rodata              const    0x0000c5ac    0x10  start.o [1]
+  .rodata              const    0x0000c5bc    0x10  start.o [1]
+  .rodata              const    0x0000c5cc    0x10  start.o [1]
+  .rodata              const    0x0000c5dc    0x10  start.o [1]
+  .rodata              const    0x0000c5ec    0x10  start.o [1]
+  .rodata              const    0x0000c5fc    0x10  start.o [1]
+  .rodata              const    0x0000c60c    0x10  start.o [1]
+  .rodata              const    0x0000c61c    0x10  start.o [1]
+  .rodata              const    0x0000c62c    0x10  start.o [1]
+  .rodata              const    0x0000c63c    0x10  start.o [1]
+  .rodata              const    0x0000c64c    0x10  start.o [1]
+  .rodata              const    0x0000c65c    0x10  start.o [1]
+  .rodata              const    0x0000c66c    0x10  start.o [1]
+  .text                ro code  0x0000c67c    0x10  io.o [1]
+  .rodata              const    0x0000c68c     0xc  Car_init.o [1]
+  .rodata              const    0x0000c698     0xc  LCD.o [1]
+  .rodata              const    0x0000c6a4     0xc  LCD.o [1]
+  .rodata              const    0x0000c6b0     0xc  LCD.o [1]
+  .rodata              const    0x0000c6bc     0xc  LCD.o [1]
+  .rodata              const    0x0000c6c8     0xc  LCD.o [1]
+  .rodata              const    0x0000c6d4     0xc  LCD.o [1]
+  .rodata              const    0x0000c6e0     0xc  SD_SendDriver.o [1]
+  .rodata              const    0x0000c6ec     0xc  isr.o [1]
+  .rodata              const    0x0000c6f8     0xc  isr.o [1]
+  .rodata              const    0x0000c704     0xc  isr.o [1]
+  .rodata              const    0x0000c710     0xc  isr.o [1]
+  .rodata              const    0x0000c71c     0xc  start.o [1]
+  .rodata              const    0x0000c728     0xc  start.o [1]
+  .rodata              const    0x0000c734     0xc  start.o [1]
+  .rodata              const    0x0000c740     0xc  start.o [1]
+  .text                ro code  0x0000c74c     0xc  cstartup_M.o [5]
+  .rodata              const    0x0000c758     0x8  SD_SendDriver.o [1]
+  .rodata              const    0x0000c760     0x8  sdhc.o [1]
+  .rodata              const    0x0000c768     0x8  start.o [1]
+  .rodata              const    0x0000c770     0x8  start.o [1]
+  .rodata              const    0x0000c778     0x8  start.o [1]
+  .rodata              const    0x0000c780     0x8  start.o [1]
+  .rodata              const    0x0000c788     0x8  start.o [1]
+  .rodata              const    0x0000c790     0x8  start.o [1]
+  .rodata              const    0x0000c798     0x8  start.o [1]
+  .rodata              const    0x0000c7a0     0x8  start.o [1]
+  .rodata              const    0x0000c7a8     0x0  bwt_init3c.o [5]
+                              - 0x0000c7a8  0xc35c
+
+"P2", part 1 of 3:                           0xec4
+  .data                         0x1fff0410   0xc48  <Block>
+    .data-1                     0x1fff0410   0xc48  <Init block>
+      .data            inited   0x1fff0410     0xc  FTM.o [1]
+      .data            inited   0x1fff041c     0x4  ISR_fun.o [1]
+      .data            inited   0x1fff0420     0x4  ISR_fun.o [1]
+      .data            inited   0x1fff0424   0x800  LCD.o [1]
+      .data            inited   0x1fff0c24   0x36c  LCD.o [1]
+      .data            inited   0x1fff0f90     0x1  OV7725.o [1]
+      .data            inited   0x1fff0f94    0x64  OV7725.o [1]
+      .data            inited   0x1fff0ff8     0x1  OV7725.o [1]
+      .data            inited   0x1fff0ffc     0x4  Process.o [1]
+      .data            inited   0x1fff1000     0x4  Process.o [1]
+      .data            inited   0x1fff1004     0x4  Process.o [1]
+      .data            inited   0x1fff1008     0x4  Startline_Ren_Block.o [1]
+      .data            inited   0x1fff100c     0x1  diskio.o [1]
+      .data            inited   0x1fff1010    0x14  gpio.o [1]
+      .data            inited   0x1fff1024    0x14  gpio.o [1]
+      .data            inited   0x1fff1038     0x8  mcg.o [1]
+      .data            inited   0x1fff1040    0x18  uart.o [1]
+  CodeRelocateRam               0x1fff1058   0x27c  <Block>
+    CodeRelocateRam-1           0x1fff1058   0x27c  <Init block>
+      Veneer           inited   0x1fff1058     0x8  - Linker created -
+      .textrw          inited   0x1fff1060   0x224  flash.o [1]
+      .textrw          inited   0x1fff1284    0x50  mcg.o [1]
+                              - 0x1fff12d4   0xec4
+
+"P2", part 2 of 3:                          0x403c
+  .bss                          0x1fff12d4  0x403c  <Block>
+    .bss               zero     0x1fff12d4     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff12d8     0xc  ISR_fun.o [1]
+    .bss               zero     0x1fff12e4     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff12e8     0xc  ISR_fun.o [1]
+    .bss               zero     0x1fff12f4     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff12f8     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff12fc     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1300     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1304     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1308     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff130c     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1310     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1314     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1318     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff131c     0x4  ISR_fun.o [1]
+    .bss               zero     0x1fff1320  0x25a8  OV7725.o [1]
+    .bss               zero     0x1fff38c8     0x4  Process.o [1]
+    .bss               zero     0x1fff38cc   0x3c8  Process.o [1]
+    .bss               zero     0x1fff3c94   0x3c8  Process.o [1]
+    .bss               zero     0x1fff405c   0x3c8  Process.o [1]
+    .bss               zero     0x1fff4424   0x3c8  Process.o [1]
+    .bss               zero     0x1fff47ec    0xf4  Process.o [1]
+    .bss               zero     0x1fff48e0    0xf4  Process.o [1]
+    .bss               zero     0x1fff49d4    0x78  Process.o [1]
+    .bss               zero     0x1fff4a4c    0x78  Process.o [1]
+    .bss               zero     0x1fff4ac4    0x78  Process.o [1]
+    .bss               zero     0x1fff4b3c    0x78  Process.o [1]
+    .bss               zero     0x1fff4bb4    0x20  Process.o [1]
+    .bss               zero     0x1fff4bd4    0x20  Process.o [1]
+    .bss               zero     0x1fff4bf4     0x4  Process.o [1]
+    .bss               zero     0x1fff4bf8     0x4  Process.o [1]
+    .bss               zero     0x1fff4bfc   0x144  Process.o [1]
+    .bss               zero     0x1fff4d40    0x24  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4d64   0x230  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4f94     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4f98    0x54  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4fec     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4ff0     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4ff4     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4ff8     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff4ffc     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5000     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5004     0x4  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5008     0x4  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff500c     0x4  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff5010     0x4  ff.o [1]
+    .bss               zero     0x1fff5014     0x4  isr.o [1]
+    .bss               zero     0x1fff5018    0x28  main.o [1]
+    .bss               zero     0x1fff5040    0x40  main.o [1]
+    .bss               zero     0x1fff5080    0x18  main.o [1]
+    .bss               zero     0x1fff5098     0xc  main.o [1]
+    .bss               zero     0x1fff50a4    0x20  main.o [1]
+    .bss               zero     0x1fff50c4     0x4  main.o [1]
+    .bss               zero     0x1fff50c8    0x14  sdhc.o [1]
+    .bss               zero     0x1fff50dc     0x4  sdhc.o [1]
+    .bss               zero     0x1fff50e0   0x204  sdhc.o [1]
+    .bss               zero     0x1fff52e4     0x8  sdhc.o [1]
+    .bss               zero     0x1fff52ec     0x4  sysinit.o [1]
+    .bss               zero     0x1fff52f0     0x4  sysinit.o [1]
+    .bss               zero     0x1fff52f4     0x4  sysinit.o [1]
+    .bss               zero     0x1fff52f8     0x2  SD_SendDriver.o [1]
+    .bss               zero     0x1fff52fa     0x2  SD_SendDriver.o [1]
+    .bss               zero     0x1fff52fc     0x2  ff.o [1]
+    .bss               zero     0x1fff52fe     0x2  isr.o [1]
+    .bss               zero     0x1fff5300     0x1  Car_init.o [1]
+    .bss               zero     0x1fff5301     0x1  Car_init.o [1]
+    .bss               zero     0x1fff5302     0x1  ISR_fun.o [1]
+    .bss               zero     0x1fff5303     0x1  ISR_fun.o [1]
+    .bss               zero     0x1fff5304     0x1  ISR_fun.o [1]
+    .bss               zero     0x1fff5305     0x1  Process.o [1]
+    .bss               zero     0x1fff5306     0x1  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5307     0x1  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5308     0x1  SD_SendDriver.o [1]
+    .bss               zero     0x1fff5309     0x1  SmallS_Cross.o [1]
+    .bss               zero     0x1fff530a     0x1  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff530b     0x1  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff530c     0x1  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff530d     0x1  Startline_Ren_Block.o [1]
+    .bss               zero     0x1fff530e     0x1  isr.o [1]
+    .bss               zero     0x1fff530f     0x1  isr.o [1]
+                              - 0x1fff5310  0x403c
+
+"P2", part 3 of 3:                             0x4
+  __DLIB_PERTHREAD     zero     0x1fff5310     0x4  errno.o [3]
+                              - 0x1fff5314     0x4
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0x4040:
+          0x1fff12d4  0x403c
+          0x1fff5310     0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj: [1]
+    About_Image.o               88
+    Car_init.o               2 288                92        2
+    FTM.o                    1 000               108       12
+    IIC.o                    4 394
+    ISR_fun.o                2 428                 8       87
+    LCD.o                    3 228             2 996    2 924
+    LED.o                      180
+    OV7725.o                   480               265    9 742
+    PIT.o                      112
+    Process.o                1 260                31    5 253
+    SCCB.o                   1 034
+    SD_SendDriver.o          1 000                60      719
+    SmallS_Cross.o             488                          1
+    Startline_Ren_Block.o    2 668                 4       16
+    arm_cm4.o                  348               240
+    assert.o                    32                76
+    crt0.o                      60
+    delay.o                     36
+    diskio.o                 1 728                 1        1
+    dma.o                      836                96
+    ff.o                     6 104                16        6
+    flash.o                             548      648
+    gpio.o                     196               139       40
+    io.o                        16
+    isr.o                    1 466                96        8
+    lptmr.o                     72
+    main.o                      44                        176
+    mcg.o                      756       80       88        8
+    port.o                      88
+    printf.o                 1 372
+    sdhc.o                   2 780               264      548
+    start.o                  1 312             1 176
+    startup.o                  192
+    stdlib.o                    32
+    sysinit.o                   92                         12
+    uart.o                     920                24       24
+    vectors.o                   32             1 088
+    wdog.o                      56
+    ---------------------------------------------------------
+    Total:                  39 218      628    7 516   19 579
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    errno.o                     12                          4
+    exit.o                       4
+    low_level_init.o             4
+    xtls.o                       2
+    ---------------------------------------------------------
+    Total:                      22                          4
+
+m7M_tl.a: [4]
+    DblAdd.o                   232
+    DblCmpGe.o                  46
+    DblCmpLe.o                  46
+    DblDiv.o                   582
+    DblMul.o                   418
+    DblSub.o                   384
+    DblToFlt.o                 144
+    DblToI32.o                  76
+    FltAdd.o                   132
+    FltCmpGe.o                  36
+    FltCmpLe.o                  36
+    FltDiv.o                   252
+    FltMul.o                   216
+    FltSub.o                   230
+    FltToDbl.o                  78
+    FltToS32.o                  68
+    FltToU32.o                  36
+    I32ToDbl.o                  48
+    I32ToFlt.o                  46
+    asin.o                     252
+    sqrt.o                     240
+    xatan.o                    504
+    ---------------------------------------------------------
+    Total:                   4 102
+
+rt7M_tl.a: [5]
+    bwt_init3c.o
+    cexit.o                     10
+    cmain.o                     22
+    cstartup_M.o                12
+    data_init3.o                44
+    iarEdom.o                   12
+    zero_init3.o                34
+    ---------------------------------------------------------
+    Total:                     134
+
+shb_l.a: [6]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                        28                          9
+    Linker created              40        8       32
+-------------------------------------------------------------
+    Grand Total:            43 564      636    7 548   19 592
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.bss$$Base              0x1fff12d4           --   Gb  - Linker created -
+.bss$$Limit             0x1fff5310           --   Gb  - Linker created -
+.data$$Base             0x1fff0410           --   Gb  - Linker created -
+.data$$Limit            0x1fff1058           --   Gb  - Linker created -
+.data_init$$Base        0x000057e8           --   Gb  - Linker created -
+.data_init$$Limit       0x00006430           --   Gb  - Linker created -
+?main                   0x0000c401          Code  Gb  cmain.o [5]
+ASSERT_FAILED_STR       0x0000bedc    0x4c  Data  Gb  assert.o [1]
+Angle                   0x1fff5018    0x28  Data  Gb  main.o [1]
+Angle_control           0x00007ccd   0x1a4  Code  Gb  ISR_fun.o [1]
+Buzzer_Ring_ms          0x0000987b    0x24  Code  Gb  Car_init.o [1]
+CodeRelocate$$Base      0x0000b9dc           --   Gb  - Linker created -
+CodeRelocate$$Limit     0x0000bc58           --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff1058           --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff12d4           --   Gb  - Linker created -
+Cross_flag              0x1fff5309     0x1  Data  Gb  SmallS_Cross.o [1]
+Cross_judge             0x00007489    0xd0  Code  Gb  SmallS_Cross.o [1]
+DMA0_IRQHandler         0x0000ab0f    0x2a  Code  Gb  isr.o [1]
+DMA_PORTx2BUFF_Init     0x0000a2dd   0x30c  Code  Gb  dma.o [1]
+Decoder_init            0x00009975   0x14c  Code  Gb  Car_init.o [1]
+Direction               0x1fff5080    0x18  Data  Gb  main.o [1]
+Direction_control       0x00008017    0xe2  Code  Gb  ISR_fun.o [1]
+Direction_control_with_Ren
+                        0x000080f9    0xca  Code  Gb  ISR_fun.o [1]
+Disp_single_colour      0x0000534f    0x36  Code  Gb  LCD.o [1]
+Draw_single_line        0x00005385    0x58  Code  Gb  LCD.o [1]
+ESDHC_COMMAND_XFERTYP   0x0000bc58   0x100  Data  Gb  sdhc.o [1]
+FTM0_IRQHandler         0x0000b03b     0x2  Code  Gb  isr.o [1]
+FTM1_IRQHandler         0x0000b03d     0x2  Code  Gb  isr.o [1]
+FTM_PWM_Duty            0x00008d51    0x76  Code  Gb  FTM.o [1]
+FTM_PWM_init            0x00008a29   0x328  Code  Gb  FTM.o [1]
+FTMx                    0x1fff0410     0xc  Data  Gb  FTM.o [1]
+FatFs                   0x1fff5010     0x4  Data  Lc  ff.o [1]
+Font8x16                0x1fff0424   0x800  Data  Gb  LCD.o [1]
+Fsid                    0x1fff52fc     0x2  Data  Lc  ff.o [1]
+GPIOx                   0x1fff1010    0x14  Data  Gb  gpio.o [1]
+Get_Gyro                0x00003eaf    0x84  Code  Gb  IIC.o [1]
+Get_mma8451_once        0x00003db1    0x96  Code  Gb  IIC.o [1]
+H                       0x1fff38c8     0x4  Data  Gb  Process.o [1]
+HardFault_Handler       0x0000af95     0xa  Code  Gb  isr.o [1]
+His_Left_flag           0x1fff4bb4    0x20  Data  Gb  Process.o [1]
+His_Right_flag          0x1fff4bd4    0x20  Data  Gb  Process.o [1]
+His_black_L             0x1fff4a4c    0x78  Data  Gb  Process.o [1]
+His_black_R             0x1fff4ac4    0x78  Data  Gb  Process.o [1]
+His_centre              0x1fff49d4    0x78  Data  Gb  Process.o [1]
+His_halfwidth           0x1fff4b3c    0x78  Data  Gb  Process.o [1]
+IIC_start               0x00002e09   0x12a  Code  Gb  IIC.o [1]
+IIC_stop                0x00002f35   0x132  Code  Gb  IIC.o [1]
+Image_fire              0x1fff1320  0x25a8  Data  Gb  OV7725.o [1]
+Init_L3G4200D           0x00003e61    0x4e  Code  Gb  IIC.o [1]
+Judge_Ren               0x000068a7   0x5a4  Code  Gb  Startline_Ren_Block.o [1]
+K60_SDHC0_init          0x0000c760     0x8  Data  Gb  sdhc.o [1]
+LCD_PORT_init           0x00004b09    0x40  Code  Gb  LCD.o [1]
+LCD_PutChar             0x000051b7    0x28  Code  Gb  LCD.o [1]
+LCD_PutChar8x16         0x0000523f    0x6c  Code  Gb  LCD.o [1]
+LCD_PutString           0x000051df    0x60  Code  Gb  LCD.o [1]
+LCD_Put_Int             0x000053e1   0x2c0  Code  Gb  LCD.o [1]
+LCD_SetPos              0x00005159    0x5e  Code  Gb  LCD.o [1]
+LCD_init                0x00004b49   0x23a  Code  Gb  LCD.o [1]
+LED_init                0x000044b5    0x34  Code  Gb  LED.o [1]
+MMA845x_init            0x00003395   0x9a4  Code  Gb  IIC.o [1]
+Measure_Acc             0x00007bb1   0x11c  Code  Gb  ISR_fun.o [1]
+Measure_speed           0x00007ae5    0xcc  Code  Gb  ISR_fun.o [1]
+Motor_Control           0x000081c3   0x1bc  Code  Gb  ISR_fun.o [1]
+Ov7725_Init             0x0000a1d5    0x12  Code  Gb  OV7725.o [1]
+Ov7725_exti_Init        0x0000a0fd    0x9a  Code  Gb  OV7725.o [1]
+Ov7725_reg_Init         0x0000a1e7    0xbe  Code  Gb  OV7725.o [1]
+PIT0_IRQHandler         0x0000ab39   0x186  Code  Gb  isr.o [1]
+PORTX                   0x1fff1024    0x14  Data  Gb  gpio.o [1]
+Parameters_On_LCD       0x000056a1    0xd2  Code  Gb  LCD.o [1]
+Parameters_init_CAR1    0x00009459   0x422  Code  Gb  Car_init.o [1]
+PendSV_Handler          0x0000b039     0x2  Code  Gb  isr.o [1]
+Process_Image           0x00006e9d   0x1e0  Code  Gb  Process.o [1]
+PutGB1616               0x000052ab    0xa4  Code  Gb  LCD.o [1]
+Pwm_Port_init           0x00009921    0x54  Code  Gb  Car_init.o [1]
+Region$$Table$$Base     0x0000c19c           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000c1b4           --   Gb  - Linker created -
+Ren                     0x1fff50a4    0x20  Data  Gb  main.o [1]
+Reset_Handler           0x00000411          Code  Gb  crt0.o [1]
+SCCB_Ack                0x0000a799    0x4c  Code  Lc  SCCB.o [1]
+SCCB_GPIO_init          0x0000a693    0x1c  Code  Gb  SCCB.o [1]
+SCCB_NoAck              0x0000a7e5    0x4c  Code  Lc  SCCB.o [1]
+SCCB_ReadByte           0x0000a9fd    0x86  Code  Gb  SCCB.o [1]
+SCCB_ReceiveByte        0x0000a923    0x84  Code  Lc  SCCB.o [1]
+SCCB_SendByte           0x0000a8b9    0x6a  Code  Lc  SCCB.o [1]
+SCCB_Start              0x0000a6af    0xaa  Code  Lc  SCCB.o [1]
+SCCB_Stop               0x0000a759    0x40  Code  Lc  SCCB.o [1]
+SCCB_WaitAck            0x0000a831    0x88  Code  Lc  SCCB.o [1]
+SCCB_WriteByte          0x0000a9b5    0x48  Code  Gb  SCCB.o [1]
+SCCB_delay              0x0000a679    0x1a  Code  Lc  SCCB.o [1]
+SCISendFloat            0x00009df7    0xe8  Code  Gb  uart.o [1]
+SDHC_Card               0x1fff50c8    0x14  Data  Gb  sdhc.o [1]
+SDHC_Device             0x1fff52e4     0x8  Data  Gb  sdhc.o [1]
+SDHC_Info               0x1fff50e0   0x204  Data  Gb  sdhc.o [1]
+SDHC_Init               0x1fff50dc     0x4  Data  Gb  sdhc.o [1]
+SDHC_init               0x000023b1   0x100  Code  Gb  sdhc.o [1]
+SDHC_ioctl              0x00002661   0x6dc  Code  Gb  sdhc.o [1]
+SDHC_is_running         0x000024b1    0x18  Code  Gb  sdhc.o [1]
+SDHC_send_command       0x000024db   0x186  Code  Gb  sdhc.o [1]
+SDHC_set_baudrate       0x000022e5    0xcc  Code  Gb  sdhc.o [1]
+SDHC_status_wait        0x000024c9    0x12  Code  Gb  sdhc.o [1]
+SD_Writedata            0x000075cd   0x36a  Code  Gb  SD_SendDriver.o [1]
+SD_enable               0x1fff5307     0x1  Data  Gb  SD_SendDriver.o [1]
+Sd_writeOnce            0x1fff5306     0x1  Data  Lc  SD_SendDriver.o [1]
+Send_Image_to_LCD       0x000079b5    0x58  Code  Gb  About_Image.o [1]
+Send_Img                0x1fff4f98    0x54  Data  Gb  SD_SendDriver.o [1]
+Single_Read             0x0000335b    0x38  Code  Gb  IIC.o [1]
+Single_Write            0x00003331    0x2a  Code  Gb  IIC.o [1]
+Speed                   0x1fff5040    0x40  Data  Gb  main.o [1]
+Speed_control           0x00007e71   0x1a6  Code  Gb  ISR_fun.o [1]
+StartLine               0x1fff5098     0xc  Data  Gb  main.o [1]
+Stat                    0x1fff100c     0x1  Data  Lc  diskio.o [1]
+Store_History           0x000073d5    0xb4  Code  Gb  SmallS_Cross.o [1]
+Switch_init             0x000098bd    0x64  Code  Gb  Car_init.o [1]
+SysTick_Handler         0x0000af93     0x2  Code  Gb  isr.o [1]
+System_Init             0x000092a9   0x1b0  Code  Gb  Car_init.o [1]
+Test_startline_by_camera
+                        0x00006431   0x476  Code  Gb  Startline_Ren_Block.o [1]
+Time_1ms                0x1fff50c4     0x4  Data  Gb  main.o [1]
+UARTx                   0x1fff1040    0x18  Data  Gb  uart.o [1]
+USART3_IRQHandler       0x0000acbf   0x2d4  Code  Gb  isr.o [1]
+VSYNC_IRQ               0x0000aa85    0x8a  Code  Gb  isr.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fff8           --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fff0000           --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000           --   Gb  command line/config [2]
+__aeabi_cdcmple         0x00004465          Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x00004435          Code  Gb  DblCmpGe.o [4]
+__aeabi_cfcmple         0x000087cd          Code  Gb  FltCmpLe.o [4]
+__aeabi_cfrcmple        0x000087a9          Code  Gb  FltCmpGe.o [4]
+__aeabi_d2f             0x00008461          Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x00007389          Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x000085c5          Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x00004049          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x00004291          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x00008e11          Code  Gb  DblSub.o [4]
+__aeabi_errno_addr      0x00009081     0x6  Code  Gb  errno.o [3]
+__aeabi_f2d             0x00008575          Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x000057a5          Code  Gb  FltToS32.o [4]
+__aeabi_f2uiz           0x00008a05          Code  Gb  FltToU32.o [4]
+__aeabi_fadd            0x000084f1          Code  Gb  FltAdd.o [4]
+__aeabi_fdiv            0x00008909          Code  Gb  FltDiv.o [4]
+__aeabi_fmul            0x00007a0d          Code  Gb  FltMul.o [4]
+__aeabi_fsub            0x00008821          Code  Gb  FltSub.o [4]
+__aeabi_i2d             0x00004019          Code  Gb  I32ToDbl.o [4]
+__aeabi_i2f             0x000087f1          Code  Gb  I32ToFlt.o [4]
+__aeabi_ui2d            0x0000402d          Code  Gb  I32ToDbl.o [4]
+__cmain                 0x0000c401          Code  Gb  cmain.o [5]
+__code_start__ {Abs}    0x00000410           --   Gb  command line/config [2]
+__exit                  0x0000c42d    0x14  Code  Gb  exit.o [6]
+__iar_Atan              0x00009091   0x15e  Code  Gb  xatan.o [4]
+__iar_Errno             0x1fff5310     0x4  Data  Gb  errno.o [3]
+__iar_SB                0x0000c7a8          Data  Gb  bwt_init3c.o [5]
+__iar_d2uiz             0x000073b5          Code  Gb  DblToI32.o [4]
+__iar_dadd              0x000085d9          Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x0000c0fd    0x2c  Code  Gb  data_init3.o [5]
+__iar_dlib_perthread_access
+                        0x00009295     0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x00008e25          Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x00008e37          Code  Gb  DblSub.o [4]
+__iar_edom              0x00009289          Code  Gb  iarEdom.o [5]
+__iar_fadd              0x00008501          Code  Gb  FltAdd.o [4]
+__iar_fsub              0x00008831          Code  Gb  FltSub.o [4]
+__iar_fsubStart         0x00008841          Code  Gb  FltSub.o [4]
+__iar_program_start     0x0000c74d          Code  Gb  cstartup_M.o [5]
+__iar_sqrt              0x00008f91          Code  Gb  sqrt.o [4]
+__iar_ui2d              0x00004031          Code  Gb  I32ToDbl.o [4]
+__iar_ui2f              0x00008805          Code  Gb  I32ToFlt.o [4]
+__iar_zero_init3        0x00003f33    0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000c417     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0x410  Data  Gb  vectors.o [1]
+_call_main              0x0000c40d          Code  Gb  cmain.o [5]
+_exit                   0x0000c421          Code  Gb  cexit.o [5]
+_main                   0x0000c413          Code  Gb  cmain.o [5]
+a                       0x00009248    0x40  Data  Lc  xatan.o [4]
+add                     0x1fff4fec     0x4  Data  Gb  SD_SendDriver.o [1]
+asin                    0x000086ad    0xe8  Code  Gb  asin.o [4]
+assert_failed           0x00004495    0x20  Code  Gb  assert.o [1]
+black_L                 0x1fff3c94   0x3c8  Data  Gb  Process.o [1]
+black_R                 0x1fff405c   0x3c8  Data  Gb  Process.o [1]
+black_centre            0x1fff0ffc     0x4  Data  Gb  Process.o [1]
+block_Offset            0x1fff500c     0x4  Data  Gb  Startline_Ren_Block.o [1]
+block_delaytime         0x1fff1008     0x4  Data  Gb  Startline_Ren_Block.o [1]
+block_flag              0x1fff530a     0x1  Data  Gb  Startline_Ren_Block.o [1]
+block_time              0x1fff5008     0x4  Data  Gb  Startline_Ren_Block.o [1]
+bus_clk_khz             0x1fff52f4     0x4  Data  Gb  sysinit.o [1]
+bw                      0x1fff4f94     0x4  Data  Gb  SD_SendDriver.o [1]
+centre                  0x1fff38cc   0x3c8  Data  Gb  Process.o [1]
+cfgnum                  0x1fff0ff8     0x1  Data  Gb  OV7725.o [1]
+check_fs                0x00000ed5    0x7a  Code  Lc  ff.o [1]
+chk_chr                 0x000004a3    0x14  Code  Lc  ff.o [1]
+chk_mounted             0x00000f4f   0x434  Code  Lc  ff.o [1]
+clust2sect              0x00000607    0x1a  Code  Gb  ff.o [1]
+codeGB_16               0x1fff0c24   0x36c  Data  Gb  LCD.o [1]
+common_startup          0x0000b599    0xc0  Code  Gb  startup.o [1]
+core_clk_khz            0x1fff52ec     0x4  Data  Gb  sysinit.o [1]
+core_clk_mhz            0x1fff52f0     0x4  Data  Gb  sysinit.o [1]
+cpu_identify            0x0000b16f   0x20a  Code  Gb  start.o [1]
+create_chain            0x00000905    0xdc  Code  Lc  ff.o [1]
+create_name             0x00000cc5   0x170  Code  Lc  ff.o [1]
+default_isr             0x0000c2b5    0x20  Code  Gb  vectors.o [1]
+delayms                 0x00004ac5    0x1e  Code  Gb  delay.o [1]
+dir_find                0x00000bdb    0x68  Code  Lc  ff.o [1]
+dir_next                0x00000a99   0x142  Code  Lc  ff.o [1]
+dir_register            0x00000c43    0x82  Code  Lc  ff.o [1]
+dir_sdi                 0x000009e1    0xb8  Code  Lc  ff.o [1]
+disable_irq             0x0000a03b    0x5e  Code  Gb  arm_cm4.o [1]
+disk_initialize         0x00001c25   0x2ca  Code  Gb  diskio.o [1]
+disk_ioctl              0x000021e9    0xba  Code  Gb  diskio.o [1]
+disk_read               0x00001f8b    0xd8  Code  Gb  diskio.o [1]
+disk_status             0x000022a3    0x12  Code  Gb  diskio.o [1]
+disk_write              0x000020c1   0x128  Code  Gb  diskio.o [1]
+enable_irq              0x00009fa7    0x94  Code  Gb  arm_cm4.o [1]
+exit                    0x0000c41b     0x4  Code  Gb  exit.o [3]
+f_close                 0x00001881    0x1c  Code  Gb  ff.o [1]
+f_mount                 0x000013b1    0x32  Code  Gb  ff.o [1]
+f_open                  0x000013fd   0x1a6  Code  Gb  ff.o [1]
+f_printf                0x00001903   0x322  Code  Gb  ff.o [1]
+f_putc                  0x0000189d    0x38  Code  Gb  ff.o [1]
+f_puts                  0x000018d5    0x2e  Code  Gb  ff.o [1]
+f_sync                  0x000017e3    0x9e  Code  Gb  ff.o [1]
+f_write                 0x000015a3   0x240  Code  Gb  ff.o [1]
+fdst                    0x1fff4d40    0x24  Data  Gb  SD_SendDriver.o [1]
+flash_cmd_launch        0x1fff1061    0x20  Code  Lc  flash.o [1]
+flash_erase_sector      0x1fff10a9    0x7c  Code  Gb  flash.o [1]
+flash_identify          0x0000b379    0xbe  Code  Gb  start.o [1]
+flash_init              0x1fff1081    0x28  Code  Gb  flash.o [1]
+flash_write             0x1fff1125    0x8c  Code  Gb  flash.o [1]
+flash_write_buf         0x1fff11b1    0xa2  Code  Gb  flash.o [1]
+flash_write_count       0x1fff4ff0     0x4  Data  Lc  SD_SendDriver.o [1]
+follow_path             0x00000e35    0xa0  Code  Lc  ff.o [1]
+fs                      0x1fff4d64   0x230  Data  Gb  SD_SendDriver.o [1]
+getLeft_flag            0x1fff47ec    0xf4  Data  Gb  Process.o [1]
+getRight_flag           0x1fff48e0    0xf4  Data  Gb  Process.o [1]
+get_black_line          0x0000707d   0x2b2  Code  Gb  Process.o [1]
+get_fat                 0x00000621   0x102  Code  Gb  ff.o [1]
+get_fattime             0x000022e1     0x4  Code  Gb  diskio.o [1]
+gpio_init               0x00003f55    0xb8  Code  Gb  gpio.o [1]
+halfwidth               0x1fff4424   0x3c8  Data  Gb  Process.o [1]
+img_flag                0x1fff0f90     0x1  Data  Gb  OV7725.o [1]
+led                     0x000044e9    0x1e  Code  Gb  LED.o [1]
+main                    0x0000b6b5    0x2c  Code  Gb  main.o [1]
+mcg_div                 0x1fff1038     0x8  Data  Gb  mcg.o [1]
+mem_cmp                 0x0000047f    0x24  Code  Lc  ff.o [1]
+mem_cpy                 0x0000044d    0x1c  Code  Lc  ff.o [1]
+mem_set                 0x00000469    0x16  Code  Lc  ff.o [1]
+mma_switch              0x00003d39    0x78  Code  Gb  IIC.o [1]
+move_window             0x000004b7    0x78  Code  Lc  ff.o [1]
+out_char                0x0000c67d    0x10  Code  Gb  io.o [1]
+ov7725_get_img          0x0000a197    0x3e  Code  Gb  OV7725.o [1]
+ov7727_reg              0x1fff0f94    0x64  Data  Gb  OV7725.o [1]
+pit_init                0x00009f31    0x62  Code  Gb  PIT.o [1]
+pll_init                0x0000b6e9   0x2f4  Code  Gb  mcg.o [1]
+port_init               0x0000a621    0x58  Code  Gb  port.o [1]
+printf                  0x00004a9b    0x26  Code  Gb  printf.o [1]
+printk                  0x00004691   0x40a  Code  Gb  printf.o [1]
+printk_mknumstr         0x0000459b    0xaa  Code  Lc  printf.o [1]
+printk_pad_space        0x0000466b    0x26  Code  Lc  printf.o [1]
+printk_pad_zero         0x00004645    0x26  Code  Lc  printf.o [1]
+printk_putc             0x00004569    0x32  Code  Lc  printf.o [1]
+put_fat                 0x00000723   0x170  Code  Gb  ff.o [1]
+rcvr_datablock          0x00001eef    0x9c  Code  Lc  diskio.o [1]
+read_byte               0x0000321d   0x104  Code  Gb  IIC.o [1]
+remove_chain            0x00000893    0x72  Code  Lc  ff.o [1]
+send_byte               0x00003069   0x1b2  Code  Gb  IIC.o [1]
+set_irq_priority        0x0000a099    0x2a  Code  Gb  arm_cm4.o [1]
+set_sys_dividers        0x1fff1285    0x50  Code  Gb  mcg.o [1]
+sqrt                    0x00008f91          Code  Gb  sqrt.o [4]
+sqrtl                   0x00008f91          Code  Gb  sqrt.o [4]
+start                   0x0000b041   0x12e  Code  Gb  start.o [1]
+strlen                  0x00004ae9    0x20  Code  Gb  stdlib.o [1]
+sum_OneRow              0x00007559    0x22  Code  Gb  SmallS_Cross.o [1]
+sync                    0x0000052f    0xd8  Code  Lc  ff.o [1]
+sysinit                 0x0000b659    0x48  Code  Gb  sysinit.o [1]
+time_delay_ms           0x00002dc1    0x38  Code  Gb  lptmr.o [1]
+uart_getchar            0x00009d8f    0x1e  Code  Gb  uart.o [1]
+uart_init               0x00009b99   0x1f6  Code  Gb  uart.o [1]
+uart_irq_EN             0x00009dcb    0x2c  Code  Gb  uart.o [1]
+uart_putchar            0x00009dad    0x1e  Code  Gb  uart.o [1]
+validate                0x00001383    0x2e  Code  Lc  ff.o [1]
+water_lights            0x00004507    0x5c  Code  Gb  LED.o [1]
+wdog_disable            0x0000b561    0x16  Code  Gb  wdog.o [1]
+wdog_unlock             0x0000b579    0x16  Code  Gb  wdog.o [1]
+write_command           0x00004d83   0x1e0  Code  Gb  LCD.o [1]
+write_data              0x00004f63   0x1e0  Code  Gb  LCD.o [1]
+write_vtor              0x00009fa1     0x6  Code  Gb  arm_cm4.o [1]
+write_word              0x00005143    0x16  Code  Gb  LCD.o [1]
+xmit_datablock          0x00002063    0x5e  Code  Lc  diskio.o [1]
+
+
+[1] = C:\Users\xuxu\Desktop\7.9CAR1+CAR2(car1ËÄµµ28.812s µç³ØµçÑ¹8.0V)\build\fire_demo\CAR1_Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  43 564 bytes of readonly  code memory
+     636 bytes of readwrite code memory
+   7 548 bytes of readonly  data memory
+  19 592 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

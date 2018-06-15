@@ -1,0 +1,15 @@
+"E:\IAR\arm\bin\armproc.dll" 
+
+"E:\IAR\arm\bin\armjlink2.dll" 
+
+"C:\Users\Administrator\Desktop\大二购买\电磁三轮程序+电路+机械图 国一速度2.7m\第十三届电磁组程序 - 无调参系统版\Prj\Debug\Exe\KEA.out" 
+
+--plugin "E:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "E:\IAR\arm\config\debugger\NXP\KExx.dmac" 
+
+--flash_loader "E:\IAR\arm\config\flashloader\NXP\FlashKE04Z128_4.board" 
+
+
+
+

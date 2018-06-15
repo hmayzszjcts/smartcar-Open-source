@@ -1,0 +1,183 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[JLinkDriver]
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=1
+ClockWanted=6000000
+JtagSpeed=6000000
+Prescaler=12
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[DebugChecksum]
+Checksum=525522730
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[array_types]
+Fmt0=int[102]	3	0
+Fmt1=int[240]	3	0
+Fmt2=int[242]	3	0
+Fmt3=int[5]	3	0
+Fmt4=unsigned char[102]	3	0
+Fmt5=unsigned char[242]	3	0
+Fmt6=unsigned char[330]	3	0
+Fmt7=unsigned char[40]	1	0
+Fmt8=unsigned char[640]	1	0
+Fmt9=unsigned int[102]	3	0
+[watch_formats]
+Fmt0={W}42:Axz	0	7
+Fmt1={W}42:Dir_P	0	7
+Fmt2={W}42:G_angle	0	7
+Fmt3={W}42:OFFSET_angle	0	7
+Fmt4={W}42:RateAxz	0	7
+Fmt5={W}42:a	1	1
+Fmt6={W}42:acc_factor1	0	7
+Fmt7={W}42:angle_Out	0	7
+Fmt8={W}42:angle_P	0	7
+Fmt9={W}42:bb	0	4
+Fmt10={W}42:black_L	3	0
+Fmt11={W}42:black_centre	3	0
+Fmt12={W}42:czd	3	4
+Fmt13={W}42:getLeft_flag	3	1
+Fmt14={W}42:m_angle	0	7
+Fmt15={W}42:speed_Goal	0	7
+Fmt16={W}42:speed_Goal_init	0	7
+Fmt17={W}42:start_line_flag	0	1
+Fmt18={W}42:sudden_change_conut	3	0
+Fmt19={W}42:tg	0	7
+Fmt20={W}42:valid_farthest	3	0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title0=I0
+Setup0=0 1 0 500 2 0 4 0 0
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title0=ITM1
+Setup0=1 1 1 1
+Title1=ITM2
+Setup1=1 1 1 1
+Title2=ITM3
+Setup2=1 1 1 1
+Title3=ITM4
+Setup3=1 1 1 1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Trace1]
+Enabled=0
+ShowSource=1
+[Trace2]
+Enabled=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerProbe]
+Frequency=10000
+Probe0=I0
+ProbeSetup0=2 1 1 2 0 0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+A0=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\common\printf.c" ""
+A1=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\common\startup.c" ""
+A2=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\arm_cm4.c" ""
+A3=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\crt0.s" ""
+A4=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\sysinit.c" ""
+A5=_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\drivers\mcg\mcg.c" ""
+A6=_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\app_mydriver\IIC.c" ""
+A7=_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\app_mydriver\LCD.c" ""
+A8=_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\common\io.c" ""
+A9=_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\drivers\uart\uart.c" ""
+A10=_ "C:\Users\space\Desktop\4.61black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""
+A11=_ "C:\Users\space\Desktop\4.61black board(好用版本+固定行23s)\src\cpu\crt0.s" ""
+A12=_ "C:\Users\space\Desktop\初始程序2.0（K60的空工程，自己在里面添加代码就行）\src\common\printf.c" ""
+A13=_ "C:\Users\space\Desktop\初始程序2.0（K60的空工程，自己在里面添加代码就行）\src\cpu\crt0.s" ""
+A14=_ "C:\Users\xuxu\Desktop\4.4black board(好用版本+继承4.1)\src\cpu\crt0.s" ""
+A15=_ "C:\Users\xuxu\Desktop\4.61black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""
+A16=_ "C:\Users\xuxu\Desktop\4.61black board(好用版本+固定行23s)\src\cpu\crt0.s" ""
+A17=_ "C:\Users\xuxu\Desktop\4.6black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""
+A18=_ "C:\Users\xuxu\Desktop\5.0black board(E+好用版本+新代码+新赛道)（2014.4.28）\src\app_mydriver\IIC.c" ""
+A19=_ "C:\Users\xuxu\Desktop\6.1black board(2m好用版本）（2014.5.12） - 副本\src\app_mydriver\IIC.c" ""
+A20=_ "C:\Users\xuxu\Desktop\6.4 鹰眼DMA\src\cpu\crt0.s" ""
+A21=_ "C:\Users\xuxu\Desktop\7.2 鹰眼DMA(2.1~2.4)(green board）\src\LIB\FatFs\ff.c" ""
+A22=_ "C:\Users\xuxu\Desktop\7.7(green board）(4500+6000+startline+Ren+Cross）\src\LIB\FatFs\ff.c" ""
+A23=_ "C:\Users\xuxu\Desktop\7.7(green board）(4500+6000+startline+Ren+Cross）\src\cpu\crt0.s" ""
+Count=24
+SuppressDialog=1

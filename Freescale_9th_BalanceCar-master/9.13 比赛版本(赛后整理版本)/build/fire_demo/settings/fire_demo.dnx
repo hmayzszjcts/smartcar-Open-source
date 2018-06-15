@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <JLinkDriver>
+        <TraceBufferSize>0x00010000</TraceBufferSize>
+        <TraceStallIfFIFOFull>0x00000000</TraceStallIfFIFOFull>
+        <TracePortSize>0x00000004</TracePortSize>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </JLinkDriver>
+    <SWOTraceHWSettings>
+        <OverrideDefaultClocks>0</OverrideDefaultClocks>
+        <CpuClock>72000000</CpuClock>
+        <ClockAutoDetect>1</ClockAutoDetect>
+        <ClockWanted>6000000</ClockWanted>
+        <JtagSpeed>6000000</JtagSpeed>
+        <Prescaler>12</Prescaler>
+        <TimeStampPrescIndex>0</TimeStampPrescIndex>
+        <TimeStampPrescData>0</TimeStampPrescData>
+        <PcSampCYCTAP>1</PcSampCYCTAP>
+        <PcSampPOSTCNT>15</PcSampPOSTCNT>
+        <PcSampIndex>0</PcSampIndex>
+        <DataLogMode>0</DataLogMode>
+        <ITMportsEnable>0</ITMportsEnable>
+        <ITMportsTermIO>0</ITMportsTermIO>
+        <ITMportsLogFile>0</ITMportsLogFile>
+        <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
+    </SWOTraceHWSettings>
+    <DebugChecksum>
+        <Checksum>525522730</Checksum>
+    </DebugChecksum>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemoryMap>
+        <Enabled>0</Enabled>
+        <Base>0</Base>
+        <UseAuto>0</UseAuto>
+        <TypeViolation>1</TypeViolation>
+        <UnspecRange>1</UnspecRange>
+        <ActionState>1</ActionState>
+    </MemoryMap>
+    <array_types>
+        <Fmt0>int[102]	3	0</Fmt0>
+        <Fmt1>int[240]	3	0</Fmt1>
+        <Fmt2>int[242]	3	0</Fmt2>
+        <Fmt3>int[5]	3	0</Fmt3>
+        <Fmt4>unsigned char[102]	3	0</Fmt4>
+        <Fmt5>unsigned char[242]	3	0</Fmt5>
+        <Fmt6>unsigned char[330]	3	0</Fmt6>
+        <Fmt7>unsigned char[40]	1	0</Fmt7>
+        <Fmt8>unsigned char[640]	1	0</Fmt8>
+        <Fmt9>unsigned int[102]	3	0</Fmt9>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}42:Axz	0	7</Fmt0>
+        <Fmt1>{W}42:Dir_P	0	7</Fmt1>
+        <Fmt2>{W}42:G_angle	0	7</Fmt2>
+        <Fmt3>{W}42:OFFSET_angle	0	7</Fmt3>
+        <Fmt4>{W}42:RateAxz	0	7</Fmt4>
+        <Fmt5>{W}42:a	1	1</Fmt5>
+        <Fmt6>{W}42:acc_factor1	0	7</Fmt6>
+        <Fmt7>{W}42:angle_Out	0	7</Fmt7>
+        <Fmt8>{W}42:angle_P	0	7</Fmt8>
+        <Fmt9>{W}42:bb	0	4</Fmt9>
+        <Fmt10>{W}42:black_L	3	0</Fmt10>
+        <Fmt11>{W}42:black_centre	3	0</Fmt11>
+        <Fmt12>{W}42:czd	3	4</Fmt12>
+        <Fmt13>{W}42:getLeft_flag	3	1</Fmt13>
+        <Fmt14>{W}42:m_angle	0	7</Fmt14>
+        <Fmt15>{W}42:speed_Goal	0	7</Fmt15>
+        <Fmt16>{W}42:speed_Goal_init	0	7</Fmt16>
+        <Fmt17>{W}42:start_line_flag	0	1</Fmt17>
+        <Fmt18>{W}42:sudden_change_conut	3	0</Fmt18>
+        <Fmt19>{W}42:tg	0	7</Fmt19>
+        <Fmt20>{W}42:valid_farthest	3	0</Fmt20>
+    </watch_formats>
+    <PowerLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>0</ShowTimeSum>
+        <Title0>I0</Title0>
+        <Setup0>0 1 0 500 2 0 4 0 0</Setup0>
+        <LiveEnabled>0</LiveEnabled>
+        <LiveFile>PowerLogLive.log</LiveFile>
+    </PowerLog>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <SumEnabled>0</SumEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <EventLog>
+        <LogEnabled>0</LogEnabled>
+        <SumEnabled>0</SumEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>1</ShowTimeSum>
+        <Title0>ITM1</Title0>
+        <Setup0>1 1 1 1</Setup0>
+        <Title1>ITM2</Title1>
+        <Setup1>1 1 1 1</Setup1>
+        <Title2>ITM3</Title2>
+        <Setup2>1 1 1 1</Setup2>
+        <Title3>ITM4</Title3>
+        <Setup3>1 1 1 1</Setup3>
+        <SumSortOrder>0</SumSortOrder>
+    </EventLog>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <SumEnabled>0</SumEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <Trace2>
+        <Enabled>0</Enabled>
+    </Trace2>
+    <SWOTraceWindow>
+        <PcSampling>0</PcSampling>
+        <InterruptLogs>0</InterruptLogs>
+        <ForcedTimeStamps>0</ForcedTimeStamps>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <PowerProbe>
+        <Frequency>10000</Frequency>
+        <Probe0>I0</Probe0>
+        <ProbeSetup0>2 1 1 2 0 0</ProbeSetup0>
+    </PowerProbe>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>1</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <Disassemble_mode>
+        <mode>0</mode>
+    </Disassemble_mode>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\common\printf.c" ""</A0>
+        <A1>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\common\startup.c" ""</A1>
+        <A2>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\arm_cm4.c" ""</A2>
+        <A3>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\crt0.s" ""</A3>
+        <A4>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\cpu\sysinit.c" ""</A4>
+        <A5>_ "C:\Users\Lenovov\Desktop\野火K60\fire_Kinetis_代码V2.2\src\drivers\mcg\mcg.c" ""</A5>
+        <A6>_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\app_mydriver\IIC.c" ""</A6>
+        <A7>_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\app_mydriver\LCD.c" ""</A7>
+        <A8>_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\common\io.c" ""</A8>
+        <A9>_ "C:\Users\space\Desktop\4.4black board(好用版本+继承4.1)\src\drivers\uart\uart.c" ""</A9>
+        <A10>_ "C:\Users\space\Desktop\4.61black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""</A10>
+        <A11>_ "C:\Users\space\Desktop\4.61black board(好用版本+固定行23s)\src\cpu\crt0.s" ""</A11>
+        <A12>_ "C:\Users\space\Desktop\初始程序2.0（K60的空工程，自己在里面添加代码就行）\src\common\printf.c" ""</A12>
+        <A13>_ "C:\Users\space\Desktop\初始程序2.0（K60的空工程，自己在里面添加代码就行）\src\cpu\crt0.s" ""</A13>
+        <A14>_ "C:\Users\xuxu\Desktop\4.4black board(好用版本+继承4.1)\src\cpu\crt0.s" ""</A14>
+        <A15>_ "C:\Users\xuxu\Desktop\4.61black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""</A15>
+        <A16>_ "C:\Users\xuxu\Desktop\4.61black board(好用版本+固定行23s)\src\cpu\crt0.s" ""</A16>
+        <A17>_ "C:\Users\xuxu\Desktop\4.6black board(好用版本+固定行23s)\src\app_mydriver\IIC.c" ""</A17>
+        <A18>_ "C:\Users\xuxu\Desktop\5.0black board(E+好用版本+新代码+新赛道)（2014.4.28）\src\app_mydriver\IIC.c" ""</A18>
+        <A19>_ "C:\Users\xuxu\Desktop\6.1black board(2m好用版本）（2014.5.12） - 副本\src\app_mydriver\IIC.c" ""</A19>
+        <A20>_ "C:\Users\xuxu\Desktop\6.4 鹰眼DMA\src\cpu\crt0.s" ""</A20>
+        <A21>_ "C:\Users\xuxu\Desktop\7.2 鹰眼DMA(2.1~2.4)(green board）\src\LIB\FatFs\ff.c" ""</A21>
+        <A22>_ "C:\Users\xuxu\Desktop\7.7(green board）(4500+6000+startline+Ren+Cross）\src\LIB\FatFs\ff.c" ""</A22>
+        <A23>_ "C:\Users\xuxu\Desktop\7.7(green board）(4500+6000+startline+Ren+Cross）\src\cpu\crt0.s" ""</A23>
+        <Count>24</Count>
+        <SuppressDialog>1</SuppressDialog>
+    </Aliases>
+</settings>
