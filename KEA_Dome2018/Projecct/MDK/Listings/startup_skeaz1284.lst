@@ -1,0 +1,1374 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/******************************************************
+                       ***********************
+    2 00000000         ; * @file:    startup_SKEAZ1284.s
+    3 00000000         ; * @purpose: CMSIS Cortex-M0plus Core Device Startup Fi
+                       le for the
+    4 00000000         ; *           SKEAZ1284
+    5 00000000         ; * @version: 1.2
+    6 00000000         ; * @date:    2014-1-10
+    7 00000000         ; *
+    8 00000000         ; * Copyright: 1997 - 2014 Freescale Semiconductor, Inc.
+                        All Rights Reserved.
+    9 00000000         ;*
+   10 00000000         ; *------- <<< Use Configuration Wizard in Context Menu 
+                       >>> ------------------
+   11 00000000         ; *
+   12 00000000         ; ******************************************************
+                       ***********************/
+   13 00000000         
+   14 00000000         
+   15 00000000         ; <h> Stack Configuration
+   16 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   17 00000000         ; </h>
+   18 00000000         
+   19 00000000 00000100 
+                       Stack_Size
+                               EQU              0x00000100
+   20 00000000         
+   21 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+   22 00000000         Stack_Mem
+                               SPACE            Stack_Size
+   23 00000100         __initial_sp
+   24 00000100         
+   25 00000100         
+   26 00000100         ; <h> Heap Configuration
+   27 00000100         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   28 00000100         ; </h>
+   29 00000100         
+   30 00000100 00000000 
+                       Heap_Size
+                               EQU              0x00000000
+   31 00000100         
+   32 00000100                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
+3
+   33 00000000         __heap_base
+   34 00000000         Heap_Mem
+                               SPACE            Heap_Size
+   35 00000000         __heap_limit
+   36 00000000         
+   37 00000000         
+   38 00000000                 PRESERVE8
+   39 00000000                 THUMB
+   40 00000000         
+   41 00000000         
+   42 00000000         ; Vector Table Mapped to Address 0 at Reset
+   43 00000000         
+   44 00000000                 AREA             RESET, DATA, READONLY
+   45 00000000                 EXPORT           __Vectors
+   46 00000000                 EXPORT           __Vectors_End
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   47 00000000                 EXPORT           __Vectors_Size
+   48 00000000         
+   49 00000000 00000000 
+                       __Vectors
+                               DCD              __initial_sp ; Top of Stack
+   50 00000004 00000000        DCD              Reset_Handler ; Reset Handler
+   51 00000008 00000000        DCD              NMI_Handler ; NMI Handler
+   52 0000000C 00000000        DCD              HardFault_Handler ; Hard Fault 
+                                                            Handler
+   53 00000010 00000000        DCD              0           ; Reserved
+   54 00000014 00000000        DCD              0           ; Reserved
+   55 00000018 00000000        DCD              0           ; Reserved
+   56 0000001C 00000000        DCD              0           ; Reserved
+   57 00000020 00000000        DCD              0           ; Reserved
+   58 00000024 00000000        DCD              0           ; Reserved
+   59 00000028 00000000        DCD              0           ; Reserved
+   60 0000002C 00000000        DCD              SVC_Handler ; SVCall Handler
+   61 00000030 00000000        DCD              0           ; Reserved
+   62 00000034 00000000        DCD              0           ; Reserved
+   63 00000038 00000000        DCD              PendSV_Handler ; PendSV Handler
+                                                            
+   64 0000003C 00000000        DCD              SysTick_Handler 
+                                                            ; SysTick Handler
+   65 00000040         
+   66 00000040         ; External Interrupts
+   67 00000040 00000000        DCD              Reserved16_IRQHandler ; Reserve
+                                                            d interrupt
+   68 00000044 00000000        DCD              Reserved17_IRQHandler ; Reserve
+                                                            d interrupt
+   69 00000048 00000000        DCD              Reserved18_IRQHandler ; Reserve
+                                                            d interrupt
+   70 0000004C 00000000        DCD              Reserved19_IRQHandler ; Reserve
+                                                            d interrupt
+   71 00000050 00000000        DCD              Reserved20_IRQHandler ; Reserve
+                                                            d interrupt
+   72 00000054 00000000        DCD              FTMRE_IRQHandler ; Command comp
+                                                            lete and read colli
+                                                            sion
+   73 00000058 00000000        DCD              PMC_IRQHandler ; Low-voltage de
+                                                            tect, low-voltage w
+                                                            arning
+   74 0000005C 00000000        DCD              IRQ_IRQHandler ; External Inter
+                                                            rupt
+   75 00000060 00000000        DCD              I2C0_IRQHandler 
+                                                            ; I2C0 interrupt
+   76 00000064 00000000        DCD              I2C1_IRQHandler 
+                                                            ; I2C1 interrupt
+   77 00000068 00000000        DCD              SPI0_IRQHandler ; SPI0 single i
+                                                            nterrupt vector for
+                                                             all sources
+   78 0000006C 00000000        DCD              SPI1_IRQHandler ; SPI1 single i
+                                                            nterrupt vector for
+                                                             all sources
+   79 00000070 00000000        DCD              UART0_IRQHandler ; UART0 status
+                                                             and error
+   80 00000074 00000000        DCD              UART1_IRQHandler ; UART1 status
+                                                             and error
+   81 00000078 00000000        DCD              UART2_IRQHandler ; UART2 status
+                                                             and error
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   82 0000007C 00000000        DCD              ADC_IRQHandler ; ADC interrupt
+   83 00000080 00000000        DCD              ACMP0_IRQHandler 
+                                                            ; ACMP0 interrupt
+   84 00000084 00000000        DCD              FTM0_IRQHandler ; FTM0 single i
+                                                            nterrupt vector for
+                                                             all sources
+   85 00000088 00000000        DCD              FTM1_IRQHandler ; FTM1 single i
+                                                            nterrupt vector for
+                                                             all sources
+   86 0000008C 00000000        DCD              FTM2_IRQHandler ; FTM2 single i
+                                                            nterrupt vector for
+                                                             all sources
+   87 00000090 00000000        DCD              RTC_IRQHandler ; RTC overflow
+   88 00000094 00000000        DCD              ACMP1_IRQHandler 
+                                                            ; ACMP1 interrupt
+   89 00000098 00000000        DCD              PIT_CH0_IRQHandler 
+                                                            ; PIT CH0 overflow
+   90 0000009C 00000000        DCD              PIT_CH1_IRQHandler 
+                                                            ; PIT CH1 overflow
+   91 000000A0 00000000        DCD              KBI0_IRQHandler ; Keyboard inte
+                                                            rrupt0(32bit)
+   92 000000A4 00000000        DCD              KBI1_IRQHandler ; Keyboard inte
+                                                            rrupt1(32bit)
+   93 000000A8 00000000        DCD              Reserved42_IRQHandler ; Reserve
+                                                            d interrupt
+   94 000000AC 00000000        DCD              ICS_IRQHandler ; ICS interrupt
+   95 000000B0 00000000        DCD              WDOG_IRQHandler 
+                                                            ; Watchdog timeout
+   96 000000B4 00000000        DCD              PWT_IRQHandler ; PWT interrupt
+   97 000000B8 00000000        DCD              MSCAN_RX_IRQHandler ; MSCAN Rx 
+                                                            Interrupt
+   98 000000BC 00000000        DCD              MSCAN_TX_IRQHandler ; MSCAN Tx,
+                                                             Err and Wake-up in
+                                                            terrupt
+   99 000000C0         __Vectors_End
+  100 000000C0         
+  101 000000C0 000000C0 
+                       __Vectors_Size
+                               EQU              __Vectors_End - __Vectors
+  102 000000C0         
+  103 000000C0         ; <h> Flash Configuration
+  104 000000C0         ;   <i> 16-byte flash configuration field that stores de
+                       fault protection settings (loaded on reset)
+  105 000000C0         ;   <i> and security information that allows the MCU to 
+                       restrict acces to the FTFL module.
+  106 000000C0         ;   <h> Backdoor Comparison Key
+  107 000000C0         ;     <o0>  Backdoor Key 0  <0x0-0xFF:2>
+  108 000000C0         ;     <o1>  Backdoor Key 1  <0x0-0xFF:2>
+  109 000000C0         ;     <o2>  Backdoor Key 2  <0x0-0xFF:2>
+  110 000000C0         ;     <o3>  Backdoor Key 3  <0x0-0xFF:2>
+  111 000000C0         ;     <o4>  Backdoor Key 4  <0x0-0xFF:2>
+  112 000000C0         ;     <o5>  Backdoor Key 5  <0x0-0xFF:2>
+  113 000000C0         ;     <o6>  Backdoor Key 6  <0x0-0xFF:2>
+  114 000000C0         ;     <o7>  Backdoor Key 7  <0x0-0xFF:2>
+  115 000000C0 000000FF 
+                       BackDoorK0
+                               EQU              0xFF
+  116 000000C0 000000FF 
+                       BackDoorK1
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+                               EQU              0xFF
+  117 000000C0 000000FF 
+                       BackDoorK2
+                               EQU              0xFF
+  118 000000C0 000000FF 
+                       BackDoorK3
+                               EQU              0xFF
+  119 000000C0 000000FF 
+                       BackDoorK4
+                               EQU              0xFF
+  120 000000C0 000000FF 
+                       BackDoorK5
+                               EQU              0xFF
+  121 000000C0 000000FF 
+                       BackDoorK6
+                               EQU              0xFF
+  122 000000C0 000000FF 
+                       BackDoorK7
+                               EQU              0xFF
+  123 000000C0         ;   </h>
+  124 000000C0         ;     <h> FPROT
+  125 000000C0         ;       <i> P-Flash Protection Register
+  126 000000C0         ;       <o.7> FPOPEN
+  127 000000C0         ;         <0=> FPHDIS and FPLDIS bits define unprotected
+                        address ranges as specified by the corresponding FPHS a
+                       nd FPLS bits FPROT1.1
+  128 000000C0         ;         <1=> FPHDIS and FPLDIS bits enable protection 
+                       for the address range specified by the corresponding FPH
+                       S and FPLS bits
+  129 000000C0         ;       <o.5> FPHDIS
+  130 000000C0         ;         <0=> Protection/Unprotection enabled
+  131 000000C0         ;         <1=> Protection/Unprotection disabled
+  132 000000C0         ;       <o.3..4> FPHS
+  133 000000C0         ;         <0=> Address range: 0x00_7C00-0x00_7FFF; prote
+                       cted size: 1 KB
+  134 000000C0         ;         <1=> Address range: 0x00_7800-0x00_7FFF; prote
+                       cted size: 2 KB
+  135 000000C0         ;         <2=> Address range: 0x00_7000-0x00_7FFF; prote
+                       cted size: 4 KB
+  136 000000C0         ;         <3=> Address range: 0x00_6000-0x00_7FFF; prote
+                       cted size: 8 KB
+  137 000000C0         ;       <o.5> FPLDIS
+  138 000000C0         ;         <0=> Protection/Unprotection enabled
+  139 000000C0         ;         <1=> Protection/Unprotection disabled
+  140 000000C0         ;       <o.3..4> FPLS
+  141 000000C0         ;         <0=> Address range: 0x00_0000-0x00_07FF; prote
+                       cted size: 2 KB
+  142 000000C0         ;         <1=> Address range: 0x00_0000-0x00_0FFF; prote
+                       cted size: 4 KB
+  143 000000C0         ;         <2=> Address range: 0x00_0000-0x00_1FFF; prote
+                       cted size: 8 KB
+  144 000000C0         ;         <3=> Address range: 0x00_0000-0x00_3FFF; prote
+                       cted size: 16 KB
+  145 000000C0 000000FF 
+                       FPROT   EQU              0xFF
+  146 000000C0         ;     </h>
+  147 000000C0         ;   </h>
+  148 000000C0         ;   <h> Flash security byte (FSEC)
+  149 000000C0         ;     <i> WARNING: If SEC field is configured as "MCU se
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+                       curity status is secure" and MEEN field is configured as
+                        "Mass erase is disabled",
+  150 000000C0         ;     <i> MCU's security status cannot be set back to un
+                       secure state since Mass erase via the debugger is blocke
+                       d !!!
+  151 000000C0         ;     <o.0..1> SEC
+  152 000000C0         ;       <2=> MCU security status is unsecure
+  153 000000C0         ;       <3=> MCU security status is secure
+  154 000000C0         ;         <i> Flash Security
+  155 000000C0         ;         <i> This bits define the security state of the
+                        MCU.
+  156 000000C0         ;     <o.6..7> KEYEN
+  157 000000C0         ;       <2=> Backdoor key access enabled
+  158 000000C0         ;       <3=> Backdoor key access disabled
+  159 000000C0         ;         <i> Backdoor key Security Enable
+  160 000000C0         ;         <i> These bits enable and disable backdoor key
+                        access to the FTFL module.
+  161 000000C0 000000FE 
+                       FSEC    EQU              0xFE
+  162 000000C0         ;   </h>
+  163 000000C0         ;   <h> Flash Option Register (FOPT)
+  164 000000C0 000000FE 
+                       FOPT    EQU              0xFE
+  165 000000C0         ;   </h>
+  166 000000C0                 IF               :LNOT::DEF:RAM_TARGET
+  167 000000C0                 AREA             |.ARM.__at_0x400|, CODE, READON
+LY
+  168 00000000 FF FF FF 
+              FF               DCB              BackDoorK0, BackDoorK1, BackDoo
+rK2, BackDoorK3
+  169 00000004 FF FF FF 
+              FF               DCB              BackDoorK4, BackDoorK5, BackDoo
+rK6, BackDoorK7
+  170 00000008 FF FF FF 
+              FF               DCB              0xFF,       0xFF,       0xFF,  
+     0xFF
+  171 0000000C FF FF FE 
+              FE               DCB              0xFF,       FPROT,      FSEC,  
+     FOPT
+  172 00000010                 ENDIF
+  173 00000010         
+  174 00000010                 AREA             |.text|, CODE, READONLY
+  175 00000000         
+  176 00000000         ;init_data_bss
+  177 00000000         ;     User defined function for data and bs memory segme
+                       nt initialization.
+  178 00000000         ;      Weak definition to be replaced by user code.
+  179 00000000         
+  180 00000000         init_data_bss
+                               PROC
+  181 00000000                 EXPORT           init_data_bss             [WEAK
+]
+  182 00000000 4770            BX               R14
+  183 00000002                 ENDP
+  184 00000002         
+  185 00000002         ; Reset Handler
+  186 00000002         
+  187 00000002         Reset_Handler
+                               PROC
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  188 00000002                 EXPORT           Reset_Handler             [WEAK
+]
+  189 00000002                 IMPORT           Start
+  190 00000002                 IMPORT           __main
+  191 00000002 4806            LDR              R0, =Start
+  192 00000004 4780            BLX              R0
+  193 00000006 4806            LDR              R0, =init_data_bss
+  194 00000008 4780            BLX              R0
+  195 0000000A 4806            LDR              R0, =__main
+  196 0000000C 4700            BX               R0
+  197 0000000E                 ENDP
+  198 0000000E         
+  199 0000000E         
+  200 0000000E         ; Dummy Exception Handlers (infinite loops which can be 
+                       modified)
+  201 0000000E         
+  202 0000000E         NMI_Handler
+                               PROC
+  203 0000000E                 EXPORT           NMI_Handler               [WEAK
+]
+  204 0000000E E7FE            B                .
+  205 00000010                 ENDP
+  207 00000010         HardFault_Handler
+                               PROC
+  208 00000010                 EXPORT           HardFault_Handler         [WEAK
+]
+  209 00000010 E7FE            B                .
+  210 00000012                 ENDP
+  211 00000012         SVC_Handler
+                               PROC
+  212 00000012                 EXPORT           SVC_Handler               [WEAK
+]
+  213 00000012 E7FE            B                .
+  214 00000014                 ENDP
+  215 00000014         PendSV_Handler
+                               PROC
+  216 00000014                 EXPORT           PendSV_Handler            [WEAK
+]
+  217 00000014 E7FE            B                .
+  218 00000016                 ENDP
+  219 00000016         SysTick_Handler
+                               PROC
+  220 00000016                 EXPORT           SysTick_Handler           [WEAK
+]
+  221 00000016 E7FE            B                .
+  222 00000018                 ENDP
+  223 00000018         
+  224 00000018         Default_Handler
+                               PROC
+  225 00000018                 EXPORT           Reserved16_IRQHandler     [WEAK
+]
+  226 00000018                 EXPORT           Reserved17_IRQHandler     [WEAK
+]
+  227 00000018                 EXPORT           Reserved18_IRQHandler     [WEAK
+]
+  228 00000018                 EXPORT           Reserved19_IRQHandler     [WEAK
+]
+  229 00000018                 EXPORT           Reserved20_IRQHandler     [WEAK
+]
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  230 00000018                 EXPORT           FTMRE_IRQHandler     [WEAK]
+  231 00000018                 EXPORT           PMC_IRQHandler     [WEAK]
+  232 00000018                 EXPORT           IRQ_IRQHandler     [WEAK]
+  233 00000018                 EXPORT           I2C0_IRQHandler     [WEAK]
+  234 00000018                 EXPORT           I2C1_IRQHandler     [WEAK]
+  235 00000018                 EXPORT           SPI0_IRQHandler     [WEAK]
+  236 00000018                 EXPORT           SPI1_IRQHandler     [WEAK]
+  237 00000018                 EXPORT           UART0_IRQHandler     [WEAK]
+  238 00000018                 EXPORT           UART1_IRQHandler     [WEAK]
+  239 00000018                 EXPORT           UART2_IRQHandler     [WEAK]
+  240 00000018                 EXPORT           ADC_IRQHandler     [WEAK]
+  241 00000018                 EXPORT           ACMP0_IRQHandler     [WEAK]
+  242 00000018                 EXPORT           FTM0_IRQHandler     [WEAK]
+  243 00000018                 EXPORT           FTM1_IRQHandler     [WEAK]
+  244 00000018                 EXPORT           FTM2_IRQHandler     [WEAK]
+  245 00000018                 EXPORT           RTC_IRQHandler     [WEAK]
+  246 00000018                 EXPORT           ACMP1_IRQHandler     [WEAK]
+  247 00000018                 EXPORT           PIT_CH0_IRQHandler     [WEAK]
+  248 00000018                 EXPORT           PIT_CH1_IRQHandler     [WEAK]
+  249 00000018                 EXPORT           KBI0_IRQHandler     [WEAK]
+  250 00000018                 EXPORT           KBI1_IRQHandler     [WEAK]
+  251 00000018                 EXPORT           Reserved42_IRQHandler     [WEAK
+]
+  252 00000018                 EXPORT           ICS_IRQHandler     [WEAK]
+  253 00000018                 EXPORT           WDOG_IRQHandler     [WEAK]
+  254 00000018                 EXPORT           PWT_IRQHandler     [WEAK]
+  255 00000018                 EXPORT           MSCAN_RX_IRQHandler     [WEAK]
+  256 00000018                 EXPORT           MSCAN_TX_IRQHandler     [WEAK]
+  257 00000018                 EXPORT           DefaultISR                     
+ [WEAK]
+  258 00000018         
+  259 00000018         Reserved16_IRQHandler
+  260 00000018         Reserved17_IRQHandler
+  261 00000018         Reserved18_IRQHandler
+  262 00000018         Reserved19_IRQHandler
+  263 00000018         Reserved20_IRQHandler
+  264 00000018         FTMRE_IRQHandler
+  265 00000018         PMC_IRQHandler
+  266 00000018         IRQ_IRQHandler
+  267 00000018         I2C0_IRQHandler
+  268 00000018         I2C1_IRQHandler
+  269 00000018         SPI0_IRQHandler
+  270 00000018         SPI1_IRQHandler
+  271 00000018         UART0_IRQHandler
+  272 00000018         UART1_IRQHandler
+  273 00000018         UART2_IRQHandler
+  274 00000018         ADC_IRQHandler
+  275 00000018         ACMP0_IRQHandler
+  276 00000018         FTM0_IRQHandler
+  277 00000018         FTM1_IRQHandler
+  278 00000018         FTM2_IRQHandler
+  279 00000018         RTC_IRQHandler
+  280 00000018         ACMP1_IRQHandler
+  281 00000018         PIT_CH0_IRQHandler
+  282 00000018         PIT_CH1_IRQHandler
+  283 00000018         KBI0_IRQHandler
+  284 00000018         KBI1_IRQHandler
+  285 00000018         Reserved42_IRQHandler
+  286 00000018         ICS_IRQHandler
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  287 00000018         WDOG_IRQHandler
+  288 00000018         PWT_IRQHandler
+  289 00000018         MSCAN_RX_IRQHandler
+  290 00000018         MSCAN_TX_IRQHandler
+  291 00000018         DefaultISR
+  292 00000018         
+  293 00000018 E7FE            B                .
+  294 0000001A         
+  295 0000001A                 ENDP
+  296 0000001A         
+  297 0000001A         
+  298 0000001A 00 00           ALIGN
+  299 0000001C         
+  300 0000001C         
+  301 0000001C         ; User Initial Stack & Heap
+  302 0000001C         
+  303 0000001C                 IF               :DEF:__MICROLIB
+  304 0000001C         
+  305 0000001C                 EXPORT           __initial_sp
+  306 0000001C                 EXPORT           __heap_base
+  307 0000001C                 EXPORT           __heap_limit
+  308 0000001C         
+  309 0000001C                 ELSE
+  323                          ENDIF
+  324 0000001C         
+  325 0000001C         
+  326 0000001C                 END
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
+work --depend=.\objects\startup_skeaz1284.d -o.\objects\startup_skeaz1284.o -I"
+C:\Users\ÆëÕþ\Desktop\Ð¡³µ\KEA_Dome 118 1455\Projecct\MDK\RTE" -IC:\MDK5\ARM\PA
+CK\Keil\Kinetis_KEAxx_DFP\1.2.0\Device\Include -IC:\MDK5\ARM\CMSIS\Include --pr
+edefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 514" --predefin
+e="SKEAZ128xxx4 SETA 1" --list=.\listings\startup_skeaz1284.lst ..\..\Libraries
+\startup\DeviceSupport\MDK-ARM\startup_SKEAZ1284.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 21 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 22 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00000100
+
+Symbol: __initial_sp
+   Definitions
+      At line 23 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 49 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 305 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HEAP 00000000
+
+Symbol: HEAP
+   Definitions
+      At line 32 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      None
+Comment: HEAP unused
+Heap_Mem 00000000
+
+Symbol: Heap_Mem
+   Definitions
+      At line 34 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      None
+Comment: Heap_Mem unused
+__heap_base 00000000
+
+Symbol: __heap_base
+   Definitions
+      At line 33 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 306 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: __heap_base used once
+__heap_limit 00000000
+
+Symbol: __heap_limit
+   Definitions
+      At line 35 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 307 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: __heap_limit used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 44 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 49 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 45 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 101 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+__Vectors_End 000000C0
+
+Symbol: __Vectors_End
+   Definitions
+      At line 99 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 46 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 101 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.ARM.__at_0x400 00000000
+
+Symbol: .ARM.__at_0x400
+   Definitions
+      At line 167 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      None
+Comment: .ARM.__at_0x400 unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 174 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      None
+Comment: .text unused
+ACMP0_IRQHandler 00000018
+
+Symbol: ACMP0_IRQHandler
+   Definitions
+      At line 275 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 83 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 241 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+ACMP1_IRQHandler 00000018
+
+Symbol: ACMP1_IRQHandler
+   Definitions
+      At line 280 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 88 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 246 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+ADC_IRQHandler 00000018
+
+Symbol: ADC_IRQHandler
+   Definitions
+      At line 274 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 82 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 240 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+DefaultISR 00000018
+
+Symbol: DefaultISR
+   Definitions
+      At line 291 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 257 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: DefaultISR used once
+Default_Handler 00000018
+
+Symbol: Default_Handler
+   Definitions
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 224 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      None
+Comment: Default_Handler unused
+FTM0_IRQHandler 00000018
+
+Symbol: FTM0_IRQHandler
+   Definitions
+      At line 276 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 84 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 242 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+FTM1_IRQHandler 00000018
+
+Symbol: FTM1_IRQHandler
+   Definitions
+      At line 277 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 85 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 243 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+FTM2_IRQHandler 00000018
+
+Symbol: FTM2_IRQHandler
+   Definitions
+      At line 278 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 86 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 244 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+FTMRE_IRQHandler 00000018
+
+Symbol: FTMRE_IRQHandler
+   Definitions
+      At line 264 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 72 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 230 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+HardFault_Handler 00000010
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 207 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Uses
+      At line 52 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 208 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+I2C0_IRQHandler 00000018
+
+Symbol: I2C0_IRQHandler
+   Definitions
+      At line 267 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 75 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 233 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+I2C1_IRQHandler 00000018
+
+Symbol: I2C1_IRQHandler
+   Definitions
+      At line 268 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 76 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 234 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+ICS_IRQHandler 00000018
+
+Symbol: ICS_IRQHandler
+   Definitions
+      At line 286 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 94 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 252 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+IRQ_IRQHandler 00000018
+
+Symbol: IRQ_IRQHandler
+   Definitions
+      At line 266 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 74 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 232 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+KBI0_IRQHandler 00000018
+
+Symbol: KBI0_IRQHandler
+   Definitions
+      At line 283 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+_SKEAZ1284.s
+   Uses
+      At line 91 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 249 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+KBI1_IRQHandler 00000018
+
+Symbol: KBI1_IRQHandler
+   Definitions
+      At line 284 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 92 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 250 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+MSCAN_RX_IRQHandler 00000018
+
+Symbol: MSCAN_RX_IRQHandler
+   Definitions
+      At line 289 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 97 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 255 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+MSCAN_TX_IRQHandler 00000018
+
+Symbol: MSCAN_TX_IRQHandler
+   Definitions
+      At line 290 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 98 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 256 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+NMI_Handler 0000000E
+
+Symbol: NMI_Handler
+   Definitions
+      At line 202 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 51 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 203 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+PIT_CH0_IRQHandler 00000018
+
+Symbol: PIT_CH0_IRQHandler
+   Definitions
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 281 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 89 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 247 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+PIT_CH1_IRQHandler 00000018
+
+Symbol: PIT_CH1_IRQHandler
+   Definitions
+      At line 282 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 90 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 248 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+PMC_IRQHandler 00000018
+
+Symbol: PMC_IRQHandler
+   Definitions
+      At line 265 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 73 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 231 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+PWT_IRQHandler 00000018
+
+Symbol: PWT_IRQHandler
+   Definitions
+      At line 288 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 96 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 254 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+PendSV_Handler 00000014
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 215 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 63 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 216 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+RTC_IRQHandler 00000018
+
+Symbol: RTC_IRQHandler
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 279 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 87 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 245 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved16_IRQHandler 00000018
+
+Symbol: Reserved16_IRQHandler
+   Definitions
+      At line 259 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 67 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 225 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved17_IRQHandler 00000018
+
+Symbol: Reserved17_IRQHandler
+   Definitions
+      At line 260 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 68 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 226 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved18_IRQHandler 00000018
+
+Symbol: Reserved18_IRQHandler
+   Definitions
+      At line 261 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 69 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 227 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved19_IRQHandler 00000018
+
+Symbol: Reserved19_IRQHandler
+   Definitions
+      At line 262 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 70 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 228 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved20_IRQHandler 00000018
+
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: Reserved20_IRQHandler
+   Definitions
+      At line 263 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 71 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 229 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reserved42_IRQHandler 00000018
+
+Symbol: Reserved42_IRQHandler
+   Definitions
+      At line 285 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 93 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 251 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+Reset_Handler 00000002
+
+Symbol: Reset_Handler
+   Definitions
+      At line 187 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 50 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 188 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+SPI0_IRQHandler 00000018
+
+Symbol: SPI0_IRQHandler
+   Definitions
+      At line 269 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 77 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 235 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+SPI1_IRQHandler 00000018
+
+Symbol: SPI1_IRQHandler
+   Definitions
+      At line 270 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 78 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 236 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+SVC_Handler 00000012
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Relocatable symbols
+
+
+Symbol: SVC_Handler
+   Definitions
+      At line 211 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 60 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 212 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+SysTick_Handler 00000016
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 219 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 64 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 220 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+UART0_IRQHandler 00000018
+
+Symbol: UART0_IRQHandler
+   Definitions
+      At line 271 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 79 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 237 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+UART1_IRQHandler 00000018
+
+Symbol: UART1_IRQHandler
+   Definitions
+      At line 272 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 80 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 238 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+UART2_IRQHandler 00000018
+
+Symbol: UART2_IRQHandler
+   Definitions
+      At line 273 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 81 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 239 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Relocatable symbols
+
+WDOG_IRQHandler 00000018
+
+Symbol: WDOG_IRQHandler
+   Definitions
+      At line 287 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 95 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+      At line 253 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+init_data_bss 00000000
+
+Symbol: init_data_bss
+   Definitions
+      At line 180 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 181 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+      At line 193 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+42 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+BackDoorK0 000000FF
+
+Symbol: BackDoorK0
+   Definitions
+      At line 115 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 168 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK0 used once
+BackDoorK1 000000FF
+
+Symbol: BackDoorK1
+   Definitions
+      At line 116 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 168 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK1 used once
+BackDoorK2 000000FF
+
+Symbol: BackDoorK2
+   Definitions
+      At line 117 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 168 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK2 used once
+BackDoorK3 000000FF
+
+Symbol: BackDoorK3
+   Definitions
+      At line 118 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 168 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK3 used once
+BackDoorK4 000000FF
+
+Symbol: BackDoorK4
+   Definitions
+      At line 119 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 169 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK4 used once
+BackDoorK5 000000FF
+
+Symbol: BackDoorK5
+   Definitions
+      At line 120 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 169 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+Comment: BackDoorK5 used once
+BackDoorK6 000000FF
+
+Symbol: BackDoorK6
+   Definitions
+      At line 121 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 169 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK6 used once
+BackDoorK7 000000FF
+
+Symbol: BackDoorK7
+   Definitions
+      At line 122 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 169 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: BackDoorK7 used once
+FOPT 000000FE
+
+Symbol: FOPT
+   Definitions
+      At line 164 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 171 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: FOPT used once
+FPROT 000000FF
+
+Symbol: FPROT
+   Definitions
+      At line 145 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 171 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: FPROT used once
+FSEC 000000FE
+
+Symbol: FSEC
+   Definitions
+      At line 161 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 171 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: FSEC used once
+Heap_Size 00000000
+
+Symbol: Heap_Size
+   Definitions
+      At line 30 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 34 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+SKEAZ1284.s
+Comment: Heap_Size used once
+Stack_Size 00000100
+
+Symbol: Stack_Size
+   Definitions
+      At line 19 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+   Uses
+      At line 22 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+Comment: Stack_Size used once
+__Vectors_Size 000000C0
+
+Symbol: __Vectors_Size
+   Definitions
+      At line 101 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 47 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_
+SKEAZ1284.s
+Comment: __Vectors_Size used once
+14 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 189 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 191 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: Start used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 190 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+   Uses
+      At line 195 in file ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup
+_SKEAZ1284.s
+Comment: __main used once
+2 symbols
+406 symbols in table

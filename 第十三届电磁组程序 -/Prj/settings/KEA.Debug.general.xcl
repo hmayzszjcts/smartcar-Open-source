@@ -1,0 +1,15 @@
+"E:\IAR\arm\bin\armproc.dll" 
+
+"E:\IAR\arm\bin\armjlink2.dll" 
+
+"C:\Users\admin\Desktop\第十三届电磁组程序 - 无调参系统版\Prj\Debug\Exe\KEA.out" 
+
+--plugin "E:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "E:\IAR\arm\config\debugger\NXP\KExx.dmac" 
+
+--flash_loader "E:\IAR\arm\config\flashloader\NXP\FlashKE04Z128_4.board" 
+
+
+
+

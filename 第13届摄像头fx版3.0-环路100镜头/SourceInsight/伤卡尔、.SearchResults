@@ -1,0 +1,12 @@
+---- diff_speed Matches (11 in 3 files) ----
+Direction.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):			diff_speed=-300;
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):float diff_speed;
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):   diff_speed=(float)myPar_num.BILI;//整型
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user)://      left_speed= (int8)((Vspeed * 70/100) - (2*(-even_diff)/diff_speed));
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):      left_speed= (int8)((Vspeed * 70/100) - (-even_diff*diff_speed/100));
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user)://      right_speed  =  (Vspeed * 90/100) - (even_diff*diff_speed/100);
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user)://      left_speed = (Vspeed * 80/100) + (even_diff*diff_speed/100);
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):      right_speed= (int8)((Vspeed * 70/100) - (even_diff*diff_speed/100));
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user)://       right_speed  = (Vspeed * 80/100) - (even_diff*diff_speed/100);
+Speed_new.c (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user)://       left_speed= (Vspeed * 90/100) + (even_diff*diff_speed/100);
+Speed_new.h (e:\飞思卡尔\十二届摄像头-用配置文件调参1.5-加环路-1\十二届摄像头-用配置文件调参1.5-加环路\app\user):extern float diff_speed;

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1861</ColumnWidth1></Debug-Log>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
+      </Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>247</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <PreferedWindows>
+          
+          
+          
+          
+        <Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows>
+        <col-names>
+          
+          
+        <item>Disassembly</item><item>_I0</item></col-names>
+        <col-widths>
+          
+          
+        <item>500</item><item>20</item></col-widths>
+        <DisasmHistory/>
+        
+        
+      <ShowCodeCoverage>1</ShowCodeCoverage><ShowInstrProfiling>1</ShowInstrProfiling></Disassembly>
+      <StaticWatch>
+        <expressions>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        <item>Speed-&gt;ActualSpeed[2]</item><item></item></expressions>
+        <col-names>
+          
+          
+          
+          
+        <item>Expression</item><item>Location</item><item>Type</item><item>Value</item></col-names>
+        <col-widths>
+          
+          
+          
+          
+        <item>100</item><item>150</item><item>100</item><item>100</item></col-widths>
+      </StaticWatch>
+      <Register>
+        <RegFindHistory/>
+      <PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows></Register>
+      <Select-Ambiguous-Definitions>
+        
+        
+        
+      <ColumnWidth0>664</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>1138</ColumnWidth2></Select-Ambiguous-Definitions>
+      <PROJECT_GUI_CALL_GRAPH>
+        <PreferedWindows>
+          <Position>3</Position>
+          <ScreenPosX>0</ScreenPosX>
+          <ScreenPosY>0</ScreenPosY>
+          <Windows/>
+        </PreferedWindows>
+        <col-names>
+          <item>File</item>
+          <item>Function</item>
+          <item>Line</item>
+        </col-names>
+        <col-widths>
+          <item>200</item>
+          <item>700</item>
+          <item>100</item>
+        </col-widths>
+      </PROJECT_GUI_CALL_GRAPH>
+    </Static>
+    <Windows>
+      
+      
+      
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-19627-25185</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-19104-25195</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-24887-6442</Identity>
+            <TabName>Ambiguous Definitions</TabName>
+            <Factory>Select-Ambiguous-Definitions</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-30375-25188</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>KEA128</ExpandedNode><ExpandedNode>KEA128/drives</ExpandedNode><ExpandedNode>KEA128/drives/inc</ExpandedNode><ExpandedNode>KEA128/seekfree</ExpandedNode><ExpandedNode>KEA128/startup</ExpandedNode><ExpandedNode>KEA128/user_c</ExpandedNode><ExpandedNode>KEA128/user_h</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-18059-25214</Identity>
+            <TabName>Live Watch</TabName>
+            <Factory>StaticWatch</Factory>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5><Tabs><Tab><Identity>TabID-28900-31687</Identity><TabName>Register</TabName><Factory>Register</Factory><Session><REG1>0</REG1><REG2>0</REG2><Group>18</Group><States>7</States><State0>GPIOB_PDDR</State0><State1>GPIOB_PDIR</State1><State2>GPIOB_PIDR</State2><State3>ROM_ROM_COMPID3</State3><State4>SIM_PINSEL0</State4><State5>SPI0_C1</State5><State6>SPI0_C2</State6></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\USER\src\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1333</YPos2><SelStart2>39419</SelStart2><SelEnd2>39419</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\Libraries\drives\inc\headfile.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>21</YPos2><SelStart2>1755</SelStart2><SelEnd2>1755</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\program\KEA128.icf</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>1391</SelStart2><SelEnd2>1391</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-06AB1258><key>iaridepm.enu1</key></Toolbar-06AB1258></Sizes></Row0><Row1><Sizes><Toolbar-15A5E808><key>debuggergui.enu1</key></Toolbar-15A5E808></Sizes></Row1><Row2><Sizes><Toolbar-15A5E4E8><key>armjlink.enu1</key></Toolbar-15A5E4E8></Sizes></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>714</Bottom><Right>338</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>202</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200596</sizeHorzCY><sizeVertCX>177083</sizeVertCX><sizeVertCY>711023</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>714</Bottom><Right>445</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>202</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200596</sizeHorzCY><sizeVertCX>232813</sizeVertCX><sizeVertCY>711023</sizeVertCY></Rect></Wnd4></Sizes></Row0><Row1><Sizes><Wnd5><Rect><Top>-2</Top><Left>443</Left><Bottom>714</Bottom><Right>728</Right><x>443</x><y>-2</y><xscreen>200</xscreen><yscreen>202</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>200596</sizeHorzCY><sizeVertCX>148438</sizeVertCX><sizeVertCY>711023</sizeVertCY></Rect></Wnd5></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>200</Bottom><Right>1922</Right><x>-2</x><y>-2</y><xscreen>1924</xscreen><yscreen>202</yscreen><sizeHorzCX>1002083</sizeHorzCX><sizeHorzCY>200596</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>200596</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

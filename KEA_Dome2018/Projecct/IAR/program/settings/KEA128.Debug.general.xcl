@@ -1,0 +1,15 @@
+"D:\professional software\IAR7.7\arm\bin\armproc.dll" 
+
+"D:\professional software\IAR7.7\arm\bin\armjlink2.dll" 
+
+"E:\work\seekfree\freescale_work\单片机库开发\KEA\产品例程\KEA双编码器测速\Projecct\IAR\program\Debug\Exe\KEA128.out" 
+
+--plugin "D:\professional software\IAR7.7\arm\bin\armbat.dll" 
+
+--device_macro "D:\professional software\IAR7.7\arm\config\debugger\NXP\KExx.dmac" 
+
+--flash_loader "D:\professional software\IAR7.7\arm\config\flashloader\NXP\FlashKE04Z128_4.board" 
+
+
+
+

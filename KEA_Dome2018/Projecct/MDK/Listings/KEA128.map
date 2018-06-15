@@ -1,0 +1,1214 @@
+Product: MDK-ARM Standard 5.10
+Component: ARM Compiler 5.04 update 1 (build 49)
+Tool: armlink [5040049]
+
+==============================================================================
+
+Section Cross References
+
+    startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    startup_skeaz1284.o(RESET) refers to startup_skeaz1284.o(.text) for Reset_Handler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.IRQ_IRQHandler) for IRQ_IRQHandler
+    startup_skeaz1284.o(RESET) refers to main.o(i.PIT_CH0_IRQHandler) for PIT_CH0_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.PIT_CH1_IRQHandler) for PIT_CH1_IRQHandler
+    startup_skeaz1284.o(RESET) refers to isr.o(i.KBI0_IRQHandler) for KBI0_IRQHandler
+    startup_skeaz1284.o(.text) refers to system_skeaz1284.o(i.Start) for Start
+    startup_skeaz1284.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_skeaz1284.o(i.Start) refers to system_skeaz1284.o(i.disable_wdog) for disable_wdog
+    common.o(i.get_clk) refers to memcpya.o(.text) for __aeabi_memcpy4
+    common.o(i.get_clk) refers to kea128_uart.o(i.uart_init) for uart_init
+    common.o(i.get_clk) refers to common.o(.constdata) for .constdata
+    common.o(i.get_clk) refers to common.o(.data) for ics_clk_khz
+    kea128_flash.o(i.FLASH_EraseSector) refers to kea128_flash.o(i.FlashCmdStart) for FlashCmdStart
+    kea128_flash.o(i.FLASH_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_flash.o(i.FLASH_Init) refers to common.o(.data) for bus_clk_khz
+    kea128_flash.o(i.FLASH_WriteSector) refers to kea128_flash.o(i.FlashCmdStart) for FlashCmdStart
+    kea128_flash.o(i.FlashCmdStart) refers to kea128_flash.o(.data) for s_flash_command_run
+    kea128_ftm.o(i.ftm_count_clean) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_get) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_init) refers to kea128_ftm.o(i.ftm_count_mux) for ftm_count_mux
+    kea128_ftm.o(i.ftm_count_init) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_count_mux) refers to kea128_port.o(i.port_pull) for port_pull
+    kea128_ftm.o(i.ftm_pwm_duty) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_duty) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_duty) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_freq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_freq) refers to common.o(.data) for ftm_clk_khz
+    kea128_ftm.o(i.ftm_pwm_freq) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_freq) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(i.ftm_pwm_mux) for ftm_pwm_mux
+    kea128_ftm.o(i.ftm_pwm_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_ftm.o(i.ftm_pwm_init) refers to common.o(.data) for ftm_clk_khz
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(.data) for period
+    kea128_ftm.o(i.ftm_pwm_init) refers to kea128_ftm.o(.constdata) for FTMX
+    kea128_ftm.o(i.ftm_pwm_mux) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    kea128_gpio.o(i.gpio_ddr) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_get) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_init) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_set) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_gpio.o(i.gpio_turn) refers to kea128_gpio.o(.constdata) for GPIOX
+    kea128_kbi.o(i.kbi_init) refers to kea128_port.o(i.port_pull) for port_pull
+    kea128_kbi.o(i.kbi_init) refers to kea128_kbi.o(.data) for kbi
+    kea128_pit.o(i.pit_init) refers to kea128_pit.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    kea128_uart.o(i.fputc) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_getchar) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_init) refers to kea128_uart.o(i.uart_mux) for uart_mux
+    kea128_uart.o(i.uart_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_uart.o(i.uart_init) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_init) refers to common.o(.data) for bus_clk_khz
+    kea128_uart.o(i.uart_putbuff) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_putchar) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_putstr) refers to kea128_uart.o(i.uart_putchar) for uart_putchar
+    kea128_uart.o(i.uart_rx_irq_dis) refers to kea128_uart.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    kea128_uart.o(i.uart_rx_irq_dis) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_rx_irq_en) refers to kea128_uart.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    kea128_uart.o(i.uart_rx_irq_en) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_txc_irq_dis) refers to kea128_uart.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    kea128_uart.o(i.uart_txc_irq_dis) refers to kea128_uart.o(.data) for uart
+    kea128_uart.o(i.uart_txc_irq_en) refers to kea128_uart.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    kea128_uart.o(i.uart_txc_irq_en) refers to kea128_uart.o(.data) for uart
+    kea128_systick.o(i.systick_delay_ms) refers to kea128_systick.o(i.systick_delay) for systick_delay
+    kea128_systick.o(i.systick_delay_ms) refers to common.o(.data) for core_clk_khz
+    kea128_spi.o(i.spi_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    kea128_spi.o(i.spi_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_spi.o(i.spi_init) refers to kea128_spi.o(.constdata) for .constdata
+    kea128_spi.o(i.spi_init) refers to common.o(.data) for bus_clk_khz
+    kea128_spi.o(i.spi_init) refers to kea128_spi.o(.data) for SPIN
+    kea128_spi.o(i.spi_mosi) refers to kea128_spi.o(.data) for SPIN
+    kea128_spi.o(i.spi_mosi_cmd) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    kea128_i2c.o(i.i2c_Wait) refers to seekfree_iic.o(i.IIC_init) for IIC_init
+    kea128_i2c.o(i.i2c_Wait) refers to seekfree_iic.o(i.IIC_stop) for IIC_stop
+    kea128_i2c.o(i.i2c_Wait) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    kea128_i2c.o(i.i2c_init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    kea128_i2c.o(i.i2c_init) refers to kea128_i2c.o(.constdata) for .constdata
+    kea128_i2c.o(i.i2c_init) refers to common.o(.data) for bus_clk_khz
+    kea128_i2c.o(i.i2c_init) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_read_reg) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_read_reg_bytes) refers to kea128_i2c.o(.data) for I2CN
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(i.i2c_Wait) for i2c_Wait
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(i.i2c_delay) for i2c_delay
+    kea128_i2c.o(i.i2c_write_reg) refers to kea128_i2c.o(.data) for I2CN
+    seekfree_18tft.o(i.LCD_WriteData_16Bit) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.LCD_WriteData_16Bit) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.Lcd_SetRegion) refers to seekfree_18tft.o(i.Lcd_WriteIndex) for Lcd_WriteIndex
+    seekfree_18tft.o(i.Lcd_SetRegion) refers to seekfree_18tft.o(i.Lcd_WriteData) for Lcd_WriteData
+    seekfree_18tft.o(i.Lcd_WriteData) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.Lcd_WriteData) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.Lcd_WriteIndex) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.Lcd_WriteIndex) refers to kea128_spi.o(i.spi_mosi) for spi_mosi
+    seekfree_18tft.o(i.dsp_single_colour) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.dsp_single_colour) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_18tft.o(i.lcd_init) refers to kea128_spi.o(i.spi_init) for spi_init
+    seekfree_18tft.o(i.lcd_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_18tft.o(i.lcd_init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.tft_delay) for tft_delay
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.Lcd_WriteIndex) for Lcd_WriteIndex
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.Lcd_WriteData) for Lcd_WriteData
+    seekfree_18tft.o(i.lcd_init) refers to seekfree_18tft.o(i.dsp_single_colour) for dsp_single_colour
+    seekfree_18tft.o(i.lcd_showchar) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.lcd_showchar) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_18tft.o(i.lcd_showchar) refers to font.o(.constdata) for tft_ascii
+    seekfree_18tft.o(i.lcd_showint16) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showint16) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showint8) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showint8) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showstr) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showuint16) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showuint16) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.lcd_showuint8) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_18tft.o(i.lcd_showuint8) refers to seekfree_18tft.o(i.lcd_showchar) for lcd_showchar
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.dsp_single_colour) for dsp_single_colour
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.Lcd_SetRegion) for Lcd_SetRegion
+    seekfree_18tft.o(i.showimage) refers to seekfree_18tft.o(i.LCD_WriteData_16Bit) for LCD_WriteData_16Bit
+    seekfree_fun.o(i.limit) refers to ffltui.o(.text) for __aeabi_ui2f
+    seekfree_fun.o(i.limit) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    seekfree_fun.o(i.limit) refers to fflti.o(.text) for __aeabi_i2f
+    seekfree_fun.o(i.limit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    seekfree_iic.o(i.I2C_SendACK) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.I2C_SendACK) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.IIC_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_iic.o(i.IIC_init) refers to kea128_port.o(i.port_pull) for port_pull
+    seekfree_iic.o(i.IIC_start) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.IIC_start) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.IIC_stop) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.IIC_stop) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    seekfree_iic.o(i.SCCB_WaitAck) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.SCCB_WaitAck) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_iic.o(i.read_ch) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.read_ch) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.read_ch) refers to kea128_gpio.o(i.gpio_ddr) for gpio_ddr
+    seekfree_iic.o(i.read_ch) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_iic.o(i.read_ch) refers to seekfree_iic.o(i.I2C_SendACK) for I2C_SendACK
+    seekfree_iic.o(i.send_ch) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_iic.o(i.send_ch) refers to seekfree_iic.o(i.simiic_delay) for simiic_delay
+    seekfree_iic.o(i.send_ch) refers to seekfree_iic.o(i.SCCB_WaitAck) for SCCB_WaitAck
+    seekfree_iic.o(i.simiic_read_reg) refers to seekfree_iic.o(i.IIC_start) for IIC_start
+    seekfree_iic.o(i.simiic_read_reg) refers to seekfree_iic.o(i.send_ch) for send_ch
+    seekfree_iic.o(i.simiic_read_reg) refers to seekfree_iic.o(i.IIC_stop) for IIC_stop
+    seekfree_iic.o(i.simiic_read_reg) refers to seekfree_iic.o(i.read_ch) for read_ch
+    seekfree_iic.o(i.simiic_read_regs) refers to seekfree_iic.o(i.IIC_start) for IIC_start
+    seekfree_iic.o(i.simiic_read_regs) refers to seekfree_iic.o(i.send_ch) for send_ch
+    seekfree_iic.o(i.simiic_read_regs) refers to seekfree_iic.o(i.IIC_stop) for IIC_stop
+    seekfree_iic.o(i.simiic_read_regs) refers to seekfree_iic.o(i.read_ch) for read_ch
+    seekfree_iic.o(i.simiic_write_reg) refers to seekfree_iic.o(i.IIC_start) for IIC_start
+    seekfree_iic.o(i.simiic_write_reg) refers to seekfree_iic.o(i.send_ch) for send_ch
+    seekfree_iic.o(i.simiic_write_reg) refers to seekfree_iic.o(i.IIC_stop) for IIC_stop
+    seekfree_l3g4200d.o(i.InitL3G4200D) refers to seekfree_iic.o(i.simiic_write_reg) for simiic_write_reg
+    seekfree_l3g4200d.o(i.InitL3G4200D) refers to seekfree_iic.o(i.simiic_read_reg) for simiic_read_reg
+    seekfree_l3g4200d.o(i.InitL3G4200D) refers to seekfree_l3g4200d.o(.data) for Temperature
+    seekfree_l3g4200d.o(i.get_l3g4200d) refers to seekfree_iic.o(i.simiic_read_reg) for simiic_read_reg
+    seekfree_l3g4200d.o(i.get_l3g4200d) refers to seekfree_iic.o(i.simiic_read_regs) for simiic_read_regs
+    seekfree_l3g4200d.o(i.get_l3g4200d) refers to seekfree_l3g4200d.o(.data) for gyro_x
+    seekfree_mma8451.o(i.MMA845x_init) refers to seekfree_iic.o(i.simiic_write_reg) for simiic_write_reg
+    seekfree_mma8451.o(i.MMA845x_init) refers to seekfree_iic.o(i.simiic_read_reg) for simiic_read_reg
+    seekfree_mma8451.o(i.get_mma8451) refers to seekfree_iic.o(i.simiic_read_regs) for simiic_read_regs
+    seekfree_mma8451.o(i.get_mma8451) refers to seekfree_mma8451.o(.data) for acc_x
+    seekfree_mpu6050.o(i.Get_AccData) refers to seekfree_iic.o(i.simiic_read_regs) for simiic_read_regs
+    seekfree_mpu6050.o(i.Get_AccData) refers to seekfree_mpu6050.o(.data) for mpu_acc_x
+    seekfree_mpu6050.o(i.Get_Gyro) refers to seekfree_iic.o(i.simiic_read_regs) for simiic_read_regs
+    seekfree_mpu6050.o(i.Get_Gyro) refers to seekfree_mpu6050.o(.data) for mpu_gyro_x
+    seekfree_mpu6050.o(i.InitMPU6050) refers to seekfree_iic.o(i.simiic_write_reg) for simiic_write_reg
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_port.o(i.port_pull) for port_pull
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) for NRF_SPI_W_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) for NRF_SPI_W_Cmd_Byte
+    seekfree_nrf24l01.o(i.NRF_Dev_Init) refers to seekfree_nrf24l01.o(.data) for NRF_RF_Addr
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) for NRF_SPI_R_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Rece_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) for NRF_SPI_R_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) refers to seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte) for NRF_SPI_WR_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte) for NRF_SPI_W_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst) for NRF_SPI_W_Reg_Burst
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte) for NRF_SPI_R_Reg_Byte
+    seekfree_nrf24l01.o(i.NRF_Send_Packet) refers to seekfree_nrf24l01.o(.data) for NRF_RF_Addr
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_ClrPixel) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_Fill) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Fill) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_HEXACSII) refers to idiv.o(.text) for __aeabi_idivmod
+    seekfree_oled.o(i.OLED_Init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_oled.o(i.OLED_Init) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_DLY_ms) for OLED_DLY_ms
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_Fill) for OLED_Fill
+    seekfree_oled.o(i.OLED_Init) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_P6x8Str) refers to seekfree_oled.o(.constdata) for F6x8
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_P8x16Str) refers to seekfree_oled.o(.constdata) for F8X16
+    seekfree_oled.o(i.OLED_Print_Num) refers to seekfree_oled.o(i.OLED_HEXACSII) for OLED_HEXACSII
+    seekfree_oled.o(i.OLED_Print_Num) refers to seekfree_oled.o(i.OLED_P8x16Str) for OLED_P8x16Str
+    seekfree_oled.o(i.OLED_Print_Num1) refers to seekfree_oled.o(i.OLED_P6x8Str) for OLED_P6x8Str
+    seekfree_oled.o(i.OLED_Print_Num1) refers to seekfree_oled.o(i.OLED_HEXACSII) for OLED_HEXACSII
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_PutPixel) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_oled.o(i.OLED_Set_Pos) refers to seekfree_oled.o(i.OLED_WrCmd) for OLED_WrCmd
+    seekfree_oled.o(i.OLED_Wr6Dat) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_WrCmd) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.OLED_WrDat) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_oled.o(i.dis_bmp) refers to seekfree_oled.o(i.OLED_Set_Pos) for OLED_Set_Pos
+    seekfree_oled.o(i.dis_bmp) refers to seekfree_oled.o(i.OLED_WrDat) for OLED_WrDat
+    seekfree_tsl1401.o(i.ccd_collect) refers to kea128_gpio.o(i.gpio_set) for gpio_set
+    seekfree_tsl1401.o(i.ccd_collect) refers to kea128_adc.o(i.adc_once) for adc_once
+    seekfree_tsl1401.o(i.ccd_collect) refers to seekfree_tsl1401.o(.bss) for ccd_data
+    seekfree_tsl1401.o(i.ccd_init) refers to kea128_adc.o(i.adc_init) for adc_init
+    seekfree_tsl1401.o(i.ccd_init) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    seekfree_tsl1401.o(i.ccd_init) refers to kea128_pit.o(i.pit_init) for pit_init
+    seekfree_tsl1401.o(i.ccd_init) refers to seekfree_tsl1401.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    seekfree_tsl1401.o(i.ccd_init) refers to common.o(.data) for bus_clk_khz
+    main.o(i.PIT_CH0_IRQHandler) refers to kea128_adc.o(i.adc_once) for adc_once
+    main.o(i.PIT_CH0_IRQHandler) refers to fflti.o(.text) for __aeabi_i2f
+    main.o(i.PIT_CH0_IRQHandler) refers to fadd.o(.text) for __aeabi_fsub
+    main.o(i.PIT_CH0_IRQHandler) refers to fmul.o(.text) for __aeabi_fmul
+    main.o(i.PIT_CH0_IRQHandler) refers to ffixi.o(.text) for __aeabi_f2iz
+    main.o(i.PIT_CH0_IRQHandler) refers to operation_data.o(i.MotorControlOutput) for MotorControlOutput
+    main.o(i.PIT_CH0_IRQHandler) refers to kea128_gpio.o(i.gpio_turn) for gpio_turn
+    main.o(i.PIT_CH0_IRQHandler) refers to main.o(.data) for count
+    main.o(i.main) refers to common.o(i.get_clk) for get_clk
+    main.o(i.main) refers to kea128_gpio.o(i.gpio_init) for gpio_init
+    main.o(i.main) refers to kea128_ftm.o(i.ftm_pwm_init) for ftm_pwm_init
+    main.o(i.main) refers to kea128_ftm.o(i.ftm_count_init) for ftm_count_init
+    main.o(i.main) refers to kea128_port.o(i.port_pull) for port_pull
+    main.o(i.main) refers to kea128_adc.o(i.adc_init) for adc_init
+    main.o(i.main) refers to seekfree_iic.o(i.IIC_init) for IIC_init
+    main.o(i.main) refers to kea128_pit.o(i.pit_init) for pit_init
+    main.o(i.main) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    main.o(i.main) refers to seekfree_l3g4200d.o(i.InitL3G4200D) for InitL3G4200D
+    main.o(i.main) refers to pid_system.o(i.PID_SetCoefficient) for PID_SetCoefficient
+    main.o(i.main) refers to main.o(.bss) for PID
+    get_data.o(i.GetCurrentValue) refers to kea128_adc.o(i.adc_once) for adc_once
+    get_data.o(i.GetEncoderValue) refers to kea128_ftm.o(i.ftm_count_get) for ftm_count_get
+    get_data.o(i.GetEncoderValue) refers to kea128_ftm.o(i.ftm_count_clean) for ftm_count_clean
+    get_data.o(i.GetEncoderValue) refers to kea128_gpio.o(i.gpio_get) for gpio_get
+    get_data.o(i.GetInductorValue) refers to kea128_adc.o(i.adc_once) for adc_once
+    pid_system.o(i.PD_Increment) refers to fflti.o(.text) for __aeabi_i2f
+    pid_system.o(i.PD_Increment) refers to fmul.o(.text) for __aeabi_fmul
+    pid_system.o(i.PD_Increment) refers to fadd.o(.text) for __aeabi_fadd
+    pid_system.o(i.PD_Increment) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    pid_system.o(i.PD_Increment) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    pid_system.o(i.PID_Increment) refers to fflti.o(.text) for __aeabi_i2f
+    pid_system.o(i.PID_Increment) refers to fmul.o(.text) for __aeabi_fmul
+    pid_system.o(i.PID_Increment) refers to fadd.o(.text) for __aeabi_fadd
+    pid_system.o(i.PID_Increment) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    pid_system.o(i.PID_Increment) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    pid_system.o(i.PID_Position) refers to fflti.o(.text) for __aeabi_i2f
+    pid_system.o(i.PID_Position) refers to fmul.o(.text) for __aeabi_fmul
+    pid_system.o(i.PID_Position) refers to f2d.o(.text) for __aeabi_f2d
+    pid_system.o(i.PID_Position) refers to dmul.o(.text) for __aeabi_dmul
+    pid_system.o(i.PID_Position) refers to fadd.o(.text) for __aeabi_fadd
+    pid_system.o(i.PID_Position) refers to dadd.o(.text) for __aeabi_dadd
+    pid_system.o(i.PID_Position) refers to d2f.o(.text) for __aeabi_d2f
+    pid_system.o(i.PID_Position) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    pid_system.o(i.PID_Position) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    pid_system.o(i.PI_Increment) refers to fflti.o(.text) for __aeabi_i2f
+    pid_system.o(i.PI_Increment) refers to fmul.o(.text) for __aeabi_fmul
+    pid_system.o(i.PI_Increment) refers to fadd.o(.text) for __aeabi_fadd
+    pid_system.o(i.PI_Increment) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    pid_system.o(i.PI_Increment) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    mp3.o(i.Mp3_Test) refers to mp3.o(i.Send_Mp3_CMD) for Send_Mp3_CMD
+    mp3.o(i.Send_Mp3_CMD) refers to mp3.o(i.Checksum) for Checksum
+    offline_access.o(i.ParameterReadFlash) refers to dfltui.o(.text) for __aeabi_ui2d
+    offline_access.o(i.ParameterReadFlash) refers to ddiv.o(.text) for __aeabi_ddiv
+    offline_access.o(i.ParameterReadFlash) refers to d2f.o(.text) for __aeabi_d2f
+    offline_access.o(i.ParameterReadFlash) refers to uidiv.o(.text) for __aeabi_uidivmod
+    offline_access.o(i.ParameterWriteFlash) refers to memseta.o(.text) for __aeabi_memclr4
+    offline_access.o(i.ParameterWriteFlash) refers to fmul.o(.text) for __aeabi_fmul
+    offline_access.o(i.ParameterWriteFlash) refers to ffixui.o(.text) for __aeabi_f2uiz
+    offline_access.o(i.ParameterWriteFlash) refers to kea128_systick.o(i.systick_delay_ms) for systick_delay_ms
+    menu_gui.o(i.GUI_MENU) refers to kea128_ftm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    menu_gui.o(i.GUI_MENU) refers to menu_gui.o(i.GUI_A) for GUI_A
+    menu_gui.o(i.GUI_MENU) refers to menu_gui.o(i.GUI_B) for GUI_B
+    menu_gui.o(i.GUI_MENU) refers to menu_gui.o(i.GUI_C) for GUI_C
+    menu_gui.o(i.GUI_MENU) refers to menu_gui.o(i.GUI_D) for GUI_D
+    menu_gui.o(i.GUI_MENU) refers to menu_gui.o(i.GUI_E) for GUI_E
+    menu_gui.o(i.GUI_MENU) refers to idiv.o(.text) for __aeabi_idivmod
+    menu_gui.o(i.number_init) refers to fflti.o(.text) for __aeabi_i2f
+    menu_gui.o(i.number_init) refers to fmul.o(.text) for __aeabi_fmul
+    menu_gui.o(i.number_init) refers to ffixi.o(.text) for __aeabi_f2iz
+    menu_gui.o(i.number_init) refers to f2d.o(.text) for __aeabi_f2d
+    menu_gui.o(i.number_init) refers to dmul.o(.text) for __aeabi_dmul
+    menu_gui.o(i.number_init) refers to dfixi.o(.text) for __aeabi_d2iz
+    menu_gui.o(i.number_write) refers to fflti.o(.text) for __aeabi_i2f
+    menu_gui.o(i.number_write) refers to fdiv.o(.text) for __aeabi_fdiv
+    menu_gui.o(i.number_write) refers to dflti.o(.text) for __aeabi_i2d
+    menu_gui.o(i.number_write) refers to ddiv.o(.text) for __aeabi_ddiv
+    menu_gui.o(i.number_write) refers to d2f.o(.text) for __aeabi_d2f
+    polynomial.o(i.operation) refers to memcpya.o(.text) for __aeabi_memcpy4
+    polynomial.o(i.operation) refers to dmul.o(.text) for __aeabi_dmul
+    polynomial.o(i.operation) refers to dadd.o(.text) for __aeabi_dadd
+    polynomial.o(i.operation) refers to polynomial.o(.constdata) for .constdata
+    process_data.o(i.CurrentLowPassFilter) refers to dflti.o(.text) for __aeabi_i2d
+    process_data.o(i.CurrentLowPassFilter) refers to dmul.o(.text) for __aeabi_dmul
+    process_data.o(i.CurrentLowPassFilter) refers to dadd.o(.text) for __aeabi_dadd
+    process_data.o(i.CurrentLowPassFilter) refers to dfixi.o(.text) for __aeabi_d2iz
+    process_data.o(i.EncoderLowPassFilter) refers to dflti.o(.text) for __aeabi_i2d
+    process_data.o(i.EncoderLowPassFilter) refers to dmul.o(.text) for __aeabi_dmul
+    process_data.o(i.EncoderLowPassFilter) refers to dadd.o(.text) for __aeabi_dadd
+    process_data.o(i.EncoderLowPassFilter) refers to dfixi.o(.text) for __aeabi_d2iz
+    process_data.o(i.InductorLowPassFilter) refers to dflti.o(.text) for __aeabi_i2d
+    process_data.o(i.InductorLowPassFilter) refers to dmul.o(.text) for __aeabi_dmul
+    process_data.o(i.InductorLowPassFilter) refers to dadd.o(.text) for __aeabi_dadd
+    process_data.o(i.InductorLowPassFilter) refers to dfixi.o(.text) for __aeabi_d2iz
+    process_data.o(i.InductorLowPassFilter) refers to process_data.o(i.GetExtremum) for GetExtremum
+    process_data.o(i.InductorLowPassFilter) refers to process_data.o(i.NormalizedProcess) for NormalizedProcess
+    process_data.o(i.NormalizedProcess) refers to dflti.o(.text) for __aeabi_i2d
+    process_data.o(i.NormalizedProcess) refers to dmul.o(.text) for __aeabi_dmul
+    process_data.o(i.NormalizedProcess) refers to ddiv.o(.text) for __aeabi_ddiv
+    process_data.o(i.NormalizedProcess) refers to f2d.o(.text) for __aeabi_f2d
+    process_data.o(i.NormalizedProcess) refers to dfixui.o(.text) for __aeabi_d2uiz
+    operation_data.o(i.MotorControlOutput) refers to kea128_ftm.o(i.ftm_pwm_duty) for ftm_pwm_duty
+    operation_data.o(i.PathCalculation) refers to dflti.o(.text) for __aeabi_i2d
+    operation_data.o(i.PathCalculation) refers to sqrt.o(i.sqrt) for sqrt
+    operation_data.o(i.PathCalculation) refers to dadd.o(.text) for __aeabi_dsub
+    operation_data.o(i.PathCalculation) refers to dmul.o(.text) for __aeabi_dmul
+    operation_data.o(i.PathCalculation) refers to ddiv.o(.text) for __aeabi_ddiv
+    operation_data.o(i.PathCalculation) refers to dfixi.o(.text) for __aeabi_d2iz
+    operation_data.o(i.PathCalculation) refers to fflti.o(.text) for __aeabi_i2f
+    operation_data.o(i.PathCalculation) refers to fmul.o(.text) for __aeabi_fmul
+    operation_data.o(i.PathCalculation) refers to ffixi.o(.text) for __aeabi_f2iz
+    operation_data.o(i.PathCalculation) refers to fadd.o(.text) for __aeabi_fsub
+    operation_data.o(i.PathCalculation) refers to operation_data.o(.data) for error
+    operation_data.o(i.PathCalculation) refers to operation_data.o(.bss) for err_
+    operation_data.o(i.SpeedControlOutput) refers to pid_system.o(i.PID_Increment) for PID_Increment
+    operation_data.o(i.SpeedControlOutput) refers to ffixi.o(.text) for __aeabi_f2iz
+    operation_data.o(i.SpeedControlOutput) refers to operation_data.o(i.MotorControlOutput) for MotorControlOutput
+    sqrt.o(i.__softfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__softfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.__sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.__sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.__sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.__sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    fflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fflti.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    cfcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_skeaz1284.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to depilogue.o(.text) for _double_round
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_skeaz1284.o(HEAP), (0 bytes).
+    Removing system_skeaz1284.o(.rev16_text), (4 bytes).
+    Removing system_skeaz1284.o(.revsh_text), (4 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing misc.o(i.write_vtor), (12 bytes).
+    Removing common.o(.rev16_text), (4 bytes).
+    Removing common.o(.revsh_text), (4 bytes).
+    Removing kea128_adc.o(.rev16_text), (4 bytes).
+    Removing kea128_adc.o(.revsh_text), (4 bytes).
+    Removing kea128_adc.o(i.adc_stop), (12 bytes).
+    Removing kea128_flash.o(.rev16_text), (4 bytes).
+    Removing kea128_flash.o(.revsh_text), (4 bytes).
+    Removing kea128_flash.o(i.FLASH_EraseSector), (48 bytes).
+    Removing kea128_flash.o(i.FLASH_GetSectorSize), (6 bytes).
+    Removing kea128_flash.o(i.FLASH_Init), (76 bytes).
+    Removing kea128_flash.o(i.FLASH_WriteSector), (112 bytes).
+    Removing kea128_flash.o(i.FlashCmdStart), (60 bytes).
+    Removing kea128_flash.o(.data), (20 bytes).
+    Removing kea128_ftm.o(.rev16_text), (4 bytes).
+    Removing kea128_ftm.o(.revsh_text), (4 bytes).
+    Removing kea128_ftm.o(i.ftm_count_clean), (16 bytes).
+    Removing kea128_ftm.o(i.ftm_count_get), (20 bytes).
+    Removing kea128_ftm.o(i.ftm_pwm_freq), (132 bytes).
+    Removing kea128_gpio.o(.rev16_text), (4 bytes).
+    Removing kea128_gpio.o(.revsh_text), (4 bytes).
+    Removing kea128_irq.o(.rev16_text), (4 bytes).
+    Removing kea128_irq.o(.revsh_text), (4 bytes).
+    Removing kea128_irq.o(i.irq_init), (52 bytes).
+    Removing kea128_kbi.o(.rev16_text), (4 bytes).
+    Removing kea128_kbi.o(.revsh_text), (4 bytes).
+    Removing kea128_kbi.o(i.kbi_init), (248 bytes).
+    Removing kea128_kbi.o(.data), (8 bytes).
+    Removing kea128_pit.o(.rev16_text), (4 bytes).
+    Removing kea128_pit.o(.revsh_text), (4 bytes).
+    Removing kea128_pit.o(i.pit_close), (48 bytes).
+    Removing kea128_pit.o(i.pit_delay), (128 bytes).
+    Removing kea128_pit.o(i.pit_time_get), (88 bytes).
+    Removing kea128_pit.o(i.pit_time_start), (88 bytes).
+    Removing kea128_port.o(.rev16_text), (4 bytes).
+    Removing kea128_port.o(.revsh_text), (4 bytes).
+    Removing kea128_uart.o(.rev16_text), (4 bytes).
+    Removing kea128_uart.o(.revsh_text), (4 bytes).
+    Removing kea128_uart.o(i.NVIC_DisableIRQ), (20 bytes).
+    Removing kea128_uart.o(i.NVIC_EnableIRQ), (20 bytes).
+    Removing kea128_uart.o(i.fputc), (18 bytes).
+    Removing kea128_uart.o(i.uart_getchar), (36 bytes).
+    Removing kea128_uart.o(i.uart_putbuff), (30 bytes).
+    Removing kea128_uart.o(i.uart_putchar), (32 bytes).
+    Removing kea128_uart.o(i.uart_putstr), (26 bytes).
+    Removing kea128_uart.o(i.uart_rx_irq_dis), (56 bytes).
+    Removing kea128_uart.o(i.uart_rx_irq_en), (40 bytes).
+    Removing kea128_uart.o(i.uart_txc_irq_dis), (56 bytes).
+    Removing kea128_uart.o(i.uart_txc_irq_en), (40 bytes).
+    Removing kea128_systick.o(.rev16_text), (4 bytes).
+    Removing kea128_systick.o(.revsh_text), (4 bytes).
+    Removing kea128_systick.o(i.systick_getval), (12 bytes).
+    Removing kea128_systick.o(i.systick_timing), (24 bytes).
+    Removing kea128_spi.o(.rev16_text), (4 bytes).
+    Removing kea128_spi.o(.revsh_text), (4 bytes).
+    Removing kea128_spi.o(i.spi_init), (308 bytes).
+    Removing kea128_spi.o(i.spi_mosi), (96 bytes).
+    Removing kea128_spi.o(i.spi_mosi_cmd), (44 bytes).
+    Removing kea128_spi.o(.constdata), (36 bytes).
+    Removing kea128_spi.o(.data), (8 bytes).
+    Removing kea128_i2c.o(.rev16_text), (4 bytes).
+    Removing kea128_i2c.o(.revsh_text), (4 bytes).
+    Removing kea128_i2c.o(i.i2c_Wait), (164 bytes).
+    Removing kea128_i2c.o(i.i2c_delay), (24 bytes).
+    Removing kea128_i2c.o(i.i2c_init), (280 bytes).
+    Removing kea128_i2c.o(i.i2c_read_reg), (188 bytes).
+    Removing kea128_i2c.o(i.i2c_read_reg_bytes), (280 bytes).
+    Removing kea128_i2c.o(i.i2c_write_reg), (104 bytes).
+    Removing kea128_i2c.o(.constdata), (128 bytes).
+    Removing kea128_i2c.o(.data), (12 bytes).
+    Removing font.o(.rev16_text), (4 bytes).
+    Removing font.o(.revsh_text), (4 bytes).
+    Removing font.o(.constdata), (3040 bytes).
+    Removing seekfree_18tft.o(.rev16_text), (4 bytes).
+    Removing seekfree_18tft.o(.revsh_text), (4 bytes).
+    Removing seekfree_18tft.o(i.LCD_WriteData_16Bit), (54 bytes).
+    Removing seekfree_18tft.o(i.Lcd_SetRegion), (86 bytes).
+    Removing seekfree_18tft.o(i.Lcd_WriteData), (30 bytes).
+    Removing seekfree_18tft.o(i.Lcd_WriteIndex), (30 bytes).
+    Removing seekfree_18tft.o(i.dsp_single_colour), (48 bytes).
+    Removing seekfree_18tft.o(i.lcd_init), (624 bytes).
+    Removing seekfree_18tft.o(i.lcd_showchar), (108 bytes).
+    Removing seekfree_18tft.o(i.lcd_showint16), (172 bytes).
+    Removing seekfree_18tft.o(i.lcd_showint8), (126 bytes).
+    Removing seekfree_18tft.o(i.lcd_showstr), (40 bytes).
+    Removing seekfree_18tft.o(i.lcd_showuint16), (140 bytes).
+    Removing seekfree_18tft.o(i.lcd_showuint8), (92 bytes).
+    Removing seekfree_18tft.o(i.showimage), (112 bytes).
+    Removing seekfree_18tft.o(i.tft_delay), (12 bytes).
+    Removing seekfree_18tft.o(.constdata), (3200 bytes).
+    Removing seekfree_fun.o(.rev16_text), (4 bytes).
+    Removing seekfree_fun.o(.revsh_text), (4 bytes).
+    Removing seekfree_fun.o(i.limit), (58 bytes).
+    Removing seekfree_fun.o(i.limit_ab), (14 bytes).
+    Removing seekfree_fun.o(i.my_delay), (12 bytes).
+    Removing seekfree_fun.o(i.myabs), (14 bytes).
+    Removing seekfree_iic.o(.rev16_text), (4 bytes).
+    Removing seekfree_iic.o(.revsh_text), (4 bytes).
+    Removing seekfree_iic.o(i.simiic_read_regs), (84 bytes).
+    Removing seekfree_iic.o(.data), (9 bytes).
+    Removing seekfree_l3g4200d.o(.rev16_text), (4 bytes).
+    Removing seekfree_l3g4200d.o(.revsh_text), (4 bytes).
+    Removing seekfree_l3g4200d.o(i.get_l3g4200d), (120 bytes).
+    Removing seekfree_mma8451.o(.rev16_text), (4 bytes).
+    Removing seekfree_mma8451.o(.revsh_text), (4 bytes).
+    Removing seekfree_mma8451.o(i.MMA845x_init), (64 bytes).
+    Removing seekfree_mma8451.o(i.get_mma8451), (172 bytes).
+    Removing seekfree_mma8451.o(.data), (6 bytes).
+    Removing seekfree_mpu6050.o(.rev16_text), (4 bytes).
+    Removing seekfree_mpu6050.o(.revsh_text), (4 bytes).
+    Removing seekfree_mpu6050.o(i.Get_AccData), (92 bytes).
+    Removing seekfree_mpu6050.o(i.Get_Gyro), (92 bytes).
+    Removing seekfree_mpu6050.o(i.InitMPU6050), (74 bytes).
+    Removing seekfree_mpu6050.o(.data), (12 bytes).
+    Removing seekfree_nrf24l01.o(.rev16_text), (4 bytes).
+    Removing seekfree_nrf24l01.o(.revsh_text), (4 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Dev_Init), (200 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Rece_Packet), (58 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Burst), (56 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_R_Reg_Byte), (38 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_WR_Byte), (60 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Cmd_Byte), (32 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Burst), (54 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_SPI_W_Reg_Byte), (40 bytes).
+    Removing seekfree_nrf24l01.o(i.NRF_Send_Packet), (140 bytes).
+    Removing seekfree_nrf24l01.o(.bss), (64 bytes).
+    Removing seekfree_nrf24l01.o(.data), (5 bytes).
+    Removing seekfree_oled.o(.rev16_text), (4 bytes).
+    Removing seekfree_oled.o(.revsh_text), (4 bytes).
+    Removing seekfree_oled.o(i.OLED_ClrPixel), (74 bytes).
+    Removing seekfree_oled.o(i.OLED_DLY_ms), (28 bytes).
+    Removing seekfree_oled.o(i.OLED_Fill), (58 bytes).
+    Removing seekfree_oled.o(i.OLED_HEXACSII), (50 bytes).
+    Removing seekfree_oled.o(i.OLED_Init), (256 bytes).
+    Removing seekfree_oled.o(i.OLED_P6x8Str), (100 bytes).
+    Removing seekfree_oled.o(i.OLED_P8x16Str), (140 bytes).
+    Removing seekfree_oled.o(i.OLED_Print_Num), (48 bytes).
+    Removing seekfree_oled.o(i.OLED_Print_Num1), (88 bytes).
+    Removing seekfree_oled.o(i.OLED_PutPixel), (74 bytes).
+    Removing seekfree_oled.o(i.OLED_Set_Pos), (46 bytes).
+    Removing seekfree_oled.o(i.OLED_Wr6Dat), (82 bytes).
+    Removing seekfree_oled.o(i.OLED_WrCmd), (82 bytes).
+    Removing seekfree_oled.o(i.OLED_WrDat), (82 bytes).
+    Removing seekfree_oled.o(i.dis_bmp), (536 bytes).
+    Removing seekfree_oled.o(.constdata), (2072 bytes).
+    Removing seekfree_tsl1401.o(.rev16_text), (4 bytes).
+    Removing seekfree_tsl1401.o(.revsh_text), (4 bytes).
+    Removing seekfree_tsl1401.o(i.NVIC_SetPriority), (120 bytes).
+    Removing seekfree_tsl1401.o(i.ccd_collect), (100 bytes).
+    Removing seekfree_tsl1401.o(i.ccd_init), (80 bytes).
+    Removing seekfree_tsl1401.o(.bss), (256 bytes).
+    Removing isr.o(.rev16_text), (4 bytes).
+    Removing isr.o(.revsh_text), (4 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing get_data.o(.rev16_text), (4 bytes).
+    Removing get_data.o(.revsh_text), (4 bytes).
+    Removing get_data.o(i.GetButtonStatus), (138 bytes).
+    Removing get_data.o(i.GetCurrentValue), (106 bytes).
+    Removing get_data.o(i.GetEncoderValue), (154 bytes).
+    Removing get_data.o(i.GetInductorValue), (276 bytes).
+    Removing get_data.o(i.GetSwitchStatus), (98 bytes).
+    Removing pid_system.o(.rev16_text), (4 bytes).
+    Removing pid_system.o(.revsh_text), (4 bytes).
+    Removing pid_system.o(i.PD_Increment), (150 bytes).
+    Removing pid_system.o(i.PD_Increment_Init), (60 bytes).
+    Removing pid_system.o(i.PID_Increment), (280 bytes).
+    Removing pid_system.o(i.PID_Increment_Init), (56 bytes).
+    Removing pid_system.o(i.PID_Position), (256 bytes).
+    Removing pid_system.o(i.PID_Position_Init), (56 bytes).
+    Removing pid_system.o(i.PI_Increment), (144 bytes).
+    Removing pid_system.o(i.PI_Increment_Init), (72 bytes).
+    Removing pid_system.o(i.ResponseWaveformAnalysis), (2 bytes).
+    Removing pid_system.o(i.StepResponseInput), (20 bytes).
+    Removing mp3.o(.rev16_text), (4 bytes).
+    Removing mp3.o(.revsh_text), (4 bytes).
+    Removing mp3.o(i.Checksum), (36 bytes).
+    Removing mp3.o(i.Mp3_Test), (26 bytes).
+    Removing mp3.o(i.Send_Mp3_CMD), (56 bytes).
+    Removing offline_access.o(.rev16_text), (4 bytes).
+    Removing offline_access.o(.revsh_text), (4 bytes).
+    Removing offline_access.o(i.ParameterReadFlash), (1112 bytes).
+    Removing offline_access.o(i.ParameterWriteFlash), (732 bytes).
+    Removing menu_gui.o(.rev16_text), (4 bytes).
+    Removing menu_gui.o(.revsh_text), (4 bytes).
+    Removing menu_gui.o(i.GUI_A), (2 bytes).
+    Removing menu_gui.o(i.GUI_B), (8 bytes).
+    Removing menu_gui.o(i.GUI_C), (8 bytes).
+    Removing menu_gui.o(i.GUI_D), (8 bytes).
+    Removing menu_gui.o(i.GUI_E), (8 bytes).
+    Removing menu_gui.o(i.GUI_KEY), (400 bytes).
+    Removing menu_gui.o(i.GUI_MENU), (950 bytes).
+    Removing menu_gui.o(i.number_init), (596 bytes).
+    Removing menu_gui.o(i.number_write), (484 bytes).
+    Removing polynomial.o(.rev16_text), (4 bytes).
+    Removing polynomial.o(.revsh_text), (4 bytes).
+    Removing polynomial.o(i.operation), (112 bytes).
+    Removing polynomial.o(.constdata), (288 bytes).
+    Removing process_data.o(.rev16_text), (4 bytes).
+    Removing process_data.o(.revsh_text), (4 bytes).
+    Removing process_data.o(i.ButtonLowPassFilter), (120 bytes).
+    Removing process_data.o(i.CurrentLowPassFilter), (360 bytes).
+    Removing process_data.o(i.EncoderLowPassFilter), (168 bytes).
+    Removing process_data.o(i.GetExtremum), (34 bytes).
+    Removing process_data.o(i.InductorLowPassFilter), (652 bytes).
+    Removing process_data.o(i.NormalizedProcess), (136 bytes).
+    Removing process_data.o(i.SwitchLowPassFilter), (338 bytes).
+    Removing operation_data.o(.rev16_text), (4 bytes).
+    Removing operation_data.o(.revsh_text), (4 bytes).
+    Removing operation_data.o(i.CurrentControlOutput), (2 bytes).
+    Removing operation_data.o(i.PathCalculation), (400 bytes).
+    Removing operation_data.o(i.SpeedControlOutput), (82 bytes).
+    Removing operation_data.o(i.TurnControlOutput), (2 bytes).
+    Removing operation_data.o(.bss), (100 bytes).
+    Removing operation_data.o(.data), (12 bytes).
+    Removing fdiv.o(.text), (124 bytes).
+    Removing dadd.o(.text), (356 bytes).
+    Removing dmul.o(.text), (208 bytes).
+    Removing ddiv.o(.text), (240 bytes).
+    Removing ffltui.o(.text), (14 bytes).
+    Removing dflti.o(.text), (40 bytes).
+    Removing dfltui.o(.text), (28 bytes).
+    Removing ffixui.o(.text), (40 bytes).
+    Removing dfixi.o(.text), (72 bytes).
+    Removing dfixui.o(.text), (60 bytes).
+    Removing f2d.o(.text), (40 bytes).
+    Removing d2f.o(.text), (56 bytes).
+    Removing cfcmple.o(.text), (20 bytes).
+    Removing cfrcmple.o(.text), (20 bytes).
+    Removing depilogue.o(.text), (190 bytes).
+    Removing dsqrt.o(.text), (162 bytes).
+    Removing cdcmple.o(.text), (40 bytes).
+    Removing depilogue.o(i.__ARM_clz), (46 bytes).
+
+238 unused section(s) (total 28248 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_skeaz1284.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpsqrt.c               0x00000000   Number         0  dsqrt.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt_x.o ABSOLUTE
+    ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_adc.c  0x00000000   Number         0  kea128_adc.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_flash.c 0x00000000   Number         0  kea128_flash.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_ftm.c  0x00000000   Number         0  kea128_ftm.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_gpio.c 0x00000000   Number         0  kea128_gpio.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_i2c.c  0x00000000   Number         0  kea128_i2c.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_irq.c  0x00000000   Number         0  kea128_irq.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_kbi.c  0x00000000   Number         0  kea128_kbi.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_pit.c  0x00000000   Number         0  kea128_pit.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_port.c 0x00000000   Number         0  kea128_port.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_spi.c  0x00000000   Number         0  kea128_spi.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_systick.c 0x00000000   Number         0  kea128_systick.o ABSOLUTE
+    ..\..\Libraries\drives\src\KEA128_uart.c 0x00000000   Number         0  kea128_uart.o ABSOLUTE
+    ..\..\Libraries\drives\src\common.c      0x00000000   Number         0  common.o ABSOLUTE
+    ..\..\Libraries\drives\src\misc.c        0x00000000   Number         0  misc.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_18TFT.c 0x00000000   Number         0  seekfree_18tft.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_FUN.c  0x00000000   Number         0  seekfree_fun.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_IIC.c  0x00000000   Number         0  seekfree_iic.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_L3G4200D.c 0x00000000   Number         0  seekfree_l3g4200d.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_MMA8451.c 0x00000000   Number         0  seekfree_mma8451.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_MPU6050.c 0x00000000   Number         0  seekfree_mpu6050.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_NRF24L01.c 0x00000000   Number         0  seekfree_nrf24l01.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_OLED.c 0x00000000   Number         0  seekfree_oled.o ABSOLUTE
+    ..\..\Libraries\seekfree\SEEKFREE_TSL1401.c 0x00000000   Number         0  seekfree_tsl1401.o ABSOLUTE
+    ..\..\Libraries\seekfree\font.c          0x00000000   Number         0  font.o ABSOLUTE
+    ..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_SKEAZ1284.s 0x00000000   Number         0  startup_skeaz1284.o ABSOLUTE
+    ..\..\Libraries\startup\DeviceSupport\system_SKEAZ1284.c 0x00000000   Number         0  system_skeaz1284.o ABSOLUTE
+    ..\USER\src\get_data.c                   0x00000000   Number         0  get_data.o ABSOLUTE
+    ..\USER\src\isr.c                        0x00000000   Number         0  isr.o ABSOLUTE
+    ..\USER\src\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    ..\USER\src\menu_gui.c                   0x00000000   Number         0  menu_gui.o ABSOLUTE
+    ..\USER\src\mp3.c                        0x00000000   Number         0  mp3.o ABSOLUTE
+    ..\USER\src\offline_access.c             0x00000000   Number         0  offline_access.o ABSOLUTE
+    ..\USER\src\operation_data.c             0x00000000   Number         0  operation_data.o ABSOLUTE
+    ..\USER\src\pid_system.c                 0x00000000   Number         0  pid_system.o ABSOLUTE
+    ..\USER\src\polynomial.c                 0x00000000   Number         0  polynomial.o ABSOLUTE
+    ..\USER\src\process_data.c               0x00000000   Number         0  process_data.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_adc.c 0x00000000   Number         0  kea128_adc.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_flash.c 0x00000000   Number         0  kea128_flash.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_ftm.c 0x00000000   Number         0  kea128_ftm.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_gpio.c 0x00000000   Number         0  kea128_gpio.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_i2c.c 0x00000000   Number         0  kea128_i2c.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_irq.c 0x00000000   Number         0  kea128_irq.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_kbi.c 0x00000000   Number         0  kea128_kbi.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_pit.c 0x00000000   Number         0  kea128_pit.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_port.c 0x00000000   Number         0  kea128_port.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_spi.c 0x00000000   Number         0  kea128_spi.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_systick.c 0x00000000   Number         0  kea128_systick.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\KEA128_uart.c 0x00000000   Number         0  kea128_uart.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\common.c 0x00000000   Number         0  common.o ABSOLUTE
+    ..\\..\\Libraries\\drives\\src\\misc.c   0x00000000   Number         0  misc.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_18TFT.c 0x00000000   Number         0  seekfree_18tft.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_FUN.c 0x00000000   Number         0  seekfree_fun.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_IIC.c 0x00000000   Number         0  seekfree_iic.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_L3G4200D.c 0x00000000   Number         0  seekfree_l3g4200d.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_MMA8451.c 0x00000000   Number         0  seekfree_mma8451.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_MPU6050.c 0x00000000   Number         0  seekfree_mpu6050.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_NRF24L01.c 0x00000000   Number         0  seekfree_nrf24l01.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_OLED.c 0x00000000   Number         0  seekfree_oled.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\SEEKFREE_TSL1401.c 0x00000000   Number         0  seekfree_tsl1401.o ABSOLUTE
+    ..\\..\\Libraries\\seekfree\\font.c      0x00000000   Number         0  font.o ABSOLUTE
+    ..\\..\\Libraries\\startup\\DeviceSupport\\system_SKEAZ1284.c 0x00000000   Number         0  system_skeaz1284.o ABSOLUTE
+    ..\\USER\\src\\get_data.c                0x00000000   Number         0  get_data.o ABSOLUTE
+    ..\\USER\\src\\isr.c                     0x00000000   Number         0  isr.o ABSOLUTE
+    ..\\USER\\src\\main.c                    0x00000000   Number         0  main.o ABSOLUTE
+    ..\\USER\\src\\menu_gui.c                0x00000000   Number         0  menu_gui.o ABSOLUTE
+    ..\\USER\\src\\mp3.c                     0x00000000   Number         0  mp3.o ABSOLUTE
+    ..\\USER\\src\\offline_access.c          0x00000000   Number         0  offline_access.o ABSOLUTE
+    ..\\USER\\src\\operation_data.c          0x00000000   Number         0  operation_data.o ABSOLUTE
+    ..\\USER\\src\\pid_system.c              0x00000000   Number         0  pid_system.o ABSOLUTE
+    ..\\USER\\src\\polynomial.c              0x00000000   Number         0  polynomial.o ABSOLUTE
+    ..\\USER\\src\\process_data.c            0x00000000   Number         0  process_data.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
+    cfcmple.s                                0x00000000   Number         0  cfcmple.o ABSOLUTE
+    cfrcmple.s                               0x00000000   Number         0  cfrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section       40  startup_skeaz1284.o(.text)
+    .text                                    0x000000fc   Section        0  uidiv.o(.text)
+    .text                                    0x00000128   Section        0  memcpya.o(.text)
+    .text                                    0x0000014c   Section        0  fadd.o(.text)
+    .text                                    0x000001fe   Section        0  fmul.o(.text)
+    .text                                    0x00000278   Section        0  fflti.o(.text)
+    .text                                    0x0000028e   Section        0  ffixi.o(.text)
+    .text                                    0x000002c0   Section        0  fepilogue.o(.text)
+    .text                                    0x000002c0   Section        0  iusefp.o(.text)
+    .text                                    0x00000344   Section       36  init.o(.text)
+    i.I2C_SendACK                            0x00000368   Section        0  seekfree_iic.o(i.I2C_SendACK)
+    i.IIC_init                               0x000003a8   Section        0  seekfree_iic.o(i.IIC_init)
+    i.IIC_start                              0x000003c6   Section        0  seekfree_iic.o(i.IIC_start)
+    i.PID_SetCoefficient                     0x000003f2   Section        0  pid_system.o(i.PID_SetCoefficient)
+    i.__scatterload_null                     0x000003fa   Section        2  handlers.o(i.__scatterload_null)
+    .ARM.__at_0x400                          0x00000400   Section       16  startup_skeaz1284.o(.ARM.__at_0x400)
+    i.IIC_stop                               0x00000410   Section        0  seekfree_iic.o(i.IIC_stop)
+    i.IRQ_IRQHandler                         0x00000440   Section        0  isr.o(i.IRQ_IRQHandler)
+    i.InitL3G4200D                           0x00000454   Section        0  seekfree_l3g4200d.o(i.InitL3G4200D)
+    i.KBI0_IRQHandler                        0x0000049c   Section        0  isr.o(i.KBI0_IRQHandler)
+    i.MotorControlOutput                     0x000004b0   Section        0  operation_data.o(i.MotorControlOutput)
+    i.NVIC_SetPriority                       0x000005b4   Section        0  kea128_pit.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x000005b5   Thumb Code   110  kea128_pit.o(i.NVIC_SetPriority)
+    i.PIT_CH0_IRQHandler                     0x0000062c   Section        0  main.o(i.PIT_CH0_IRQHandler)
+    i.PIT_CH1_IRQHandler                     0x000006d0   Section        0  isr.o(i.PIT_CH1_IRQHandler)
+    i.SCCB_WaitAck                           0x000006e4   Section        0  seekfree_iic.o(i.SCCB_WaitAck)
+    SCCB_WaitAck                             0x000006e5   Thumb Code    88  seekfree_iic.o(i.SCCB_WaitAck)
+    i.Start                                  0x0000073c   Section        0  system_skeaz1284.o(i.Start)
+    i.__ARM_common_switch8                   0x00000790   Section        0  kea128_ftm.o(i.__ARM_common_switch8)
+    i.__scatterload_copy                     0x000007ac   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_zeroinit                 0x000007ba   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.adc_init                               0x000007c8   Section        0  kea128_adc.o(i.adc_init)
+    i.adc_once                               0x000007f0   Section        0  kea128_adc.o(i.adc_once)
+    i.disable_wdog                           0x00000828   Section        0  system_skeaz1284.o(i.disable_wdog)
+    i.ftm_count_init                         0x00000840   Section        0  kea128_ftm.o(i.ftm_count_init)
+    i.ftm_count_mux                          0x0000087c   Section        0  kea128_ftm.o(i.ftm_count_mux)
+    i.ftm_pwm_duty                           0x0000092c   Section        0  kea128_ftm.o(i.ftm_pwm_duty)
+    i.ftm_pwm_init                           0x000009a8   Section        0  kea128_ftm.o(i.ftm_pwm_init)
+    i.ftm_pwm_mux                            0x00000acc   Section        0  kea128_ftm.o(i.ftm_pwm_mux)
+    i.get_clk                                0x00000c00   Section        0  common.o(i.get_clk)
+    i.gpio_ddr                               0x00000c48   Section        0  kea128_gpio.o(i.gpio_ddr)
+    i.gpio_get                               0x00000cf0   Section        0  kea128_gpio.o(i.gpio_get)
+    i.gpio_init                              0x00000d1c   Section        0  kea128_gpio.o(i.gpio_init)
+    i.gpio_set                               0x00000df8   Section        0  kea128_gpio.o(i.gpio_set)
+    i.gpio_turn                              0x00000e40   Section        0  kea128_gpio.o(i.gpio_turn)
+    i.main                                   0x00000e74   Section        0  main.o(i.main)
+    i.pit_init                               0x00000fd8   Section        0  kea128_pit.o(i.pit_init)
+    i.port_pull                              0x00001054   Section        0  kea128_port.o(i.port_pull)
+    i.read_ch                                0x000010a4   Section        0  seekfree_iic.o(i.read_ch)
+    i.send_ch                                0x0000111e   Section        0  seekfree_iic.o(i.send_ch)
+    i.simiic_delay                           0x0000116c   Section        0  seekfree_iic.o(i.simiic_delay)
+    i.simiic_read_reg                        0x0000117c   Section        0  seekfree_iic.o(i.simiic_read_reg)
+    i.simiic_write_reg                       0x000011bc   Section        0  seekfree_iic.o(i.simiic_write_reg)
+    i.systick_delay                          0x000011e4   Section        0  kea128_systick.o(i.systick_delay)
+    i.systick_delay_ms                       0x00001214   Section        0  kea128_systick.o(i.systick_delay_ms)
+    i.uart_init                              0x00001230   Section        0  kea128_uart.o(i.uart_init)
+    i.uart_mux                               0x000012e8   Section        0  kea128_uart.o(i.uart_mux)
+    .constdata                               0x00001358   Section       22  common.o(.constdata)
+    .constdata                               0x00001370   Section       12  kea128_ftm.o(.constdata)
+    FTMX                                     0x00001370   Data          12  kea128_ftm.o(.constdata)
+    .constdata                               0x0000137c   Section       12  kea128_gpio.o(.constdata)
+    GPIOX                                    0x0000137c   Data          12  kea128_gpio.o(.constdata)
+    .data                                    0x1ffff000   Section       16  common.o(.data)
+    .data                                    0x1ffff010   Section        6  kea128_ftm.o(.data)
+    .data                                    0x1ffff018   Section       12  kea128_uart.o(.data)
+    .data                                    0x1ffff024   Section       12  seekfree_l3g4200d.o(.data)
+    .data                                    0x1ffff030   Section        1  main.o(.data)
+    .bss                                     0x1ffff034   Section      992  main.o(.bss)
+    STACK                                    0x1ffff418   Section      256  startup_skeaz1284.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEJ$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_skeaz1284.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_skeaz1284.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_skeaz1284.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    init_data_bss                            0x000000d5   Thumb Code     2  startup_skeaz1284.o(.text)
+    Reset_Handler                            0x000000d7   Thumb Code    12  startup_skeaz1284.o(.text)
+    NMI_Handler                              0x000000e3   Thumb Code     2  startup_skeaz1284.o(.text)
+    HardFault_Handler                        0x000000e5   Thumb Code     2  startup_skeaz1284.o(.text)
+    SVC_Handler                              0x000000e7   Thumb Code     2  startup_skeaz1284.o(.text)
+    PendSV_Handler                           0x000000e9   Thumb Code     2  startup_skeaz1284.o(.text)
+    SysTick_Handler                          0x000000eb   Thumb Code     2  startup_skeaz1284.o(.text)
+    ACMP0_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ACMP1_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ADC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    DefaultISR                               0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTM2_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    FTMRE_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    I2C0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    I2C1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    ICS_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    KBI1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    MSCAN_RX_IRQHandler                      0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    MSCAN_TX_IRQHandler                      0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    PMC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    PWT_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    RTC_IRQHandler                           0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved16_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved17_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved18_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved19_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved20_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    Reserved42_IRQHandler                    0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    SPI0_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    SPI1_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    UART0_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    UART1_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    UART2_IRQHandler                         0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    WDOG_IRQHandler                          0x000000ed   Thumb Code     0  startup_skeaz1284.o(.text)
+    __aeabi_uidiv                            0x000000fd   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x000000fd   Thumb Code    44  uidiv.o(.text)
+    __aeabi_memcpy                           0x00000129   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00000129   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00000129   Thumb Code     0  memcpya.o(.text)
+    __aeabi_fadd                             0x0000014d   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x000001ef   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x000001f7   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x000001ff   Thumb Code   122  fmul.o(.text)
+    __aeabi_i2f                              0x00000279   Thumb Code    22  fflti.o(.text)
+    __aeabi_f2iz                             0x0000028f   Thumb Code    50  ffixi.o(.text)
+    __I$use$fp                               0x000002c1   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x000002c1   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x000002d1   Thumb Code   114  fepilogue.o(.text)
+    __scatterload                            0x00000345   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000345   Thumb Code     0  init.o(.text)
+    I2C_SendACK                              0x00000369   Thumb Code    64  seekfree_iic.o(i.I2C_SendACK)
+    IIC_init                                 0x000003a9   Thumb Code    30  seekfree_iic.o(i.IIC_init)
+    IIC_start                                0x000003c7   Thumb Code    44  seekfree_iic.o(i.IIC_start)
+    PID_SetCoefficient                       0x000003f3   Thumb Code     8  pid_system.o(i.PID_SetCoefficient)
+    __scatterload_null                       0x000003fb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    IIC_stop                                 0x00000411   Thumb Code    48  seekfree_iic.o(i.IIC_stop)
+    IRQ_IRQHandler                           0x00000441   Thumb Code    14  isr.o(i.IRQ_IRQHandler)
+    InitL3G4200D                             0x00000455   Thumb Code    68  seekfree_l3g4200d.o(i.InitL3G4200D)
+    KBI0_IRQHandler                          0x0000049d   Thumb Code    14  isr.o(i.KBI0_IRQHandler)
+    MotorControlOutput                       0x000004b1   Thumb Code   254  operation_data.o(i.MotorControlOutput)
+    PIT_CH0_IRQHandler                       0x0000062d   Thumb Code   148  main.o(i.PIT_CH0_IRQHandler)
+    PIT_CH1_IRQHandler                       0x000006d1   Thumb Code    14  isr.o(i.PIT_CH1_IRQHandler)
+    Start                                    0x0000073d   Thumb Code    74  system_skeaz1284.o(i.Start)
+    __ARM_common_switch8                     0x00000791   Thumb Code    28  kea128_ftm.o(i.__ARM_common_switch8)
+    __scatterload_copy                       0x000007ad   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_zeroinit                   0x000007bb   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    adc_init                                 0x000007c9   Thumb Code    30  kea128_adc.o(i.adc_init)
+    adc_once                                 0x000007f1   Thumb Code    50  kea128_adc.o(i.adc_once)
+    disable_wdog                             0x00000829   Thumb Code    16  system_skeaz1284.o(i.disable_wdog)
+    ftm_count_init                           0x00000841   Thumb Code    54  kea128_ftm.o(i.ftm_count_init)
+    ftm_count_mux                            0x0000087d   Thumb Code   166  kea128_ftm.o(i.ftm_count_mux)
+    ftm_pwm_duty                             0x0000092d   Thumb Code   114  kea128_ftm.o(i.ftm_pwm_duty)
+    ftm_pwm_init                             0x000009a9   Thumb Code   278  kea128_ftm.o(i.ftm_pwm_init)
+    ftm_pwm_mux                              0x00000acd   Thumb Code   302  kea128_ftm.o(i.ftm_pwm_mux)
+    get_clk                                  0x00000c01   Thumb Code    48  common.o(i.get_clk)
+    gpio_ddr                                 0x00000c49   Thumb Code   162  kea128_gpio.o(i.gpio_ddr)
+    gpio_get                                 0x00000cf1   Thumb Code    40  kea128_gpio.o(i.gpio_get)
+    gpio_init                                0x00000d1d   Thumb Code   214  kea128_gpio.o(i.gpio_init)
+    gpio_set                                 0x00000df9   Thumb Code    68  kea128_gpio.o(i.gpio_set)
+    gpio_turn                                0x00000e41   Thumb Code    48  kea128_gpio.o(i.gpio_turn)
+    main                                     0x00000e75   Thumb Code   340  main.o(i.main)
+    pit_init                                 0x00000fd9   Thumb Code   108  kea128_pit.o(i.pit_init)
+    port_pull                                0x00001055   Thumb Code    74  kea128_port.o(i.port_pull)
+    read_ch                                  0x000010a5   Thumb Code   122  seekfree_iic.o(i.read_ch)
+    send_ch                                  0x0000111f   Thumb Code    78  seekfree_iic.o(i.send_ch)
+    simiic_delay                             0x0000116d   Thumb Code    16  seekfree_iic.o(i.simiic_delay)
+    simiic_read_reg                          0x0000117d   Thumb Code    64  seekfree_iic.o(i.simiic_read_reg)
+    simiic_write_reg                         0x000011bd   Thumb Code    38  seekfree_iic.o(i.simiic_write_reg)
+    systick_delay                            0x000011e5   Thumb Code    44  kea128_systick.o(i.systick_delay)
+    systick_delay_ms                         0x00001215   Thumb Code    24  kea128_systick.o(i.systick_delay_ms)
+    uart_init                                0x00001231   Thumb Code   170  kea128_uart.o(i.uart_init)
+    uart_mux                                 0x000012e9   Thumb Code   106  kea128_uart.o(i.uart_mux)
+    Region$$Table$$Base                      0x00001388   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000013a8   Number         0  anon$$obj.o(Region$$Table)
+    ics_clk_khz                              0x1ffff000   Data           4  common.o(.data)
+    ftm_clk_khz                              0x1ffff004   Data           4  common.o(.data)
+    core_clk_khz                             0x1ffff008   Data           4  common.o(.data)
+    bus_clk_khz                              0x1ffff00c   Data           4  common.o(.data)
+    period                                   0x1ffff010   Data           6  kea128_ftm.o(.data)
+    uart                                     0x1ffff018   Data          12  kea128_uart.o(.data)
+    gyro_x                                   0x1ffff024   Data           2  seekfree_l3g4200d.o(.data)
+    gyro_y                                   0x1ffff026   Data           2  seekfree_l3g4200d.o(.data)
+    gyro_z                                   0x1ffff028   Data           2  seekfree_l3g4200d.o(.data)
+    Temperature                              0x1ffff02a   Data           1  seekfree_l3g4200d.o(.data)
+    time                                     0x1ffff02c   Data           4  seekfree_l3g4200d.o(.data)
+    count                                    0x1ffff030   Data           1  main.o(.data)
+    Encoder_Sample                           0x1ffff034   Data         272  main.o(.bss)
+    PID                                      0x1ffff144   Data         640  main.o(.bss)
+    WriteBuff                                0x1ffff3c4   Data          80  main.o(.bss)
+    __initial_sp                             0x1ffff518   Data           0  startup_skeaz1284.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000013dc, Max: 0x00020000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000013a8, Max: 0x00020000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000c0   Data   RO            3    RESET               startup_skeaz1284.o
+    0x000000c0   0x00000000   Code   RO         1929  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x00000004   Code   RO         1978    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x00000004   Code   RO         1981    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x00000000   Code   RO         1983    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x00000000   Code   RO         1985    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x00000008   Code   RO         1986    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x00000000   Code   RO         1988    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x00000000   Code   RO         1990    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x00000004   Code   RO         1979    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x00000028   Code   RO            5    .text               startup_skeaz1284.o
+    0x000000fc   0x0000002c   Code   RO         1932    .text               mc_p.l(uidiv.o)
+    0x00000128   0x00000024   Code   RO         1936    .text               mc_p.l(memcpya.o)
+    0x0000014c   0x000000b2   Code   RO         1942    .text               mf_p.l(fadd.o)
+    0x000001fe   0x0000007a   Code   RO         1944    .text               mf_p.l(fmul.o)
+    0x00000278   0x00000016   Code   RO         1954    .text               mf_p.l(fflti.o)
+    0x0000028e   0x00000032   Code   RO         1962    .text               mf_p.l(ffixi.o)
+    0x000002c0   0x00000000   Code   RO         2005    .text               mc_p.l(iusefp.o)
+    0x000002c0   0x00000082   Code   RO         2006    .text               mf_p.l(fepilogue.o)
+    0x00000342   0x00000002   PAD
+    0x00000344   0x00000024   Code   RO         2016    .text               mc_p.l(init.o)
+    0x00000368   0x00000040   Code   RO          941    i.I2C_SendACK       seekfree_iic.o
+    0x000003a8   0x0000001e   Code   RO          942    i.IIC_init          seekfree_iic.o
+    0x000003c6   0x0000002c   Code   RO          943    i.IIC_start         seekfree_iic.o
+    0x000003f2   0x00000008   Code   RO         1571    i.PID_SetCoefficient  pid_system.o
+    0x000003fa   0x00000002   Code   RO         2021    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000003fc   0x00000004   PAD
+    0x00000400   0x00000010   Code   RO            4    .ARM.__at_0x400     startup_skeaz1284.o
+    0x00000410   0x00000030   Code   RO          944    i.IIC_stop          seekfree_iic.o
+    0x00000440   0x00000014   Code   RO         1344    i.IRQ_IRQHandler    isr.o
+    0x00000454   0x00000048   Code   RO         1023    i.InitL3G4200D      seekfree_l3g4200d.o
+    0x0000049c   0x00000014   Code   RO         1345    i.KBI0_IRQHandler   isr.o
+    0x000004b0   0x00000104   Code   RO         1872    i.MotorControlOutput  operation_data.o
+    0x000005b4   0x00000078   Code   RO          479    i.NVIC_SetPriority  kea128_pit.o
+    0x0000062c   0x000000a4   Code   RO         1379    i.PIT_CH0_IRQHandler  main.o
+    0x000006d0   0x00000014   Code   RO         1346    i.PIT_CH1_IRQHandler  isr.o
+    0x000006e4   0x00000058   Code   RO          945    i.SCCB_WaitAck      seekfree_iic.o
+    0x0000073c   0x00000054   Code   RO           15    i.Start             system_skeaz1284.o
+    0x00000790   0x0000001c   Code   RO          383    i.__ARM_common_switch8  kea128_ftm.o
+    0x000007ac   0x0000000e   Code   RO         2020    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000007ba   0x0000000e   Code   RO         2022    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x000007c8   0x00000028   Code   RO          243    i.adc_init          kea128_adc.o
+    0x000007f0   0x00000038   Code   RO          244    i.adc_once          kea128_adc.o
+    0x00000828   0x00000018   Code   RO           16    i.disable_wdog      system_skeaz1284.o
+    0x00000840   0x0000003c   Code   RO          324    i.ftm_count_init    kea128_ftm.o
+    0x0000087c   0x000000b0   Code   RO          325    i.ftm_count_mux     kea128_ftm.o
+    0x0000092c   0x0000007c   Code   RO          326    i.ftm_pwm_duty      kea128_ftm.o
+    0x000009a8   0x00000124   Code   RO          328    i.ftm_pwm_init      kea128_ftm.o
+    0x00000acc   0x00000134   Code   RO          329    i.ftm_pwm_mux       kea128_ftm.o
+    0x00000c00   0x00000048   Code   RO          187    i.get_clk           common.o
+    0x00000c48   0x000000a8   Code   RO          390    i.gpio_ddr          kea128_gpio.o
+    0x00000cf0   0x0000002c   Code   RO          391    i.gpio_get          kea128_gpio.o
+    0x00000d1c   0x000000dc   Code   RO          392    i.gpio_init         kea128_gpio.o
+    0x00000df8   0x00000048   Code   RO          393    i.gpio_set          kea128_gpio.o
+    0x00000e40   0x00000034   Code   RO          394    i.gpio_turn         kea128_gpio.o
+    0x00000e74   0x00000164   Code   RO         1380    i.main              main.o
+    0x00000fd8   0x0000007c   Code   RO          482    i.pit_init          kea128_pit.o
+    0x00001054   0x00000050   Code   RO          531    i.port_pull         kea128_port.o
+    0x000010a4   0x0000007a   Code   RO          946    i.read_ch           seekfree_iic.o
+    0x0000111e   0x0000004e   Code   RO          947    i.send_ch           seekfree_iic.o
+    0x0000116c   0x00000010   Code   RO          948    i.simiic_delay      seekfree_iic.o
+    0x0000117c   0x00000040   Code   RO          949    i.simiic_read_reg   seekfree_iic.o
+    0x000011bc   0x00000026   Code   RO          951    i.simiic_write_reg  seekfree_iic.o
+    0x000011e2   0x00000002   PAD
+    0x000011e4   0x00000030   Code   RO          647    i.systick_delay     kea128_systick.o
+    0x00001214   0x0000001c   Code   RO          648    i.systick_delay_ms  kea128_systick.o
+    0x00001230   0x000000b8   Code   RO          555    i.uart_init         kea128_uart.o
+    0x000012e8   0x00000070   Code   RO          556    i.uart_mux          kea128_uart.o
+    0x00001358   0x00000016   Data   RO          188    .constdata          common.o
+    0x0000136e   0x00000002   PAD
+    0x00001370   0x0000000c   Data   RO          330    .constdata          kea128_ftm.o
+    0x0000137c   0x0000000c   Data   RO          395    .constdata          kea128_gpio.o
+    0x00001388   0x00000020   Data   RO         2018    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x1ffff000, Size: 0x00000518, Max: 0x00004000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1ffff000   0x00000010   Data   RW          189    .data               common.o
+    0x1ffff010   0x00000006   Data   RW          331    .data               kea128_ftm.o
+    0x1ffff016   0x00000002   PAD
+    0x1ffff018   0x0000000c   Data   RW          564    .data               kea128_uart.o
+    0x1ffff024   0x0000000c   Data   RW         1025    .data               seekfree_l3g4200d.o
+    0x1ffff030   0x00000001   Data   RW         1382    .data               main.o
+    0x1ffff031   0x00000003   PAD
+    0x1ffff034   0x000003e0   Zero   RW         1381    .bss                main.o
+    0x1ffff414   0x00000004   PAD
+    0x1ffff418   0x00000100   Zero   RW            1    STACK               startup_skeaz1284.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        72         24         22         16          0       2389   common.o
+        60         18          0          0          0       1476   isr.o
+        96         16          0          0          0       1246   kea128_adc.o
+       988         54         12          6          0       4698   kea128_ftm.o
+       556         24         12          0          0       4261   kea128_gpio.o
+       244         26          0          0          0       7255   kea128_pit.o
+        80          6          0          0          0        648   kea128_port.o
+        76          8          0          0          0       1215   kea128_systick.o
+       296         20          0         12          0       2122   kea128_uart.o
+       520         32          0          1        992       8196   main.o
+         0          0          0          0          0     112683   misc.o
+       260          6          0          0          0       1421   operation_data.o
+         8          0          0          0          0       1025   pid_system.o
+       592          0          0          0          0       6328   seekfree_iic.o
+        72          4          0         12          0       1035   seekfree_l3g4200d.o
+        56         30        192          0        256       1016   startup_skeaz1284.o
+       108         18          0          0          0       5467   system_skeaz1284.o
+
+    ----------------------------------------------------------------------
+      4086        286        272         52       1252     162481   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         2          0          2          5          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        36          0          0          0          0         60   memcpya.o
+        44          0          0          0          0         72   uidiv.o
+       178          0          0          0          0        108   fadd.o
+       130          0          0          0          0        144   fepilogue.o
+        50          0          0          0          0         60   ffixi.o
+        22          0          0          0          0         68   fflti.o
+       122          0          0          0          0         72   fmul.o
+
+    ----------------------------------------------------------------------
+       674         16          0          0          0        652   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       166         16          0          0          0        200   mc_p.l
+       502          0          0          0          0        452   mf_p.l
+
+    ----------------------------------------------------------------------
+       674         16          0          0          0        652   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      4760        302        272         52       1252     161349   Grand Totals
+      4760        302        272         52       1252     161349   ELF Image Totals
+      4760        302        272         52          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 5032 (   4.91kB)
+    Total RW  Size (RW Data + ZI Data)              1304 (   1.27kB)
+    Total ROM Size (Code + RO Data + RW Data)       5084 (   4.96kB)
+
+==============================================================================
+
