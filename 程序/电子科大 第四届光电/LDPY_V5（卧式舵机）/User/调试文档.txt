@@ -1,0 +1,188 @@
+
+2014-05-09
+	首次将两个程序融合。
+2014-05-11
+	上位机成功移植。
+2014-05-13
+	底层基本完工。
+2014-05-20
+	//调试舵机中心值语句(放在主循环)
+	//FTM2->CONTROLS[0].CnV = (uint32)(1.5625*((float)Steer1_info.Steer_PWMOutputDuty));
+	//调试舵机左右极限值的语句(放在主循环)
+	//	if(1 == CCD1_info.CCDGetDataOK_Flag)
+	//	{
+	//		CCD1_info.CCDGetDataOK_Flag = 0;
+	//		if(0 == xx)
+	//			Steer1_info.Steer_PWMOutputDuty -= 1;
+	//		else	
+	//			Steer1_info.Steer_PWMOutputDuty += 1;
+	//		
+	//		if(Steer1_info.Steer_PWMOutputDuty >= Steer1_info.Steer_RightMAX)
+	//			xx = 0;
+	//		else if(Steer1_info.Steer_PWMOutputDuty <= Steer1_info.Steer_LeftMAX)
+	//			xx = 1;
+	//		FTM2->CONTROLS[0].CnV = (uint32)(1.5625*((float)Steer1_info.Steer_PWMOutputDuty));
+	//	}
+2014-05-22
+	改变了巡线方式。
+2014-05-28
+	舵机KP = 1.1/1.2,KD >= 1.6(1.8)，电机KP = 340，KI = 3。偏差D步长10
+2014-06-03
+	舵机KP = 1.06,KD = 2.5，电机KP = 480，KI = 80
+2014-06-11
+	//计时，调试停车
+	if(Stop != Car_state)//计算行驶的时间
+				Parameter_info.Time += 0.003;
+			
+	#ifdef DebugTime_Enable
+	
+	//若调试时间为零则进入正常行驶状态，不进行调试
+	if((0 != Parameter_info.DebugTime) && (Parameter_info.Time >= Parameter_info.DebugTime))//调试时间到,停车
+	{
+		if(Stop != Car_state)
+		{
+			Car_state_Pre = Car_state;
+			Car_state = Stop;
+			
+			Parameter_info.StartEndLine_Flag = 1;
+		}
+	}
+	#endif
+	//end of DebugTime_Enable
+2014-06-12
+	同时采集CCD1，CCD2，CCD3的数据和求3个CCD的偏差。
+	CCD1当两边都不丢为有效,CCD2当两边不全丢为有效，CCD3当两边都不丢为有效.
+	当 CCD1_Ready_Num >= 5,CCD2_Ready_Num >= 6,CCD3_Ready_Num >= 10时是直道。
+	当 CCD1_Ready_Num >= 5,CCD2_Ready_Num >= 6,CCD3_Ready_Num  = 0时是直道入弯道。
+	当 CCD1_Ready_Num >= 5;CCD2_Ready_Num  = 0;CCD3_Ready_Num  = 0时是弯道。
+	当 CCD1_Ready_Num = 0;CCD2_Ready_Num  = 0;CCD3_Ready_Num  = 0时是急弯。
+2014-06-13
+	摇头舵机控制的时候在十字路口会有全白的时候，此时将摇头舵机逐渐回正，以保证再次寻到正确的边界。
+2014-06-20
+	限制摇头舵机补线时的中线位置，防止在十字路口由于补线错误出现的抖动。
+2014-06-21
+	根据华为标准规范了代码风格。
+2014-06-22
+	经测试，用Keil生成的K60代码中的右移位运算( >> )为算数右移，即负数也可用右移运算。
+2014-06-26
+	myOLED_Dec4(7,10,CCD3_info.LeftLine[0]);
+	myOLED_Dec4(7,50,CCD3_info.CentralLine[0]);
+	myOLED_Dec4(7,90,CCD3_info.RightLine[0]);
+	
+	myOLED_Dec4(6,10,CCD2_info.LeftLine[0]);
+	myOLED_Dec4(6,50,CCD2_info.CentralLine[0]);
+	myOLED_Dec4(6,90,CCD2_info.RightLine[0]);
+	
+	myOLED_Dec4(5,10,CCD1_info.LeftLine[0]);
+	myOLED_Dec4(5,50,CCD1_info.CentralLine[0]);
+	myOLED_Dec4(5,90,CCD1_info.RightLine[0]);
+2014-06-29
+	由于当摇头舵机打到最大后不再利用偏差减速，则速度会有突变导致在急弯的时候不稳定。
+2014-07-01
+	十字道虽然用了CCD2和CCD3来辅助检测前面的边界，但是一旦近处的CCD1再次寻到边界（不管是单边还是双边）都会退出十字道的处理。
+	这样产生的影响就是就算前面的CCD2，CCD3纠正正确了，一旦近处CCD1搜到单边界（有可能不是正确的边界），则会退出十字处理，可能导致错误。
+	
+	长直道进入坡道的时候车可能由于速度太大减速不及时会跳动，可以利用3个CCD来预判坡道。即3个CCD都有双边界，并且中心值在63附近,
+	一旦3个CCD的道路宽度都呈现逐渐加大的情况，则可以认为是坡道。处理方法为由3档或者2档减速到1档，并且开始减速。
+2014-07-06
+	弯道加速
+	//清零出弯道加速标记
+	//	if(fabs(Steer_info->Steer_PWMOutputDuty - Steer_info->Steer_Center) < 50)
+	//	{
+	//		Speed_info->CurSpeedAcc_Flag = 0;	//清零出弯道加速标记
+	//		Speed_info->CurSpeedAcc = 0;		//直道上清零出弯道速度增加值
+	//	}
+	//	else
+	//	{
+	//		if(1 == Speed_info->CurSpeedAcc_Flag)//已经在进行弯道加速
+	//		{
+	//			if(Speed_info->CurSpeedAcc < 5000)//限制上限，防止越界
+	//			{
+	//				Speed_info->CurSpeedAcc += 1;		//每个周期增加1个脉冲
+	//			}
+	//		}
+	//		else if((1 != Speed_info->CurSpeedAcc_Flag) 
+	//				&& ((Steer_info->Steer_PWMOutputDuty >= Steer_info->Steer_RightMAX - 100) 
+	//				|| (Steer_info->Steer_PWMOutputDuty <= Steer_info->Steer_LeftMAX + 100)))//弯道中转向舵机打到极限的时候开始出弯道加速
+	//		{
+	//			Speed_info->CurSpeedAcc_Flag = 1;	//开始出弯道加速
+	//			
+	//			Speed_info->CurSpeedAcc += 1;		//增加1个脉冲
+	//		}
+	//	}
+		
+	//	if((1 == Parameter_info.RampReady_FLag) && (Ramp_Up != Road_condition))//长直道进入坡道预判成功
+	//	{
+	//		Speed_info->TargetSpeed = Speed_info->RampUp_Speed;//设定为上坡道速度来急减速
+	//	}
+	//	else
+	//	{
+	//		Speed_info->TargetSpeed += sqrt(Speed_info->CurSpeedAcc);//如果在弯道中则加速
+	//	}
+2014-07-11
+	舵机调试
+	//转向舵机输出
+	FTM2->CONTROLS[0].CnV = Steer_info.Steer_PWMOutputDuty;
+	
+	myOLED_Dec(4,50,Steer_info.Steer_PWMOutputDuty);
+	
+	速度控制
+	//根据摇头舵机打角，偏差，摇头舵机打角偏差率来计算速度,并根据档位的不同来改变直道最高速度
+//	if((3 == Speed_info->LastSpeedMode) && (2 == Speed_info->SpeedMode))//由3档换到2档，应该急减速
+//	{
+//		Speed_info->TargetSpeed =   Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1]
+//								 - (Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1] - Speed_info->Cur_Speed)*HeadSteerPWMError_MAX/Speed_info->HeadSteerPWMError_K
+//								 - (Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1] - Speed_info->Snake_Speed)*HeadSteerPWMError_D_MAX/Speed_info->HeadSteerPWMError_D_K
+//								 - (Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1] - Speed_info->Cur_Speed)*LineError_MAX/Speed_info->Error_K;
+//		
+//	}
+//	else if((1 == Speed_info->LastSpeedMode) && (2 == Speed_info->SpeedMode))//由1档换到2档，应该加速
+//	{
+//		Speed_info->TargetSpeed =   Speed_info->Straight_Speed
+//								 - (Speed_info->Straight_Speed - Speed_info->Cur_Speed)*HeadSteerPWMError_MAX/Speed_info->HeadSteerPWMError_K;
+//	}
+//	else
+//	{
+//		Speed_info->TargetSpeed =   Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1]
+//								 - (Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1] - Speed_info->Cur_Speed)*HeadSteerPWMError_MAX/Speed_info->HeadSteerPWMError_K
+//								 - (Speed_info->Straight_Speed + Speed_info->SpeedAcc[Speed_info->SpeedMode - 1] - Speed_info->Snake_Speed)*HeadSteerPWMError_D_MAX/Speed_info->HeadSteerPWMError_D_K;
+//	}
+
+	调试前瞻
+//			myOLED_Dec(7,10,CCD3_info.LeftLine[0]);
+//			myOLED_Dec(7,50,CCD3_info.CentralLine[0]);
+//			myOLED_Dec(7,90,CCD3_info.RightLine[0]);
+//			
+//			myOLED_Dec(6,10,CCD2_info.LeftLine[0]);
+//			myOLED_Dec(6,50,CCD2_info.CentralLine[0]);
+//			myOLED_Dec(6,90,CCD2_info.RightLine[0]);
+//			
+//			myOLED_Dec(5,10,CCD1_info.LeftLine[0]);
+//			myOLED_Dec(5,50,CCD1_info.CentralLine[0]);
+//			myOLED_Dec(5,90,CCD1_info.RightLine[0]);
+
+//			myOLED_CCDwave(&CCD1_info,&CCD2_info,&CCD3_info);
+
+2014-07-11
+	发现一旦同时采集CCD数据和陀螺仪数据并且用液晶显示东西过多就会出现死机的现象，初步怀疑是陀螺仪与CCD采集公用了一个AD模块，导致陀螺仪
+	正在进行AD转换时被CCD采集中断打断而入堆栈，而陀螺仪AD转换尚未完成，若被打断则继续等待转换完成，CCD进入采集程序后需要该AD模块进行数据转换
+	，若此时该AD正在等待，则有可能继续等待，导致最终死机。
+	
+2014-08-05
+	发现十字道抖动的原因为CCD1进入十字道，CCD2搜到边界，控制摇头舵机的量由CCD3切换至CCD2时发生抖动。
+2014-08-09
+	if(((1 == Speed_info->LastSpeedMode) && (2 == Speed_info->SpeedMode)) || (1 == Speed_info->CurSpeedAcc_Flag))
+	{
+		Speed_info->TargetSpeed[0] =  Speed_info->Straight_Speed
+								   - (Speed_info->Straight_Speed - Speed_info->Cur_Speed)*1/Speed_info->HeadSteerPWMError_K;
+	
+		if(1 == Speed_info->CurSpeedAcc_Flag)
+		{
+			if(Speed_info->Speed_Now < Speed_info->Straight_Speed)
+			{
+				Speed_info->CurSpeedAcc += 1.5;//每个周期增加1.5个脉冲
+			}
+			
+			Speed_info->TargetSpeed[0] += sqrt(fabsf(Speed_info->CurSpeedAcc));
+		}
+	}

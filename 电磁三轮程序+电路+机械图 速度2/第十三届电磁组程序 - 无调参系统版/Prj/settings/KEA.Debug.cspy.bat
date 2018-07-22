@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"E:\IAR\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\´ó¶ş¹ºÂò\µç´ÅÈıÂÖ³ÌĞò+µçÂ·+»úĞµÍ¼ ¹úÒ»ËÙ¶È2.7m\µÚÊ®Èı½ìµç´Å×é³ÌĞò - ÎŞµ÷²ÎÏµÍ³°æ\Prj\settings\KEA.Debug.general.xcl" --backend -f "C:\Users\Administrator\Desktop\´ó¶ş¹ºÂò\µç´ÅÈıÂÖ³ÌĞò+µçÂ·+»úĞµÍ¼ ¹úÒ»ËÙ¶È2.7m\µÚÊ®Èı½ìµç´Å×é³ÌĞò - ÎŞµ÷²ÎÏµÍ³°æ\Prj\settings\KEA.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\11918\Desktop\smartcar-Open-source\ç”µç£ä¸‰è½®ç¨‹åº+ç”µè·¯+æœºæ¢°å›¾ é€Ÿåº¦2\ç¬¬åä¸‰å±Šç”µç£ç»„ç¨‹åº - æ— è°ƒå‚ç³»ç»Ÿç‰ˆ\Prj\settings\KEA.Debug.general.xcl" --backend -f "C:\Users\11918\Desktop\smartcar-Open-source\ç”µç£ä¸‰è½®ç¨‹åº+ç”µè·¯+æœºæ¢°å›¾ é€Ÿåº¦2\ç¬¬åä¸‰å±Šç”µç£ç»„ç¨‹åº - æ— è°ƒå‚ç³»ç»Ÿç‰ˆ\Prj\settings\KEA.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"E:\IAR\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\´ó¶ş¹ºÂò\µç´ÅÈıÂÖ³ÌĞò+µçÂ·+»úĞµÍ¼ ¹úÒ»ËÙ¶È2.7m\µÚÊ®Èı½ìµç´Å×é³ÌĞò - ÎŞµ÷²ÎÏµÍ³°æ\Prj\settings\KEA.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Administrator\Desktop\´ó¶ş¹ºÂò\µç´ÅÈıÂÖ³ÌĞò+µçÂ·+»úĞµÍ¼ ¹úÒ»ËÙ¶È2.7m\µÚÊ®Èı½ìµç´Å×é³ÌĞò - ÎŞµ÷²ÎÏµÍ³°æ\Prj\settings\KEA.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\11918\Desktop\smartcar-Open-source\ç”µç£ä¸‰è½®ç¨‹åº+ç”µè·¯+æœºæ¢°å›¾ é€Ÿåº¦2\ç¬¬åä¸‰å±Šç”µç£ç»„ç¨‹åº - æ— è°ƒå‚ç³»ç»Ÿç‰ˆ\Prj\settings\KEA.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\11918\Desktop\smartcar-Open-source\ç”µç£ä¸‰è½®ç¨‹åº+ç”µè·¯+æœºæ¢°å›¾ é€Ÿåº¦2\ç¬¬åä¸‰å±Šç”µç£ç»„ç¨‹åº - æ— è°ƒå‚ç³»ç»Ÿç‰ˆ\Prj\settings\KEA.Debug.driver.xcl" 
 
 @echo off 
 :end

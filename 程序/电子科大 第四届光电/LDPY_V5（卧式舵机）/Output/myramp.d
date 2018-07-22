@@ -1,0 +1,12 @@
+.\output\myramp.o: User\myRamp.c
+.\output\myramp.o: User\myRamp.h
+.\output\myramp.o: .\Startup\MK60DZ10.h
+.\output\myramp.o: .\CMSIS\core_cm4.h
+.\output\myramp.o: D:\ProgramFiles\Keil_501\Software\ARM\ARMCC\bin\..\include\stdint.h
+.\output\myramp.o: .\CMSIS\core_cmInstr.h
+.\output\myramp.o: .\CMSIS\core_cmFunc.h
+.\output\myramp.o: .\CMSIS\core_cm4_simd.h
+.\output\myramp.o: .\Startup\system_MK60DZ10.h
+.\output\myramp.o: User\myStruct.h
+.\output\myramp.o: D:\ProgramFiles\Keil_501\Software\ARM\ARMCC\bin\..\include\math.h
+.\output\myramp.o: .\LDPY\LDPY_TypeChange.h

@@ -1,0 +1,153 @@
+#include "include.h"
+#define APP_ADDRESS 0x00005000
+
+uint8   ReadAppBuffer[1024];
+
+void Jump_to_App()
+{
+  uint32_t *APP_VECTOR_TABLE=(uint32_t *)(APP_ADDRESS);
+  uint32_t appEntry = APP_VECTOR_TABLE[1];
+  uint32_t appStack = APP_VECTOR_TABLE[0];
+  static void (*firmwareBootloader)(void) = 0;
+  firmwareBootloader = (void (*)(void))appEntry;
+  // Set the VTOR to the application vector table address.
+  SCB->VTOR = (uint32_t)APP_VECTOR_TABLE;
+  //Set stack pointers to the application stack pointer.
+  __set_MSP(appStack);
+  __set_PSP(appStack);
+  // Jump to the application.
+  firmwareBootloader();
+}								    //跳转到APP.
+
+void led_flash()
+{
+  uint8 i=0;
+  for(i=0;i<10;i++)
+  {
+   gpio_set(PTE29,1);
+   gpio_set(PTE30,0);
+   gpio_set(PTE31,0);
+   DELAY_MS(30); 
+   gpio_set(PTE29,0);
+   gpio_set(PTE30,1);
+   gpio_set(PTE31,0);
+   DELAY_MS(30); 
+   gpio_set(PTE29,0);
+   gpio_set(PTE30,0);
+   gpio_set(PTE31,1);
+   DELAY_MS(30); 
+  }
+   gpio_set(PTE29,0);
+   gpio_set(PTE30,0);
+   gpio_set(PTE31,0);
+   DELAY_MS(200); 
+}
+
+void led_error_nocard()
+{
+  uint8 i=0;
+  for(i=0;i<5;i++)
+  {
+   gpio_set(PTE29,1);
+   gpio_set(PTE30,1);
+   gpio_set(PTE31,1);
+   DELAY_MS(400); 
+   gpio_set(PTE29,0);
+   gpio_set(PTE30,0);
+   gpio_set(PTE31,0);
+   DELAY_MS(400); 
+  }
+}
+
+void led_error_nofile()
+{
+  uint8 i=0;
+  for(i=0;i<10;i++)
+  {
+   gpio_set(PTE29,1);
+   gpio_set(PTE30,1);
+   gpio_set(PTE31,1);
+   DELAY_MS(200); 
+   gpio_set(PTE29,0);
+   gpio_set(PTE30,0);
+   gpio_set(PTE31,0);
+   DELAY_MS(200); 
+  }
+}
+uint8 check_flash(uint8 *buff,uint8 sector,uint16 len)
+{
+  uint16 i,retry;
+  for(i=0;i<len;i++)
+  {
+    if(flash_read(sector,i,uint8)!=*(buff+i))  //查看两者是否相等
+  }
+}
+void main (void)
+{
+  uint32  APP_Sector = 0;
+  uint16  APP_Byte = 0;
+  FATFS  FS_Struct;	                   //用于注册
+  FIL    FP_Struct;			               //用于打开文件
+  uint8   gCheckFat = 0;	                 //用于判断，文件操作是否正确
+  uint16  ReadNum;
+  uint32  i = 0;
+  
+  DisableInterrupts;  //关闭中断   
+  //按键输入 OK键
+  gpio_init(PTA4,GPI,0);                    
+  port_init_NoALT(PTA4,PULLUP); 
+  //  检测按键是否按下 yes键
+  DELAY_MS(50);
+  if(PTA4_IN!=0)   //如果重启后OK键按着就从SD卡更新程序
+  Jump_to_App();   //否则直接跳转到程序
+  //LED灯
+  gpio_init(PTE29,GPO,0);
+  gpio_init(PTE30,GPO,0); 
+  gpio_init(PTE31,GPO,0); 
+  spi_init(SPI1,SPI_PCS0,MASTER,200*1000);   //初始化为10k低速率
+  led_flash();  //代表进入了bootloader程序中
+  if(SD_Initialize())   //如果SD卡初始化成功了
+  {
+    gCheckFat = f_mount (0,&FS_Struct); 
+    if(gCheckFat == 0)
+    {
+      gCheckFat = f_open(&FP_Struct,"app.bin",FA_READ);	
+      if(gCheckFat == 0)
+      {
+        APP_Sector = FP_Struct.fsize / 1024;
+        APP_Byte   = FP_Struct.fsize % 1024;
+        for(i = 0;i < APP_Sector;i++)
+        {
+          gpio_turn(PTE31);   //状态指示
+          flash_erase_sector(20+i);//先擦除扇区
+          f_read (&FP_Struct,ReadAppBuffer,1024,(UINT *)&ReadNum);
+          flash_write_buf(20+i,0,1024,ReadAppBuffer);        //20+i,偏移地址为0,写入数据源地址:buff,数目sizeof(buff) 0x5000/1024=20
+          
+          for(i=0;i<len;i++)
+          {
+            if(flash_read(sector,i,uint8)!=*(buff+i))  //查看两者是否相等
+          }
+          
+          check_flash(ReadAppBuffer,20+i,1024);  //读出值并校验
+        }
+        if(APP_Byte != 0)
+        {
+          flash_erase_sector(20+APP_Sector);
+          f_read (&FP_Struct,ReadAppBuffer,APP_Byte,(UINT *)&ReadNum);
+          flash_write_buf(20+APP_Sector,0,APP_Byte,ReadAppBuffer);        //20+APP_Sector,写入数据源地址:buff,数目sizeof(buff) 
+        }
+        f_close (&FP_Struct);
+      }
+      else led_error_nofile();
+    }
+   }
+  else led_error_nocard();
+  
+  
+  Jump_to_App();   //跳转到程序
+  
+  while(1)
+  {
+    
+  }
+}

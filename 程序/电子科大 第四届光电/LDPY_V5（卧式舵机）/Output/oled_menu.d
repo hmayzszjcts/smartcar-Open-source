@@ -1,0 +1,16 @@
+.\output\oled_menu.o: User\OLED_menu.c
+.\output\oled_menu.o: User\OLED_menu.h
+.\output\oled_menu.o: .\Startup\MK60DZ10.h
+.\output\oled_menu.o: .\CMSIS\core_cm4.h
+.\output\oled_menu.o: D:\ProgramFiles\Keil_501\Software\ARM\ARMCC\bin\..\include\stdint.h
+.\output\oled_menu.o: .\CMSIS\core_cmInstr.h
+.\output\oled_menu.o: .\CMSIS\core_cmFunc.h
+.\output\oled_menu.o: .\CMSIS\core_cm4_simd.h
+.\output\oled_menu.o: .\Startup\system_MK60DZ10.h
+.\output\oled_menu.o: User\myStruct.h
+.\output\oled_menu.o: D:\ProgramFiles\Keil_501\Software\ARM\ARMCC\bin\..\include\math.h
+.\output\oled_menu.o: .\LDPY\LDPY_TypeChange.h
+.\output\oled_menu.o: User\myOLED.h
+.\output\oled_menu.o: .\LDPY\LDPY_GPIO.h
+.\output\oled_menu.o: .\LDPY\LDPY_SysTick.h
+.\output\oled_menu.o: D:\ProgramFiles\Keil_501\Software\ARM\ARMCC\bin\..\include\string.h

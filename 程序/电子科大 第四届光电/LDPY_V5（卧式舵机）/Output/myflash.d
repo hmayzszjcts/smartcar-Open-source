@@ -1,0 +1,13 @@
+.\output\myflash.o: User\myFlash.c
+.\output\myflash.o: User\myFlash.h
+.\output\myflash.o: User\myStruct.h
+.\output\myflash.o: .\Startup\MK60DZ10.h
+.\output\myflash.o: .\CMSIS\core_cm4.h
+.\output\myflash.o: F:\Keil-MDk\FILE\ARM\ARMCC\bin\..\include\stdint.h
+.\output\myflash.o: .\CMSIS\core_cmInstr.h
+.\output\myflash.o: .\CMSIS\core_cmFunc.h
+.\output\myflash.o: .\CMSIS\core_cm4_simd.h
+.\output\myflash.o: .\Startup\system_MK60DZ10.h
+.\output\myflash.o: F:\Keil-MDk\FILE\ARM\ARMCC\bin\..\include\math.h
+.\output\myflash.o: .\LDPY\LDPY_TypeChange.h
+.\output\myflash.o: .\LDPY\LDPY_Flash.h

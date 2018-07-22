@@ -1,0 +1,9 @@
+.\output\lptmr0.o: User\LPTMR0.c
+.\output\lptmr0.o: User\LPTMR0.h
+.\output\lptmr0.o: .\Startup\MK60DZ10.h
+.\output\lptmr0.o: .\CMSIS\core_cm4.h
+.\output\lptmr0.o: F:\Keil-MDk\File\ARM\ARMCC\bin\..\include\stdint.h
+.\output\lptmr0.o: .\CMSIS\core_cmInstr.h
+.\output\lptmr0.o: .\CMSIS\core_cmFunc.h
+.\output\lptmr0.o: .\CMSIS\core_cm4_simd.h
+.\output\lptmr0.o: .\Startup\system_MK60DZ10.h

@@ -1,0 +1,403 @@
+###############################################################################
+#
+# IAR ELF Linker V7.30.3.8024/W32 for ARM                 16/Jun/2015  12:13:09
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Exe\VCAN_KL.out
+#    Map file     =  
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\List\VCAN_KL.map
+#    Command line =  
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\bootloader.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\diskio.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\ff.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Lib\CMSIS\iar_cortexM0plusl_math.a
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\misc.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_conf.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_flash.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_gpio.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_lptmr.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_mcg.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_PIT.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_port.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_spi.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_SysTick.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_TPM.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_uart.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\MKL_wdog.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\oled.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\SD_Card.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\startup_MKL.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\system_MKL.o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj\vectors.o -o
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Exe\VCAN_KL.out
+#        --map
+#        C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\List\VCAN_KL.map
+#        --config "C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\config
+#        files\256KB_Pflash.icf" --semihosting --entry __iar_program_start
+#        --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00040000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fffe410 to 0x20006000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x410
+  .intvec              const    0x00000000   0x410  vectors.o [1]
+                              - 0x00000410   0x410
+
+"P1", part 1 of 2:                             0x0
+  .rodata              const    0x00000410     0x0  zero_init3.o [5]
+
+"A2":                                          0x8
+  .noinit              ro code  0x00000410     0x8  startup_MKL.o [1]
+                              - 0x00000418     0x8
+
+"P1", part 2 of 2:                          0x2e20
+  .text                ro code  0x00000418   0xcd8  ff.o [1]
+  .text                ro code  0x000010f0    0x44  diskio.o [1]
+  .text                ro code  0x00001134    0xe0  I32DivModFast.o [5]
+  .text                ro code  0x00001214   0x2c4  SD_Card.o [1]
+  .text                ro code  0x000014d8     0x2  IntDivZer.o [5]
+  .text                ro code  0x000014da    0x2a  zero_init3.o [5]
+  .text                ro code  0x00001504   0x1c8  MKL_spi.o [1]
+  .text                ro code  0x000016cc     0x8  abs.o [3]
+  .text                ro code  0x000016d4    0xd8  MKL_port.o [1]
+  .text                ro code  0x000017ac   0x16c  MKL_gpio.o [1]
+  Veneer               ro code  0x00001918    0x10  - Linker created -
+  Veneer               ro code  0x00001928    0x10  - Linker created -
+  Veneer               ro code  0x00001938    0x10  - Linker created -
+  .text                ro code  0x00001948   0x594  bootloader.o [1]
+  .text                ro code  0x00001edc    0xc4  MKL_PIT.o [1]
+  .text                ro code  0x00001fa0   0x53c  oled.o [1]
+  .text                ro code  0x000024dc   0x350  MKL_mcg.o [1]
+  .text                ro code  0x0000282c   0x2fc  MKL_uart.o [1]
+  .rodata              const    0x00002b28   0x228  oled.o [1]
+  CodeRelocate                  0x00002d50   0x198  <Block>
+    Initializer bytes  ro data  0x00002d50   0x198  <for CodeRelocateRam-1>
+  .text                ro code  0x00002ee8   0x150  system_MKL.o [1]
+  .text                ro code  0x00003038    0x20  MKL_wdog.o [1]
+  .text                ro code  0x00003058    0x10  MKL_conf.o [1]
+  .text                ro code  0x00003068     0xc  misc.o [1]
+  .data_init                    0x00003074    0x74  <Block>
+    Initializer bytes  ro data  0x00003074    0x74  <for .data-1>
+  .text                ro code  0x000030e8    0x28  data_init.o [5]
+  .iar.init_table      const    0x00003110    0x10  - Linker created -
+  .text                ro code  0x00003120    0x1a  cmain.o [5]
+  .text                ro code  0x0000313a     0x4  low_level_init.o [3]
+  .text                ro code  0x0000313e     0x8  exit.o [3]
+  .text                ro code  0x00003148     0xa  cexit.o [5]
+  .text                ro code  0x00003154    0x14  exit.o [6]
+  .rodata              const    0x00003168    0x14  bootloader.o [1]
+  .rodata              const    0x0000317c    0x14  bootloader.o [1]
+  .rodata              const    0x00003190    0x14  bootloader.o [1]
+  .rodata              const    0x000031a4    0x14  bootloader.o [1]
+  .rodata              const    0x000031b8    0x10  bootloader.o [1]
+  .rodata              const    0x000031c8    0x10  bootloader.o [1]
+  .rodata              const    0x000031d8    0x10  bootloader.o [1]
+  .rodata              const    0x000031e8    0x10  bootloader.o [1]
+  .rodata              const    0x000031f8    0x10  bootloader.o [1]
+  .rodata              const    0x00003208    0x10  ff.o [1]
+  .rodata              const    0x00003218     0xc  bootloader.o [1]
+  .text                ro code  0x00003224     0xc  cstartup_M.o [5]
+  .rodata              const    0x00003230     0x8  bootloader.o [1]
+                              - 0x00003238  0x2e20
+
+"P2":                                        0xa88
+  CodeRelocateRam               0x1fffe410   0x198  <Block>
+    CodeRelocateRam-1           0x1fffe410   0x198  <Init block>
+      .textrw          inited   0x1fffe410   0x198  MKL_flash.o [1]
+  .data                         0x1fffe5a8    0x74  <Block>
+    .data-1                     0x1fffe5a8    0x74  <Init block>
+      .data            inited   0x1fffe5a8    0x14  MKL_gpio.o [1]
+      .data            inited   0x1fffe5bc    0x34  MKL_mcg.o [1]
+      .data            inited   0x1fffe5f0     0x4  MKL_mcg.o [1]
+      .data            inited   0x1fffe5f4    0x14  MKL_port.o [1]
+      .data            inited   0x1fffe608     0x8  MKL_spi.o [1]
+      .data            inited   0x1fffe610     0xc  MKL_uart.o [1]
+  .bss                          0x1fffe61c   0x87c  <Block>
+    .bss               zero     0x1fffe61c     0x4  bootloader.o [1]
+    .bss               zero     0x1fffe620   0x228  bootloader.o [1]
+    .bss               zero     0x1fffe848   0x220  bootloader.o [1]
+    .bss               zero     0x1fffea68     0x4  bootloader.o [1]
+    .bss               zero     0x1fffea6c     0x4  bootloader.o [1]
+    .bss               zero     0x1fffea70     0x4  bootloader.o [1]
+    .bss               zero     0x1fffea74   0x400  bootloader.o [1]
+    .bss               zero     0x1fffee74     0x4  bootloader.o [1]
+    .bss               zero     0x1fffee78     0x4  ff.o [1]
+    .bss               zero     0x1fffee7c     0x4  MKL_wdog.o [1]
+    .bss               zero     0x1fffee80     0x4  system_MKL.o [1]
+    .bss               zero     0x1fffee84     0x4  system_MKL.o [1]
+    .bss               zero     0x1fffee88     0x4  system_MKL.o [1]
+    .bss               zero     0x1fffee8c     0x4  system_MKL.o [1]
+    .bss               zero     0x1fffee90     0x2  bootloader.o [1]
+    .bss               zero     0x1fffee92     0x2  ff.o [1]
+    .bss               zero     0x1fffee94     0x1  bootloader.o [1]
+    .bss               zero     0x1fffee95     0x1  bootloader.o [1]
+    .bss               zero     0x1fffee96     0x1  oled.o [1]
+    .bss               zero     0x1fffee97     0x1  SD_Card.o [1]
+                              - 0x1fffee98   0xa88
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x87c:
+          0x1fffe61c  0x87c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  rw code  ro data  rw data
+    ------            -------  -------  -------  -------
+C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj: [1]
+    MKL_PIT.o             196
+    MKL_conf.o             16
+    MKL_flash.o                    408      408
+    MKL_gpio.o            364                20       20
+    MKL_mcg.o             848                56       56
+    MKL_port.o            216                20       20
+    MKL_spi.o             456                 8        8
+    MKL_uart.o            764                12       12
+    MKL_wdog.o             32                          4
+    SD_Card.o             708                          1
+    bootloader.o        1 428               180    2 144
+    diskio.o               68
+    ff.o                3 288                16        6
+    misc.o                 12
+    oled.o              1 340               552        1
+    startup_MKL.o           8
+    system_MKL.o          336                         16
+    vectors.o                             1 040
+    ----------------------------------------------------
+    Total:             10 080      408    2 312    2 288
+
+command line: [2]
+    ----------------------------------------------------
+    Total:
+
+dl6M_tlf.a: [3]
+    abs.o                   8
+    exit.o                  8
+    low_level_init.o        4
+    ----------------------------------------------------
+    Total:                 20
+
+m6M_tl.a: [4]
+    ----------------------------------------------------
+    Total:
+
+rt6M_tl.a: [5]
+    I32DivModFast.o       224
+    IntDivZer.o             2
+    cexit.o                10
+    cmain.o                26
+    cstartup_M.o           12
+    data_init.o            40
+    zero_init3.o           42
+    ----------------------------------------------------
+    Total:                356
+
+shb_l.a: [6]
+    exit.o                 20
+    ----------------------------------------------------
+    Total:                 20
+
+    Gaps                    4
+    Linker created         48                16
+--------------------------------------------------------
+    Grand Total:       10 528      408    2 328    2 288
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fffe61c          --   Gb  - Linker created -
+.bss$$Limit             0x1fffee98          --   Gb  - Linker created -
+.data$$Base             0x1fffe5a8          --   Gb  - Linker created -
+.data$$Limit            0x1fffe61c          --   Gb  - Linker created -
+.data_init$$Base        0x00003074          --   Gb  - Linker created -
+.data_init$$Limit       0x000030e8          --   Gb  - Linker created -
+?main                   0x00003121         Code  Gb  cmain.o [5]
+APP_Byte                0x1fffee90    0x2  Data  Gb  bootloader.o [1]
+APP_Sector              0x1fffe61c    0x4  Data  Gb  bootloader.o [1]
+CodeRelocate$$Base      0x00002d50          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00002ee8          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fffe410          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fffe5a8          --   Gb  - Linker created -
+F6x8                    0x00002b28  0x228  Data  Gb  oled.o [1]
+FP_Struct               0x1fffe848  0x220  Data  Gb  bootloader.o [1]
+FS_Struct               0x1fffe620  0x228  Data  Gb  bootloader.o [1]
+FatFs                   0x1fffee78    0x4  Data  Lc  ff.o [1]
+Fsid                    0x1fffee92    0x2  Data  Lc  ff.o [1]
+GPIOX                   0x1fffe5a8   0x14  Data  Gb  MKL_gpio.o [1]
+Jump_to_App             0x0000195b   0x24  Code  Gb  bootloader.o [1]
+NVIC_SystemReset        0x00001949   0x12  Code  Lc  bootloader.o [1]
+OLED_DLY_ms             0x000020fd   0x1a  Code  Gb  oled.o [1]
+OLED_Fill               0x000020bb   0x42  Code  Gb  oled.o [1]
+OLED_Init               0x00002241   0xb6  Code  Gb  oled.o [1]
+OLED_P6x8Char           0x000022f7   0x48  Code  Gb  oled.o [1]
+OLED_P6x8Str            0x0000233f   0x92  Code  Gb  oled.o [1]
+OLED_PrintValueI        0x000023d5   0xfc  Code  Gb  oled.o [1]
+OLED_Set_Pos            0x00002091   0x2a  Code  Gb  oled.o [1]
+OLED_WrCmd              0x00002021   0x70  Code  Gb  oled.o [1]
+OLED_WrDat              0x00001fa1   0x7e  Code  Gb  oled.o [1]
+PORTX                   0x1fffe5f4   0x14  Data  Gb  MKL_port.o [1]
+Percentage              0x1fffee95    0x1  Data  Gb  bootloader.o [1]
+ReadAppBuffer           0x1fffea74  0x400  Data  Gb  bootloader.o [1]
+ReadNum                 0x1fffea68    0x4  Data  Gb  bootloader.o [1]
+Region$$Table$$Base     0x00003110          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00003120          --   Gb  - Linker created -
+Reset_Handler           0x00000411         Code  Gb  startup_MKL.o [1]
+SD_DisSelect            0x00001221   0x16  Code  Gb  SD_Card.o [1]
+SD_GetResponse          0x00001237   0x2a  Code  Gb  SD_Card.o [1]
+SD_Initialize           0x0000130b   0xf4  Code  Gb  SD_Card.o [1]
+SD_ReadDisk             0x000013ff   0x78  Code  Gb  SD_Card.o [1]
+SD_RecvData             0x00001261   0x3a  Code  Gb  SD_Card.o [1]
+SD_SPI_HighSpeed        0x00001215    0xc  Code  Gb  SD_Card.o [1]
+SD_SendCmd              0x0000129b   0x70  Code  Gb  SD_Card.o [1]
+SD_Type                 0x1fffee97    0x1  Data  Gb  SD_Card.o [1]
+SPIN                    0x1fffe608    0x8  Data  Gb  MKL_spi.o [1]
+SPI_SendReceiveData     0x00001477   0x3e  Code  Gb  SD_Card.o [1]
+SetAddressingMode       0x00002129   0x14  Code  Gb  oled.o [1]
+SetContrastControl      0x0000214d   0x14  Code  Gb  oled.o [1]
+SetStartLine            0x0000213d   0x10  Code  Gb  oled.o [1]
+Set_Charge_Pump         0x00002161   0x16  Code  Gb  oled.o [1]
+Set_Common_Config       0x00002217   0x16  Code  Gb  oled.o [1]
+Set_Common_Remap        0x000021cb   0x10  Code  Gb  oled.o [1]
+Set_Display_Clock       0x000021ef   0x14  Code  Gb  oled.o [1]
+Set_Display_Offset      0x000021db   0x14  Code  Gb  oled.o [1]
+Set_Display_On_Off      0x000021bb   0x10  Code  Gb  oled.o [1]
+Set_Entire_Display      0x00002187   0x10  Code  Gb  oled.o [1]
+Set_Inverse_Display     0x00002197   0x10  Code  Gb  oled.o [1]
+Set_Multiplex_Ratio     0x000021a7   0x14  Code  Gb  oled.o [1]
+Set_Precharge_Period    0x00002203   0x14  Code  Gb  oled.o [1]
+Set_Segment_Remap       0x00002177   0x10  Code  Gb  oled.o [1]
+Set_VCOMH               0x0000222d   0x14  Code  Gb  oled.o [1]
+UARTN                   0x1fffe610    0xc  Data  Gb  MKL_uart.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20005ff8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fffe000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x00001161         Code  Gb  I32DivModFast.o [5]
+__aeabi_idiv0           0x000014d9         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x00001161         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidiv           0x00001167         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidivmod        0x00001167         Code  Gb  I32DivModFast.o [5]
+__cmain                 0x00003121         Code  Gb  cmain.o [5]
+__exit                  0x00003155   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x000030e9   0x28  Code  Gb  data_init.o [5]
+__iar_program_start     0x00003225         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x000014db   0x2a  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000313b    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x0000312d         Code  Gb  cmain.o [5]
+_exit                   0x00003149         Code  Gb  cexit.o [5]
+_main                   0x00003137         Code  Gb  cmain.o [5]
+abs                     0x000016cd    0x8  Code  Gb  abs.o [3]
+bus_clk_khz             0x1fffee8c    0x4  Data  Gb  system_MKL.o [1]
+check_fs                0x00000a23   0x74  Code  Lc  ff.o [1]
+chk_chr                 0x0000046b   0x1c  Code  Lc  ff.o [1]
+chk_mounted             0x00000aad  0x32c  Code  Lc  ff.o [1]
+clmt_clust              0x000005d5   0x38  Code  Lc  ff.o [1]
+clust2sect              0x000004af   0x1c  Code  Gb  ff.o [1]
+common_startup          0x00002f67   0x92  Code  Gb  system_MKL.o [1]
+core_clk_khz            0x1fffee84    0x4  Data  Gb  system_MKL.o [1]
+core_clk_mhz            0x1fffee88    0x4  Data  Gb  system_MKL.o [1]
+create_name             0x00000807  0x186  Code  Lc  ff.o [1]
+default_isr             0x0000305b    0x6  Code  Gb  MKL_conf.o [1]
+dir_find                0x0000079f   0x68  Code  Lc  ff.o [1]
+dir_next                0x000006cd   0xac  Code  Lc  ff.o [1]
+dir_sdi                 0x0000060d   0xc0  Code  Lc  ff.o [1]
+disk_initialize         0x000010f1    0x6  Code  Gb  diskio.o [1]
+disk_read               0x000010fd   0x38  Code  Gb  diskio.o [1]
+disk_status             0x000010f7    0x6  Code  Gb  diskio.o [1]
+exit                    0x0000313f    0x8  Code  Gb  exit.o [3]
+f_close                 0x000010d5   0x1c  Code  Gb  ff.o [1]
+f_mount                 0x00000e17   0x38  Code  Gb  ff.o [1]
+f_open                  0x00000e65   0xa4  Code  Gb  ff.o [1]
+f_read                  0x00000f09  0x1cc  Code  Gb  ff.o [1]
+flash_cmd               0x1fffe411   0x22  Code  Gb  MKL_flash.o [1]
+flash_erase_sector      0x1fffe445   0x54  Code  Gb  MKL_flash.o [1]
+flash_init              0x1fffe433   0x12  Code  Gb  MKL_flash.o [1]
+flash_write             0x1fffe499   0x66  Code  Gb  MKL_flash.o [1]
+flash_write_buf         0x1fffe4ff   0x82  Code  Gb  MKL_flash.o [1]
+follow_path             0x0000098d   0x96  Code  Lc  ff.o [1]
+gCheckFat               0x1fffee94    0x1  Data  Gb  bootloader.o [1]
+get_fat                 0x000004cb  0x10a  Code  Gb  ff.o [1]
+gpio_get                0x000018f5   0x1e  Code  Gb  MKL_gpio.o [1]
+gpio_init               0x000017ad   0xce  Code  Gb  MKL_gpio.o [1]
+gpio_set                0x0000187b   0x60  Code  Gb  MKL_gpio.o [1]
+gpio_turn               0x000018db   0x1a  Code  Gb  MKL_gpio.o [1]
+i                       0x1fffea6c    0x4  Data  Gb  bootloader.o [1]
+j                       0x1fffea70    0x4  Data  Gb  bootloader.o [1]
+ld_clust                0x00000779   0x26  Code  Lc  ff.o [1]
+led_error               0x00001a2b   0x60  Code  Gb  bootloader.o [1]
+led_flash               0x0000197f   0xac  Code  Gb  bootloader.o [1]
+main                    0x00001aa1  0x3ec  Code  Gb  bootloader.o [1]
+mcg_cfg                 0x1fffe5bc   0x34  Data  Gb  MKL_mcg.o [1]
+mcg_div                 0x1fffe5f0    0x4  Data  Gb  MKL_mcg.o [1]
+mcg_div_count           0x000024dd  0x222  Code  Gb  MKL_mcg.o [1]
+mem_cmp                 0x00000449   0x22  Code  Lc  ff.o [1]
+mem_cpy                 0x00000419   0x1a  Code  Lc  ff.o [1]
+mem_set                 0x00000433   0x16  Code  Lc  ff.o [1]
+move_window             0x00000487   0x28  Code  Lc  ff.o [1]
+pit_delay               0x00001edd   0xb8  Code  Gb  MKL_PIT.o [1]
+pll_clk_mhz             0x1fffee80    0x4  Data  Gb  system_MKL.o [1]
+pll_init                0x00002715   0xc6  Code  Gb  MKL_mcg.o [1]
+port_init               0x000016d5   0x50  Code  Gb  MKL_port.o [1]
+port_init_NoALT         0x00001725   0x7a  Code  Gb  MKL_port.o [1]
+reverse                 0x1fffee96    0x1  Data  Gb  oled.o [1]
+spi_init                0x00001601   0xba  Code  Gb  MKL_spi.o [1]
+spi_set_baud            0x00001505   0xfc  Code  Gb  MKL_spi.o [1]
+start                   0x00002ee9   0x18  Code  Gb  system_MKL.o [1]
+start_check             0x00003059    0x2  Code  Gb  MKL_conf.o [1]
+sysinit                 0x00002f01   0x66  Code  Gb  system_MKL.o [1]
+uart_init               0x0000282d  0x2c0  Code  Gb  MKL_uart.o [1]
+validate                0x00000ddd   0x3a  Code  Lc  ff.o [1]
+wdog_cfg                0x1fffee7c    0x4  Data  Lc  MKL_wdog.o [1]
+wdog_disable            0x00003039   0x16  Code  Gb  MKL_wdog.o [1]
+write_vtor              0x00003069    0x6  Code  Gb  misc.o [1]
+
+
+[1] = C:\Users\haomi\Desktop\kl26\bootloader\Prj\IAR\Debug\Obj
+[2] = command line
+[3] = dl6M_tlf.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  10 528 bytes of readonly  code memory
+     408 bytes of readwrite code memory
+   2 328 bytes of readonly  data memory
+   2 288 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

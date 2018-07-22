@@ -1,0 +1,993 @@
+###############################################################################
+#
+# IAR ELF Linker V7.30.3.8024/W32 for ARM                 29/Aug/2015  08:14:27
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Exe\VCAN_KL.out
+#    Map file     =  
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\List\VCAN_KL.map
+#    Command line =  
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\CCD.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\control.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\debug.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\eeprom.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\fuzzy.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\I2C.o
+#        D:\Backup\桌面\kl26\SmartCar\Lib\CMSIS\iar_cortexM0plusl_math.a
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\init.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\misc.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_adc.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_conf.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_flash.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_gpio.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_lptmr.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_mcg.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_PIT.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_port.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_spi.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_SysTick.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_TPM.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_uart.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\MKL_wdog.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\oled.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\SD_Card.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\Search.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\SmartCar.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\startup_MKL.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\system_MKL.o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj\vectors.o -o
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Exe\VCAN_KL.out --map
+#        D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\List\VCAN_KL.map --config
+#        "D:\Backup\桌面\kl26\SmartCar\Prj\IAR\config files\app.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00005000 { ro section .intvec };
+"A2":  place at 0x00005410 { ro section .noinit };
+"P1":  place in [from 0x00005000 to 0x0003f800] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fffe410 to 0x20006000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x410
+  .intvec              const    0x00005000   0x410  vectors.o [1]
+                              - 0x00005410   0x410
+
+"P1", part 1 of 2:                             0x0
+  .rodata              const    0x00005410     0x0  zero_init3.o [5]
+
+"A2":                                          0x8
+  .noinit              ro code  0x00005410     0x8  startup_MKL.o [1]
+                              - 0x00005418     0x8
+
+"P1", part 2 of 2:                          0xd228
+  .text                ro code  0x00005418  0x3f5e  Search.o [1]
+  .text                ro code  0x00009376   0x120  FltAddSub.o [4]
+  .text                ro code  0x00009496    0x2a  zero_init3.o [5]
+  .text                ro code  0x000094c0    0x28  FltCmpGe.o [4]
+  .text                ro code  0x000094e8    0x26  FltCmpLe.o [4]
+  .text                ro code  0x00009510    0x34  I32ToDbl.o [4]
+  .text                ro code  0x00009544    0xc2  DblDiv.o [4]
+  .text                ro code  0x00009606   0x1b4  DblAddSub.o [4]
+  .text                ro code  0x000097ba    0x62  DblToFlt.o [4]
+  .text                ro code  0x0000981c    0x36  I32ToFlt.o [4]
+  .text                ro code  0x00009854    0x32  FltToDbl.o [4]
+  .text                ro code  0x00009888    0x3a  FltToS32.o [4]
+  .text                ro code  0x000098c2    0xe0  I32DivModFast.o [5]
+  .text                ro code  0x000099a2   0x184  DblMul.o [4]
+  .text                ro code  0x00009b26    0x32  DblCmpLe.o [4]
+  .text                ro code  0x00009b58    0xaa  FltDiv.o [4]
+  .text                ro code  0x00009c04  0x12f4  control.o [1]
+  .text                ro code  0x0000aef8    0xb4  FltMul.o [4]
+  .text                ro code  0x0000afac    0x32  DblCmpGe.o [4]
+  .text                ro code  0x0000afe0    0x52  DblToI32.o [4]
+  .text                ro code  0x0000b034     0x2  IntDivZer.o [5]
+  .text                ro code  0x0000b038   0x458  I2C.o [1]
+  .text                ro code  0x0000b490   0x1ec  MKL_adc.o [1]
+  .text                ro code  0x0000b67c   0x49c  MKL_TPM.o [1]
+  .text                ro code  0x0000bb18   0x4aa  fuzzy.o [1]
+  .text                ro code  0x0000bfc4    0x20  FltCmpEq.o [4]
+  .text                ro code  0x0000bfe4   0x19c  MKL_gpio.o [1]
+  .text                ro code  0x0000c180   0x154  MKL_PIT.o [1]
+  .text                ro code  0x0000c2d4    0x54  MKL_conf.o [1]
+  .text                ro code  0x0000c328    0xd8  MKL_port.o [1]
+  .text                ro code  0x0000c400    0x5c  ABImemcpy.o [5]
+  .text                ro code  0x0000c45c    0x34  ABImemset.o [5]
+  .text                ro code  0x0000c490    0x24  printf.o [3]
+  .text                ro code  0x0000c4b4   0x3e0  MKL_uart.o [1]
+  .text                ro code  0x0000c894   0xeea  xprintffull_nomb.o [3]
+  .text                ro code  0x0000d77e    0x14  strchr.o [5]
+  .text                ro code  0x0000d792    0x10  strlen.o [5]
+  .text                ro code  0x0000d7a2    0x18  memchr.o [5]
+  .text                ro code  0x0000d7ba    0x6a  I64DivMod.o [5]
+  .text                ro code  0x0000d824    0x44  xdnorm.o [4]
+  .text                ro code  0x0000d868   0x11c  xdscale.o [4]
+  .text                ro code  0x0000d984    0x68  localeconv.o [3]
+  .text                ro code  0x0000d9ec    0x20  div.o [3]
+  .text                ro code  0x0000da0c     0x2  I64DivZer.o [5]
+  .text                ro code  0x0000da0e     0x2  xtls.o [3]
+  .text                ro code  0x0000da10  0x1978  debug.o [1]
+  .text                ro code  0x0000f388   0x86c  oled.o [1]
+  Veneer               ro code  0x0000fbf4    0x10  - Linker created -
+  Veneer               ro code  0x0000fc04    0x10  - Linker created -
+  Veneer               ro code  0x0000fc14    0x10  - Linker created -
+  Veneer               ro code  0x0000fc24    0x10  - Linker created -
+  .text                ro code  0x0000fc34   0x44c  eeprom.o [1]
+  .text                ro code  0x00010080   0x508  SD_Card.o [1]
+  .text                ro code  0x00010588   0x1d4  MKL_spi.o [1]
+  .text                ro code  0x0001075c     0x8  abs.o [3]
+  .text                ro code  0x00010764   0x600  SmartCar.o [1]
+  .text                ro code  0x00010d64   0x33c  init.o [1]
+  .text                ro code  0x000110a0    0x50  misc.o [1]
+  .text                ro code  0x000110f0   0x238  CCD.o [1]
+  .text                ro code  0x00011328    0xc4  MKL_lptmr.o [1]
+  .data_init                    0x000113ec   0x538  <Block>
+    Initializer bytes  ro data  0x000113ec   0x538  <for .data-1> (used: 0x534)
+  .text                ro code  0x00011924   0x350  MKL_mcg.o [1]
+  .rodata              const    0x00011c74   0x228  oled.o [1]
+  CodeRelocate                  0x00011e9c   0x198  <Block>
+    Initializer bytes  ro data  0x00011e9c   0x198  <for CodeRelocateRam-1>
+  .text                ro code  0x00012034   0x150  system_MKL.o [1]
+  .text                ro code  0x00012184    0x20  MKL_wdog.o [1]
+  .rodata              const    0x000121a4    0x8c  fuzzy.o [1]
+  .rodata              const    0x00012230    0x3c  MKL_conf.o [1]
+  .rodata              const    0x0001226c    0x34  MKL_gpio.o [1]
+  .rodata              const    0x000122a0    0x34  MKL_lptmr.o [1]
+  .rodata              const    0x000122d4    0x30  misc.o [1]
+  .rodata              const    0x00012304    0x30  MKL_adc.o [1]
+  .rodata              const    0x00012334    0x30  MKL_PIT.o [1]
+  .rodata              const    0x00012364    0x30  MKL_spi.o [1]
+  .rodata              const    0x00012394    0x30  MKL_TPM.o [1]
+  .text                ro code  0x000123c4    0x28  data_init.o [5]
+  .rodata              const    0x000123ec    0x24  MKL_conf.o [1]
+  .iar.init_table      const    0x00012410    0x10  - Linker created -
+  .rodata              const    0x00012420    0x1c  fuzzy.o [1]
+  .rodata              const    0x0001243c    0x1c  fuzzy.o [1]
+  .text                ro code  0x00012458    0x1a  cmain.o [5]
+  .text                ro code  0x00012472     0x4  low_level_init.o [3]
+  .text                ro code  0x00012476     0x8  exit.o [3]
+  .text                ro code  0x00012480     0xa  cexit.o [5]
+  .text                ro code  0x0001248c    0x14  exit.o [6]
+  .rodata              const    0x000124a0    0x18  xprintffull_nomb.o [3]
+  .text                ro code  0x000124b8    0x16  xprout.o [3]
+  .text                ro code  0x000124d0    0x10  putchar.o [3]
+  .rodata              const    0x000124e0    0x14  fuzzy.o [1]
+  .rodata              const    0x000124f4     0xc  debug.o [1]
+  .rodata              const    0x00012500     0xc  debug.o [1]
+  .rodata              const    0x0001250c     0xc  debug.o [1]
+  .rodata              const    0x00012518     0xc  debug.o [1]
+  .rodata              const    0x00012524     0xc  debug.o [1]
+  .rodata              const    0x00012530     0xc  debug.o [1]
+  .rodata              const    0x0001253c     0xc  debug.o [1]
+  .rodata              const    0x00012548     0xc  debug.o [1]
+  .rodata              const    0x00012554     0xc  debug.o [1]
+  .rodata              const    0x00012560     0xc  debug.o [1]
+  .text                ro code  0x0001256c     0xc  cstartup_M.o [5]
+  .rodata              const    0x00012578     0x8  debug.o [1]
+  .rodata              const    0x00012580     0x8  debug.o [1]
+  .rodata              const    0x00012588     0x8  debug.o [1]
+  .rodata              const    0x00012590     0x8  debug.o [1]
+  .rodata              const    0x00012598     0x8  debug.o [1]
+  .rodata              const    0x000125a0     0x8  debug.o [1]
+  .rodata              const    0x000125a8     0x8  debug.o [1]
+  .rodata              const    0x000125b0     0x8  debug.o [1]
+  Initializer bytes    ro data  0x000125b8    0x88  <for P2 s0>
+                              - 0x00012640  0xd228
+
+"P2":                                       0x10f0
+  .data                         0x1fffe410   0x534  <Block>
+    .data-1                     0x1fffe410   0x534  <Init block>
+      .data            inited   0x1fffe410     0x2  control.o [1]
+      .data            inited   0x1fffe412     0x2  control.o [1]
+      .data            inited   0x1fffe414     0x4  control.o [1]
+      .data            inited   0x1fffe418     0x1  control.o [1]
+      .data            inited   0x1fffe41c     0x4  control.o [1]
+      .data            inited   0x1fffe420     0x4  control.o [1]
+      .data            inited   0x1fffe424     0x4  control.o [1]
+      .data            inited   0x1fffe428     0x4  control.o [1]
+      .data            inited   0x1fffe42c    0x10  control.o [1]
+      .data            inited   0x1fffe43c     0x4  control.o [1]
+      .data            inited   0x1fffe440     0x1  debug.o [1]
+      .data            inited   0x1fffe441     0x1  debug.o [1]
+      .data            inited   0x1fffe442     0x1  debug.o [1]
+      .data            inited   0x1fffe443     0x1  debug.o [1]
+      .data            inited   0x1fffe444     0x1  debug.o [1]
+      .data            inited   0x1fffe448    0x30  debug.o [1]
+      .data            inited   0x1fffe478    0x2c  debug.o [1]
+      .data            inited   0x1fffe4a4    0x54  debug.o [1]
+      .data            inited   0x1fffe4f8    0x54  debug.o [1]
+      .data            inited   0x1fffe54c    0x54  debug.o [1]
+      .data            inited   0x1fffe5a0    0x6c  debug.o [1]
+      .data            inited   0x1fffe60c     0x1  debug.o [1]
+      .data            inited   0x1fffe610    0x18  debug.o [1]
+      .data            inited   0x1fffe628     0x1  debug.o [1]
+      .data            inited   0x1fffe62c    0x40  debug.o [1]
+      .data            inited   0x1fffe66c    0x50  debug.o [1]
+      .data            inited   0x1fffe6bc     0x4  MKL_adc.o [1]
+      .data            inited   0x1fffe6c0   0x1bc  MKL_conf.o [1]
+      .data            inited   0x1fffe87c    0x14  MKL_gpio.o [1]
+      .data            inited   0x1fffe890    0x34  MKL_mcg.o [1]
+      .data            inited   0x1fffe8c4     0x4  MKL_mcg.o [1]
+      .data            inited   0x1fffe8c8    0x14  MKL_port.o [1]
+      .data            inited   0x1fffe8dc     0x8  MKL_spi.o [1]
+      .data            inited   0x1fffe8e4     0xc  MKL_TPM.o [1]
+      .data            inited   0x1fffe8f0     0xc  MKL_uart.o [1]
+      .data            inited   0x1fffe8fc     0x4  Search.o [1]
+      .data            inited   0x1fffe900     0x1  Search.o [1]
+      .data            inited   0x1fffe904    0x40  xfiles.o [3]
+  CodeRelocateRam               0x1fffe944   0x198  <Block>
+    CodeRelocateRam-1           0x1fffe944   0x198  <Init block>
+      .textrw          inited   0x1fffe944   0x198  MKL_flash.o [1]
+  .bss                          0x1fffeadc   0x99c  <Block>
+    .bss               zero     0x1fffeadc   0x100  CCD.o [1]
+    .bss               zero     0x1fffebdc     0x4  control.o [1]
+    .bss               zero     0x1fffebe0     0x4  control.o [1]
+    .bss               zero     0x1fffebe4     0x4  control.o [1]
+    .bss               zero     0x1fffebe8     0x4  control.o [1]
+    .bss               zero     0x1fffebec     0x4  control.o [1]
+    .bss               zero     0x1fffebf0     0x4  control.o [1]
+    .bss               zero     0x1fffebf4     0x4  control.o [1]
+    .bss               zero     0x1fffebf8     0x4  control.o [1]
+    .bss               zero     0x1fffebfc     0x4  control.o [1]
+    .bss               zero     0x1fffec00     0x4  control.o [1]
+    .bss               zero     0x1fffec04     0x4  control.o [1]
+    .bss               zero     0x1fffec08     0x4  control.o [1]
+    .bss               zero     0x1fffec0c     0x4  control.o [1]
+    .bss               zero     0x1fffec10     0x4  control.o [1]
+    .bss               zero     0x1fffec14     0x4  control.o [1]
+    .bss               zero     0x1fffec18     0x4  control.o [1]
+    .bss               zero     0x1fffec1c     0x4  control.o [1]
+    .bss               zero     0x1fffec20     0x4  control.o [1]
+    .bss               zero     0x1fffec24     0x4  control.o [1]
+    .bss               zero     0x1fffec28     0x4  control.o [1]
+    .bss               zero     0x1fffec2c     0x4  control.o [1]
+    .bss               zero     0x1fffec30     0x4  control.o [1]
+    .bss               zero     0x1fffec34     0x4  control.o [1]
+    .bss               zero     0x1fffec38     0x4  control.o [1]
+    .bss               zero     0x1fffec3c    0x1c  control.o [1]
+    .bss               zero     0x1fffec58    0x1c  control.o [1]
+    .bss               zero     0x1fffec74    0x1c  control.o [1]
+    .bss               zero     0x1fffec90     0x4  control.o [1]
+    .bss               zero     0x1fffec94     0x4  control.o [1]
+    .bss               zero     0x1fffec98     0x4  control.o [1]
+    .bss               zero     0x1fffec9c     0x4  control.o [1]
+    .bss               zero     0x1fffeca0     0x4  control.o [1]
+    .bss               zero     0x1fffeca4    0x10  control.o [1]
+    .bss               zero     0x1fffecb4     0x4  control.o [1]
+    .bss               zero     0x1fffecb8     0x4  control.o [1]
+    .bss               zero     0x1fffecbc     0x4  control.o [1]
+    .bss               zero     0x1fffecc0     0x4  control.o [1]
+    .bss               zero     0x1fffecc4     0x4  control.o [1]
+    .bss               zero     0x1fffecc8     0x4  control.o [1]
+    .bss               zero     0x1fffeccc     0x4  control.o [1]
+    .bss               zero     0x1fffecd0     0x4  control.o [1]
+    .bss               zero     0x1fffecd4     0x4  control.o [1]
+    .bss               zero     0x1fffecd8     0x4  control.o [1]
+    .bss               zero     0x1fffecdc    0x50  control.o [1]
+    .bss               zero     0x1fffed2c     0x4  control.o [1]
+    .bss               zero     0x1fffed30     0x4  control.o [1]
+    .bss               zero     0x1fffed34     0x4  control.o [1]
+    .bss               zero     0x1fffed38     0x4  control.o [1]
+    .bss               zero     0x1fffed3c    0x10  control.o [1]
+    .bss               zero     0x1fffed4c    0x98  debug.o [1]
+    .bss               zero     0x1fffede4     0x4  debug.o [1]
+    .bss               zero     0x1fffede8     0x4  debug.o [1]
+    .bss               zero     0x1fffedec     0x4  debug.o [1]
+    .bss               zero     0x1fffedf0     0x4  debug.o [1]
+    .bss               zero     0x1fffedf4    0x34  debug.o [1]
+    .bss               zero     0x1fffee28    0x18  I2C.o [1]
+    .bss               zero     0x1fffee40     0x4  MKL_wdog.o [1]
+    .bss               zero     0x1fffee44   0x200  SD_Card.o [1]
+    .bss               zero     0x1ffff044     0x4  Search.o [1]
+    .bss               zero     0x1ffff048     0x4  Search.o [1]
+    .bss               zero     0x1ffff04c     0x4  Search.o [1]
+    .bss               zero     0x1ffff050     0x4  Search.o [1]
+    .bss               zero     0x1ffff054     0x4  Search.o [1]
+    .bss               zero     0x1ffff058     0x4  Search.o [1]
+    .bss               zero     0x1ffff05c   0x200  Search.o [1]
+    .bss               zero     0x1ffff25c     0x4  Search.o [1]
+    .bss               zero     0x1ffff260     0x4  Search.o [1]
+    .bss               zero     0x1ffff264     0x8  Search.o [1]
+    .bss               zero     0x1ffff26c     0x8  Search.o [1]
+    .bss               zero     0x1ffff274    0x3c  Search.o [1]
+    .bss               zero     0x1ffff2b0    0x3c  Search.o [1]
+    .bss               zero     0x1ffff2ec    0x3c  Search.o [1]
+    .bss               zero     0x1ffff328     0x4  Search.o [1]
+    .bss               zero     0x1ffff32c     0x4  Search.o [1]
+    .bss               zero     0x1ffff330     0x4  Search.o [1]
+    .bss               zero     0x1ffff334     0x4  Search.o [1]
+    .bss               zero     0x1ffff338     0x4  Search.o [1]
+    .bss               zero     0x1ffff33c     0x4  Search.o [1]
+    .bss               zero     0x1ffff340     0x4  Search.o [1]
+    .bss               zero     0x1ffff344     0x4  Search.o [1]
+    .bss               zero     0x1ffff348     0x4  Search.o [1]
+    .bss               zero     0x1ffff34c     0x4  Search.o [1]
+    .bss               zero     0x1ffff350     0x4  Search.o [1]
+    .bss               zero     0x1ffff354     0x4  Search.o [1]
+    .bss               zero     0x1ffff358     0x4  Search.o [1]
+    .bss               zero     0x1ffff35c     0x4  Search.o [1]
+    .bss               zero     0x1ffff360     0x4  Search.o [1]
+    .bss               zero     0x1ffff364     0x4  Search.o [1]
+    .bss               zero     0x1ffff368     0x4  Search.o [1]
+    .bss               zero     0x1ffff36c     0x4  Search.o [1]
+    .bss               zero     0x1ffff370     0x4  Search.o [1]
+    .bss               zero     0x1ffff374     0x4  Search.o [1]
+    .bss               zero     0x1ffff378     0x4  Search.o [1]
+    .bss               zero     0x1ffff37c     0x4  Search.o [1]
+    .bss               zero     0x1ffff380     0x4  Search.o [1]
+    .bss               zero     0x1ffff384     0x4  Search.o [1]
+    .bss               zero     0x1ffff388     0x4  Search.o [1]
+    .bss               zero     0x1ffff38c     0x4  Search.o [1]
+    .bss               zero     0x1ffff390     0x4  Search.o [1]
+    .bss               zero     0x1ffff394     0x4  Search.o [1]
+    .bss               zero     0x1ffff398     0x4  Search.o [1]
+    .bss               zero     0x1ffff39c     0x4  Search.o [1]
+    .bss               zero     0x1ffff3a0     0x4  Search.o [1]
+    .bss               zero     0x1ffff3a4     0x4  Search.o [1]
+    .bss               zero     0x1ffff3a8     0x4  Search.o [1]
+    .bss               zero     0x1ffff3ac     0x4  Search.o [1]
+    .bss               zero     0x1ffff3b0     0x4  Search.o [1]
+    .bss               zero     0x1ffff3b4     0x4  Search.o [1]
+    .bss               zero     0x1ffff3b8     0x4  Search.o [1]
+    .bss               zero     0x1ffff3bc     0x4  SmartCar.o [1]
+    .bss               zero     0x1ffff3c0     0x4  system_MKL.o [1]
+    .bss               zero     0x1ffff3c4     0x4  system_MKL.o [1]
+    .bss               zero     0x1ffff3c8     0x4  system_MKL.o [1]
+    .bss               zero     0x1ffff3cc     0x4  system_MKL.o [1]
+    .bss               zero     0x1ffff3d0    0x50  xfiles.o [3]
+    .bss               zero     0x1ffff420     0x2  CCD.o [1]
+    .bss               zero     0x1ffff422     0x2  CCD.o [1]
+    .bss               zero     0x1ffff424     0x2  control.o [1]
+    .bss               zero     0x1ffff426     0x2  control.o [1]
+    .bss               zero     0x1ffff428     0x2  control.o [1]
+    .bss               zero     0x1ffff42a     0x2  control.o [1]
+    .bss               zero     0x1ffff42c     0x2  control.o [1]
+    .bss               zero     0x1ffff42e     0x2  control.o [1]
+    .bss               zero     0x1ffff430     0x2  SD_Card.o [1]
+    .bss               zero     0x1ffff432     0x1  CCD.o [1]
+    .bss               zero     0x1ffff433     0x1  control.o [1]
+    .bss               zero     0x1ffff434     0x1  control.o [1]
+    .bss               zero     0x1ffff435     0x1  control.o [1]
+    .bss               zero     0x1ffff436     0x1  debug.o [1]
+    .bss               zero     0x1ffff437     0x1  debug.o [1]
+    .bss               zero     0x1ffff438     0x1  debug.o [1]
+    .bss               zero     0x1ffff439     0x1  debug.o [1]
+    .bss               zero     0x1ffff43a     0x1  debug.o [1]
+    .bss               zero     0x1ffff43b     0x1  debug.o [1]
+    .bss               zero     0x1ffff43c     0x1  debug.o [1]
+    .bss               zero     0x1ffff43d     0x1  debug.o [1]
+    .bss               zero     0x1ffff43e     0x1  debug.o [1]
+    .bss               zero     0x1ffff43f     0x1  debug.o [1]
+    .bss               zero     0x1ffff440     0x1  debug.o [1]
+    .bss               zero     0x1ffff441     0x1  debug.o [1]
+    .bss               zero     0x1ffff442     0x1  debug.o [1]
+    .bss               zero     0x1ffff443     0x1  debug.o [1]
+    .bss               zero     0x1ffff444     0x1  debug.o [1]
+    .bss               zero     0x1ffff445     0x1  debug.o [1]
+    .bss               zero     0x1ffff446     0x1  debug.o [1]
+    .bss               zero     0x1ffff447     0x1  eeprom.o [1]
+    .bss               zero     0x1ffff448     0x1  oled.o [1]
+    .bss               zero     0x1ffff449     0x1  SD_Card.o [1]
+    .bss               zero     0x1ffff44a     0x1  SD_Card.o [1]
+    .bss               zero     0x1ffff44b     0x1  SD_Card.o [1]
+    .bss               zero     0x1ffff44c     0x1  Search.o [1]
+    .bss               zero     0x1ffff44d     0x1  Search.o [1]
+    .bss               zero     0x1ffff44e     0x1  Search.o [1]
+    .bss               zero     0x1ffff44f     0x1  Search.o [1]
+    .bss               zero     0x1ffff450     0x1  Search.o [1]
+    .bss               zero     0x1ffff451     0x1  Search.o [1]
+    .bss               zero     0x1ffff452     0x1  Search.o [1]
+    .bss               zero     0x1ffff453     0x1  Search.o [1]
+    .bss               zero     0x1ffff454     0x1  Search.o [1]
+    .bss               zero     0x1ffff455     0x1  Search.o [1]
+    .bss               zero     0x1ffff456     0x1  Search.o [1]
+    .bss               zero     0x1ffff457     0x1  Search.o [1]
+    .bss               zero     0x1ffff458     0x1  Search.o [1]
+    .bss               zero     0x1ffff459     0x1  Search.o [1]
+    .bss               zero     0x1ffff45a     0x1  Search.o [1]
+    .bss               zero     0x1ffff45b     0x1  Search.o [1]
+    .bss               zero     0x1ffff45c     0x1  Search.o [1]
+    .bss               zero     0x1ffff45d     0x1  Search.o [1]
+    .bss               zero     0x1ffff45e     0x1  Search.o [1]
+    .bss               zero     0x1ffff45f     0x1  Search.o [1]
+    .bss               zero     0x1ffff460     0x1  Search.o [1]
+    .bss               zero     0x1ffff461     0x1  Search.o [1]
+    .bss               zero     0x1ffff462     0x1  Search.o [1]
+    .bss               zero     0x1ffff463     0x1  Search.o [1]
+    .bss               zero     0x1ffff464     0x1  Search.o [1]
+    .bss               zero     0x1ffff465     0x1  Search.o [1]
+    .bss               zero     0x1ffff466     0x1  Search.o [1]
+    .bss               zero     0x1ffff467     0x1  Search.o [1]
+    .bss               zero     0x1ffff468     0x1  Search.o [1]
+    .bss               zero     0x1ffff469     0x1  Search.o [1]
+    .bss               zero     0x1ffff46a     0x1  Search.o [1]
+    .bss               zero     0x1ffff46b     0x1  Search.o [1]
+    .bss               zero     0x1ffff46c     0x1  Search.o [1]
+    .bss               zero     0x1ffff46d     0x1  Search.o [1]
+    .bss               zero     0x1ffff46e     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff46f     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff470     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff471     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff472     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff473     0x1  SmartCar.o [1]
+    .bss               zero     0x1ffff474     0x1  SmartCar.o [1]
+  P2 s0                         0x1ffff478    0x88  <Init block>
+    __DLIB_PERTHREAD   inited   0x1ffff478    0x88  localeconv.o [3]
+                              - 0x1ffff500  0x10f0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x999:
+          0x1fffeadc  0x999
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  rw code  ro data  rw data
+    ------              -------  -------  -------  -------
+D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj: [1]
+    CCD.o                   568                        261
+    I2C.o                 1 112                         24
+    MKL_PIT.o               340                48
+    MKL_TPM.o             1 180                60       12
+    MKL_adc.o               492                52        4
+    MKL_conf.o               84               540      444
+    MKL_flash.o                      408      408
+    MKL_gpio.o              412                72       20
+    MKL_lptmr.o             196                52
+    MKL_mcg.o               848                56       56
+    MKL_port.o              216                20       20
+    MKL_spi.o               468                56        8
+    MKL_uart.o              992                12       12
+    MKL_wdog.o               32                          4
+    SD_Card.o             1 288                        517
+    Search.o             16 222                 5      927
+    SmartCar.o            1 536                         11
+    control.o             4 852                48      428
+    debug.o               6 520               820      864
+    eeprom.o              1 100                          1
+    fuzzy.o               1 194               216
+    init.o                  828
+    misc.o                   80                48
+    oled.o                2 156               552        1
+    startup_MKL.o             8
+    system_MKL.o            336                         16
+    vectors.o                               1 040
+    ------------------------------------------------------
+    Total:               43 060      408    4 105    3 630
+
+command line: [2]
+    ------------------------------------------------------
+    Total:
+
+dl6M_tlf.a: [3]
+    abs.o                     8
+    div.o                    32
+    exit.o                    8
+    localeconv.o            104               136      136
+    low_level_init.o          4
+    printf.o                 36
+    putchar.o                16
+    xfiles.o                                   67      144
+    xprintffull_nomb.o    3 818                24
+    xprout.o                 22
+    xtls.o                    2
+    ------------------------------------------------------
+    Total:                4 050               227      280
+
+m6M_tl.a: [4]
+    DblAddSub.o             436
+    DblCmpGe.o               50
+    DblCmpLe.o               50
+    DblDiv.o                194
+    DblMul.o                388
+    DblToFlt.o               98
+    DblToI32.o               82
+    FltAddSub.o             288
+    FltCmpEq.o               32
+    FltCmpGe.o               40
+    FltCmpLe.o               38
+    FltDiv.o                170
+    FltMul.o                180
+    FltToDbl.o               50
+    FltToS32.o               58
+    I32ToDbl.o               52
+    I32ToFlt.o               54
+    xdnorm.o                 68
+    xdscale.o               284
+    ------------------------------------------------------
+    Total:                2 612
+
+rt6M_tl.a: [5]
+    ABImemcpy.o              92
+    ABImemset.o              52
+    I32DivModFast.o         224
+    I64DivMod.o             106
+    I64DivZer.o               2
+    IntDivZer.o               2
+    cexit.o                  10
+    cmain.o                  26
+    cstartup_M.o             12
+    data_init.o              40
+    memchr.o                 24
+    strchr.o                 20
+    strlen.o                 16
+    zero_init3.o             42
+    ------------------------------------------------------
+    Total:                  668
+
+shb_l.a: [6]
+    exit.o                   20
+    ------------------------------------------------------
+    Total:                   20
+
+    Gaps                     22                         15
+    Linker created           64                20
+----------------------------------------------------------
+    Grand Total:         50 496      408    4 352    3 925
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fffeadc          --   Gb  - Linker created -
+.bss$$Limit             0x1ffff478          --   Gb  - Linker created -
+.data$$Base             0x1fffe410          --   Gb  - Linker created -
+.data$$Limit            0x1fffe944          --   Gb  - Linker created -
+.data_init$$Base        0x000113ec          --   Gb  - Linker created -
+.data_init$$Limit       0x00011924          --   Gb  - Linker created -
+?main                   0x00012459         Code  Gb  cmain.o [5]
+ADCN                    0x1fffe6bc    0x4  Data  Gb  MKL_adc.o [1]
+ASSERT_FAILED_STR       0x000123ec   0x24  Data  Gb  MKL_conf.o [1]
+Acc_Max                 0x1fffe410    0x2  Data  Gb  control.o [1]
+Acc_Min                 0x1fffe412    0x2  Data  Gb  control.o [1]
+Acc_Offset              0x1ffff42a    0x2  Data  Gb  control.o [1]
+Acc_Z                   0x1ffff424    0x2  Data  Gb  control.o [1]
+All_Init                0x00010d65   0xa4  Code  Gb  init.o [1]
+Angle                   0x1fffebdc    0x4  Data  Gb  control.o [1]
+Angle_Calculate         0x00009e39   0x76  Code  Gb  control.o [1]
+Angle_Control           0x00009edd   0xd2  Code  Gb  control.o [1]
+Angle_Speed             0x1fffebe0    0x4  Data  Gb  control.o [1]
+AverageSpeed            0x1fffec04    0x4  Data  Gb  control.o [1]
+Barraicade              0x0000637d  0x1d2  Code  Gb  Search.o [1]
+Barri_Turn_Angle        0x1ffff45a    0x1  Data  Gb  Search.o [1]
+Barri_Turn_Speed        0x1ffff45b    0x1  Data  Gb  Search.o [1]
+Block_Index             0x1ffff430    0x2  Data  Gb  SD_Card.o [1]
+Both_Line_find_cnt      0x1ffff328    0x4  Data  Gb  Search.o [1]
+Brightness              0x1ffff422    0x2  Data  Gb  CCD.o [1]
+Brightness_Calculate    0x00008f79   0xd8  Code  Gb  Search.o [1]
+CCD_Buff                0x1fffeadc  0x100  Data  Gb  CCD.o [1]
+CCD_Capture             0x00011107  0x12a  Code  Gb  CCD.o [1]
+CCD_Diff                0x1ffff05c  0x200  Data  Gb  Search.o [1]
+CCD_Draw_Buff           0x1fffed4c   0x98  Data  Gb  debug.o [1]
+CCD_Normalization       0x00011231   0xc8  Code  Gb  CCD.o [1]
+CCD_Offset              0x1ffff432    0x1  Data  Gb  CCD.o [1]
+CarSpeed                0x1fffebfc    0x4  Data  Gb  control.o [1]
+CarStopedJustNow        0x1ffff440    0x1  Data  Gb  debug.o [1]
+Car_Angle               0x1fffebe4    0x4  Data  Gb  control.o [1]
+Car_Set_Name            0x1fffe54c   0x54  Data  Gb  debug.o [1]
+Character_Distance      0x1ffff334    0x4  Data  Gb  Search.o [1]
+Check_BottonPress       0x0000e689  0x898  Code  Gb  debug.o [1]
+Check_StartPress        0x0000e539   0xbe  Code  Gb  debug.o [1]
+CodeRelocate$$Base      0x00011e9c          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00012034          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fffe944          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fffeadc          --   Gb  - Linker created -
+ControlSpeed            0x1fffec00    0x4  Data  Gb  control.o [1]
+Control_Para            0x1fffe62c   0x40  Data  Gb  debug.o [1]
+CrossRoad               0x0000600d  0x2f8  Code  Gb  Search.o [1]
+Data_Buf                0x1fffedf0    0x4  Data  Gb  debug.o [1]
+Debug_Index             0x1ffff43a    0x1  Data  Gb  debug.o [1]
+Debug_Mode              0x1fffe448   0x30  Data  Gb  debug.o [1]
+Debug_Motor_ON          0x1ffff43b    0x1  Data  Gb  debug.o [1]
+Delt_error              0x1fffec20    0x4  Data  Gb  control.o [1]
+Delta_D                 0x1fffec30    0x4  Data  Gb  control.o [1]
+Delta_P                 0x1fffec2c    0x4  Data  Gb  control.o [1]
+DirectionControlOutNew  0x1fffec10    0x4  Data  Gb  control.o [1]
+DirectionControlOutOld  0x1fffec14    0x4  Data  Gb  control.o [1]
+DirectionCount          0x1fffec1c    0x4  Data  Gb  control.o [1]
+Direction_Control       0x0000a3ed  0x3c0  Code  Gb  control.o [1]
+Direction_Control_Output
+                        0x0000a8a1   0x34  Code  Gb  control.o [1]
+Display_Edge            0x1fffe444    0x1  Data  Gb  debug.o [1]
+Distance                0x1fffec0c    0x4  Data  Gb  control.o [1]
+Draw_CCD                0x0000e2d1  0x196  Code  Gb  debug.o [1]
+E                       0x1fffecc4    0x4  Data  Lc  control.o [1]
+EEPROM_Read             0x0000fe99  0x19e  Code  Gb  eeprom.o [1]
+EEPROM_Save             0x0000fca9  0x1d4  Code  Gb  eeprom.o [1]
+EEPROM_init             0x0000fc35   0x74  Code  Gb  eeprom.o [1]
+Encoder_Disable         0x1ffff435    0x1  Data  Gb  control.o [1]
+F6x8                    0x00011c74  0x228  Data  Gb  oled.o [1]
+FallingEdge             0x1ffff26c    0x8  Data  Gb  Search.o [1]
+FallingEdgeCnt          0x1ffff44d    0x1  Data  Gb  Search.o [1]
+FallingEdgeIndex        0x1ffff260    0x4  Data  Gb  Search.o [1]
+FindBoundary            0x00007e0d   0x88  Code  Gb  Search.o [1]
+FindNearest             0x00007d45   0xc4  Code  Gb  Search.o [1]
+Find_Bothine            0x00009071  0x1d2  Code  Gb  Search.o [1]
+Fix_Offset              0x00010f9d   0x94  Code  Gb  init.o [1]
+ForceStop               0x1ffff434    0x1  Data  Gb  control.o [1]
+Fuzzy                   0x0000bb19  0x4aa  Code  Gb  fuzzy.o [1]
+Fuzzy_Kd                0x1fffec38    0x4  Data  Gb  control.o [1]
+Fuzzy_Kp                0x1fffec34    0x4  Data  Gb  control.o [1]
+GPIOX                   0x1fffe87c   0x14  Data  Gb  MKL_gpio.o [1]
+GPIO_Init               0x00010e6d  0x130  Code  Gb  init.o [1]
+Get_Attitude            0x00009c05   0x66  Code  Gb  control.o [1]
+Get_Speed               0x00009ff1  0x120  Code  Gb  control.o [1]
+Get_X_Gyro              0x0000b3b3   0x12  Code  Gb  I2C.o [1]
+Get_Y_Gyro              0x0000b3a1   0x12  Code  Gb  I2C.o [1]
+Get_Z_Acc               0x0000b38f   0x12  Code  Gb  I2C.o [1]
+Gyro_X                  0x1ffff426    0x2  Data  Gb  control.o [1]
+Gyro_X_Offset           0x1ffff42c    0x2  Data  Gb  control.o [1]
+Gyro_Y                  0x1ffff428    0x2  Data  Gb  control.o [1]
+Gyro_Y_Offset           0x1ffff42e    0x2  Data  Gb  control.o [1]
+Hill                    0x0000794d  0x3e8  Code  Gb  Search.o [1]
+Hill_Flag               0x1ffff44f    0x1  Data  Gb  Search.o [1]
+Hill_Slow_Ratio         0x1fffebf4    0x4  Data  Gb  control.o [1]
+I2C_Ack                 0x0000b1af   0x4e  Code  Gb  I2C.o [1]
+I2C_Delay               0x0000b381    0xe  Code  Gb  I2C.o [1]
+I2C_Init                0x0000b039   0x20  Code  Gb  I2C.o [1]
+I2C_NoAck               0x0000b1fd   0x50  Code  Gb  I2C.o [1]
+I2C_ReadWord            0x0000b083   0x4e  Code  Gb  I2C.o [1]
+I2C_ReceiveByte         0x0000b2ef   0x88  Code  Gb  I2C.o [1]
+I2C_SendByte            0x0000b24d   0xa2  Code  Gb  I2C.o [1]
+I2C_Start               0x0000b0d1   0x76  Code  Gb  I2C.o [1]
+I2C_Stop                0x0000b147   0x68  Code  Gb  I2C.o [1]
+I2C_WriteReg            0x0000b059   0x2a  Code  Gb  I2C.o [1]
+Is_Barraicade           0x00008049  0x14e  Code  Gb  Search.o [1]
+Is_Black_Line           0x00009271   0xa6  Code  Gb  Search.o [1]
+Is_CrossRoad            0x0000878d  0x228  Code  Gb  Search.o [1]
+Is_Hill                 0x00007ee5  0x146  Code  Gb  Search.o [1]
+Is_Single_Line          0x00008a19  0x556  Code  Gb  Search.o [1]
+Is_Straight_Angle_Turn  0x00008201  0x524  Code  Gb  Search.o [1]
+K_0                     0x1fffecc8    0x4  Data  Lc  control.o [1]
+K_1                     0x1fffeccc    0x4  Data  Lc  control.o [1]
+Kalman_Filter           0x00009c6b  0x1c6  Code  Gb  control.o [1]
+L_DeadValue             0x1fffec98    0x4  Data  Gb  control.o [1]
+Last_Angle_Turn_Position
+                        0x1ffff33c    0x4  Data  Gb  Search.o [1]
+Last_Hill_Distance      0x1ffff348    0x4  Data  Gb  Search.o [1]
+Last_Singleine_Position
+                        0x1ffff338    0x4  Data  Gb  Search.o [1]
+Left                    0x1ffff048    0x4  Data  Gb  Search.o [1]
+LeftMotorOut            0x1fffec90    0x4  Data  Gb  control.o [1]
+Leftlast                0x1ffff450    0x1  Data  Gb  Search.o [1]
+Leftlastfind            0x1ffff452    0x1  Data  Gb  Search.o [1]
+Light_Tower_Index       0x1ffff436    0x1  Data  Gb  debug.o [1]
+Light_Tower_Para        0x1fffe478   0x2c  Data  Gb  debug.o [1]
+LoadInt                 0x0000ce53   0x68  Code  Lc  xprintffull_nomb.o [3]
+MMA8451_Init            0x0000b43d   0x4c  Code  Gb  I2C.o [1]
+MPU3050_Init            0x0000b3c5   0x6e  Code  Gb  I2C.o [1]
+Max_Peak                0x1ffff044    0x4  Data  Gb  Search.o [1]
+Max_Value               0x1ffff420    0x2  Data  Gb  CCD.o [1]
+Middle_Err              0x1ffff058    0x4  Data  Gb  Search.o [1]
+Modify_Para             0x0000f0e5   0x4c  Code  Gb  debug.o [1]
+Moto_Out                0x0000a929  0x380  Code  Gb  control.o [1]
+NVIC_EnableIRQ          0x0000c4b5    0xe  Code  Lc  MKL_uart.o [1]
+NVIC_EnableIRQ          0x00010765    0xe  Code  Lc  SmartCar.o [1]
+NVIC_SetPriority        0x00010773   0x8a  Code  Lc  SmartCar.o [1]
+Next_Valid_Block        0x1ffff447    0x1  Data  Gb  eeprom.o [1]
+Normal                  0x00005a55  0x57a  Code  Gb  Search.o [1]
+OLED_DLY_ms             0x0000f4d5   0x1a  Code  Gb  oled.o [1]
+OLED_Draw_UI            0x0000da11  0x864  Code  Gb  debug.o [1]
+OLED_Fill               0x0000f493   0x42  Code  Gb  oled.o [1]
+OLED_Init               0x0000f619   0xb6  Code  Gb  oled.o [1]
+OLED_P6x8Char           0x0000f6cf   0x48  Code  Gb  oled.o [1]
+OLED_P6x8Str            0x0000f717   0x92  Code  Gb  oled.o [1]
+OLED_PrintValueF        0x0000f98d  0x252  Code  Gb  oled.o [1]
+OLED_PrintValueFP       0x0000f8b5   0xd8  Code  Gb  oled.o [1]
+OLED_PrintValueI        0x0000f7ad   0xfc  Code  Gb  oled.o [1]
+OLED_Refresh            0x1ffff439    0x1  Data  Gb  debug.o [1]
+OLED_Set_Pos            0x0000f469   0x2a  Code  Gb  oled.o [1]
+OLED_WrCmd              0x0000f401   0x68  Code  Gb  oled.o [1]
+OLED_WrDat              0x0000f389   0x76  Code  Gb  oled.o [1]
+PCt_0                   0x1fffecbc    0x4  Data  Lc  control.o [1]
+PCt_1                   0x1fffecc0    0x4  Data  Lc  control.o [1]
+PID_ANGLE               0x1fffec3c   0x1c  Data  Gb  control.o [1]
+PID_SPEED               0x1fffec58   0x1c  Data  Gb  control.o [1]
+PID_TURN                0x1fffec74   0x1c  Data  Gb  control.o [1]
+PIT_IRQHandler          0x00010951  0x3d0  Code  Gb  SmartCar.o [1]
+PORTX                   0x1fffe8c8   0x14  Data  Gb  MKL_port.o [1]
+Page_Index              0x1fffe440    0x1  Data  Gb  debug.o [1]
+Para_Checked            0x1ffff437    0x1  Data  Gb  debug.o [1]
+Para_Choice             0x1ffff438    0x1  Data  Gb  debug.o [1]
+Para_Index              0x1fffe441    0x1  Data  Gb  debug.o [1]
+Para_Index_Limit        0x1fffe442    0x1  Data  Gb  debug.o [1]
+Para_Init               0x00010e09   0x64  Code  Gb  init.o [1]
+Para_Name               0x1fffe4a4   0x54  Data  Gb  debug.o [1]
+Para_Name1              0x1fffe4f8   0x54  Data  Gb  debug.o [1]
+Pdot                    0x1fffeca4   0x10  Data  Lc  control.o [1]
+Pk                      0x1fffe42c   0x10  Data  Lc  control.o [1]
+Prejudge                0x000059dd   0x2e  Code  Gb  Search.o [1]
+Previous_Angle          0x1ffff2b0   0x3c  Data  Gb  Search.o [1]
+Previous_Error          0x1ffff2ec   0x3c  Data  Gb  Search.o [1]
+Previous_Width          0x1ffff274   0x3c  Data  Gb  Search.o [1]
+Protect                 0x1fffe418    0x1  Data  Gb  control.o [1]
+Push_And_Pull           0x00009355   0x22  Code  Gb  Search.o [1]
+Q_angle                 0x1fffe41c    0x4  Data  Lc  control.o [1]
+Q_gyro                  0x1fffe420    0x4  Data  Lc  control.o [1]
+R_DeadValue             0x1fffec9c    0x4  Data  Gb  control.o [1]
+R_angle                 0x1fffe424    0x4  Data  Lc  control.o [1]
+Read_Switch             0x0000e475   0xa4  Code  Gb  debug.o [1]
+Record                  0x000100c3  0x132  Code  Gb  SD_Card.o [1]
+Reference_Width         0x1fffe8fc    0x4  Data  Gb  Search.o [1]
+Refind_Cnt              0x1ffff457    0x1  Data  Gb  Search.o [1]
+Region$$Table$$Base     0x00012410          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00012420          --   Gb  - Linker created -
+Reset_Handler           0x00005411         Code  Gb  startup_MKL.o [1]
+Right                   0x1ffff04c    0x4  Data  Gb  Search.o [1]
+RightAngleTurn          0x00006b01  0xdf8  Code  Gb  Search.o [1]
+RightMotorOut           0x1fffec94    0x4  Data  Gb  control.o [1]
+Right_Or_Left           0x1ffff32c    0x4  Data  Gb  Search.o [1]
+Rightlast               0x1ffff451    0x1  Data  Gb  Search.o [1]
+Rightlastfind           0x1ffff453    0x1  Data  Gb  Search.o [1]
+RisingEdge              0x1ffff264    0x8  Data  Gb  Search.o [1]
+RisingEdgeCnt           0x1ffff44c    0x1  Data  Gb  Search.o [1]
+RisingEdgeIndex         0x1ffff25c    0x4  Data  Gb  Search.o [1]
+RoadType                0x1ffff45d    0x1  Data  Gb  Search.o [1]
+RoadTypeConfirm         0x1ffff45e    0x1  Data  Gb  Search.o [1]
+RoadTypeSwitch          0x1fffe900    0x1  Data  Gb  Search.o [1]
+RoadType_Distinguish    0x00005419  0x574  Code  Gb  Search.o [1]
+RunTime                 0x1fffeca0    0x4  Data  Gb  control.o [1]
+SDHC_Buff               0x1fffee44  0x200  Data  Gb  SD_Card.o [1]
+SD_DisSelect            0x0001020d   0x16  Code  Gb  SD_Card.o [1]
+SD_GetResponse          0x00010223   0x2a  Code  Gb  SD_Card.o [1]
+SD_Initialize           0x00010315   0xf8  Code  Gb  SD_Card.o [1]
+SD_OK                   0x1ffff449    0x1  Data  Gb  SD_Card.o [1]
+SD_ReadDisk             0x00010411   0x38  Code  Gb  SD_Card.o [1]
+SD_RecvData             0x0001024d   0x3a  Code  Gb  SD_Card.o [1]
+SD_SPI_HighSpeed        0x00010201    0xc  Code  Gb  SD_Card.o [1]
+SD_SPI_LowSpeed         0x000101f5    0xc  Code  Gb  SD_Card.o [1]
+SD_SendCmd              0x00010287   0x70  Code  Gb  SD_Card.o [1]
+SD_Type                 0x1ffff44b    0x1  Data  Gb  SD_Card.o [1]
+SD_WriteDisk            0x00010459   0xd2  Code  Gb  SD_Card.o [1]
+SPIN                    0x1fffe8dc    0x8  Data  Gb  MKL_spi.o [1]
+SPI_SendReceiveData     0x00010531   0x3e  Code  Gb  SD_Card.o [1]
+SaveData                0x1ffff44a    0x1  Data  Gb  SD_Card.o [1]
+SendCCD                 0x1ffff43f    0x1  Data  Gb  debug.o [1]
+SendPara                0x1ffff43d    0x1  Data  Gb  debug.o [1]
+SendSD                  0x1ffff43e    0x1  Data  Gb  debug.o [1]
+Send_CCD                0x0000f2e1   0x46  Code  Gb  debug.o [1]
+Send_Para               0x0000f141   0xbc  Code  Gb  debug.o [1]
+Send_SD                 0x0000f32d   0x2e  Code  Gb  debug.o [1]
+Send_Variable           0x0000f21d   0xbc  Code  Gb  debug.o [1]
+SetAddressingMode       0x0000f501   0x14  Code  Gb  oled.o [1]
+SetContrastControl      0x0000f525   0x14  Code  Gb  oled.o [1]
+SetSpeed                0x1fffec08    0x4  Data  Gb  control.o [1]
+SetStartLine            0x0000f515   0x10  Code  Gb  oled.o [1]
+Set_Angle               0x1ffff433    0x1  Data  Gb  control.o [1]
+Set_Charge_Pump         0x0000f539   0x16  Code  Gb  oled.o [1]
+Set_Common_Config       0x0000f5ef   0x16  Code  Gb  oled.o [1]
+Set_Common_Remap        0x0000f5a3   0x10  Code  Gb  oled.o [1]
+Set_Display_Clock       0x0000f5c7   0x14  Code  Gb  oled.o [1]
+Set_Display_Offset      0x0000f5b3   0x14  Code  Gb  oled.o [1]
+Set_Display_On_Off      0x0000f593   0x10  Code  Gb  oled.o [1]
+Set_Entire_Display      0x0000f55f   0x10  Code  Gb  oled.o [1]
+Set_Inverse_Display     0x0000f56f   0x10  Code  Gb  oled.o [1]
+Set_Multiplex_Ratio     0x0000f57f   0x14  Code  Gb  oled.o [1]
+Set_Precharge_Period    0x0000f5db   0x14  Code  Gb  oled.o [1]
+Set_Segment_Remap       0x0000f54f   0x10  Code  Gb  oled.o [1]
+Set_VCOMH               0x0000f605   0x14  Code  Gb  oled.o [1]
+SingleLine              0x0000659d  0x534  Code  Gb  Search.o [1]
+Single_Out_Detect       0x1ffff456    0x1  Data  Gb  Search.o [1]
+Slope_Calculate         0x0000ace5  0x120  Code  Gb  control.o [1]
+SpeedControlIntegral    0x1fffebf0    0x4  Data  Gb  control.o [1]
+SpeedControlOutNew      0x1fffebe8    0x4  Data  Gb  control.o [1]
+SpeedControlOutOld      0x1fffebec    0x4  Data  Gb  control.o [1]
+SpeedCount              0x1fffebf8    0x4  Data  Gb  control.o [1]
+Speed_Control           0x0000a16d  0x1bc  Code  Gb  control.o [1]
+Speed_Control_Output    0x0000a339   0x40  Code  Gb  control.o [1]
+Speed_Filter_Times      0x1fffe414    0x4  Data  Gb  control.o [1]
+Start_Cnt               0x1fffede8    0x4  Data  Gb  debug.o [1]
+Starting                0x1ffff441    0x1  Data  Gb  debug.o [1]
+Step                    0x1fffe610   0x18  Data  Gb  debug.o [1]
+Step_Index              0x1fffe628    0x1  Data  Gb  debug.o [1]
+Stop                    0x1fffe60c    0x1  Data  Gb  debug.o [1]
+Strong_Turn             0x0000a7f1   0x9c  Code  Gb  control.o [1]
+Strong_Turn_Angle       0x1ffff458    0x1  Data  Gb  Search.o [1]
+Strong_Turn_Cnt         0x1ffff454    0x1  Data  Gb  Search.o [1]
+Strong_Turn_En          0x1ffff455    0x1  Data  Gb  Search.o [1]
+Strong_Turn_Speed       0x1ffff459    0x1  Data  Gb  Search.o [1]
+TPMN                    0x1fffe8e4    0xc  Data  Gb  MKL_TPM.o [1]
+Threshold               0x1ffff45f    0x1  Data  Gb  Search.o [1]
+Turn_Angle_Integral     0x1fffec28    0x4  Data  Gb  control.o [1]
+Turn_Out                0x1fffec24    0x4  Data  Gb  control.o [1]
+Turn_Out_Filter         0x0000ae21   0x8e  Code  Gb  control.o [1]
+Turn_Speed              0x1fffec18    0x4  Data  Gb  control.o [1]
+Turn_State              0x1ffff340    0x4  Data  Gb  Search.o [1]
+Turn_State1To2_Left     0x1ffff34c    0x4  Data  Gb  Search.o [1]
+Turn_State1To2_Right    0x1ffff350    0x4  Data  Gb  Search.o [1]
+Turn_State_Cnt          0x1ffff344    0x4  Data  Gb  Search.o [1]
+Turn_To_Angle           0x1ffff330    0x4  Data  Gb  Search.o [1]
+Type_Switch             0x1fffe5a0   0x6c  Data  Gb  debug.o [1]
+UART0_RX_IRQHandler     0x0000ef61  0x180  Code  Gb  debug.o [1]
+UARTN                   0x1fffe8f0    0xc  Data  Gb  MKL_uart.o [1]
+Uart_Send               0x1fffe443    0x1  Data  Gb  debug.o [1]
+Variable                0x1fffe66c   0x50  Data  Gb  debug.o [1]
+Voltage                 0x1fffedec    0x4  Data  Gb  debug.o [1]
+Write_Information       0x00010081   0x42  Code  Gb  SD_Card.o [1]
+_GenldFullNoMb          0x0000d475  0x2d6  Code  Lc  xprintffull_nomb.o [3]
+_LdtobFullNoMb          0x0000cfed  0x474  Code  Lc  xprintffull_nomb.o [3]
+_LitobFullNoMb          0x0000cebb  0x12e  Code  Lc  xprintffull_nomb.o [3]
+_Locale_aeabi_lconv     0x1ffff4c8   0x38  Data  Gb  localeconv.o [3]
+_Locale_lconv           0x1ffff478   0x50  Data  Gb  localeconv.o [3]
+_PrintfFullNoMb         0x0000c895  0x5be  Code  Gb  xprintffull_nomb.o [3]
+_Prout                  0x000124b9   0x16  Code  Gb  xprout.o [3]
+_PutcharsFullNoMb       0x0000d74f   0x30  Code  Lc  xprintffull_nomb.o [3]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20005ff8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fffe000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00005000          --   Gb  command line/config [2]
+__aeabi_cdcmple         0x00009b27         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x0000afad         Code  Gb  DblCmpGe.o [4]
+__aeabi_cfcmpeq         0x0000bfc5         Code  Gb  FltCmpEq.o [4]
+__aeabi_cfcmple         0x000094e9         Code  Gb  FltCmpLe.o [4]
+__aeabi_cfrcmple        0x000094c1         Code  Gb  FltCmpGe.o [4]
+__aeabi_d2f             0x000097bb         Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x0000afe1         Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x0000b005         Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x00009607         Code  Gb  DblAddSub.o [4]
+__aeabi_ddiv            0x00009545         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x000099a3         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x000096cd         Code  Gb  DblAddSub.o [4]
+__aeabi_f2d             0x00009855         Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x00009889         Code  Gb  FltToS32.o [4]
+__aeabi_fadd            0x00009377         Code  Gb  FltAddSub.o [4]
+__aeabi_fdiv            0x00009b59         Code  Gb  FltDiv.o [4]
+__aeabi_fmul            0x0000aef9         Code  Gb  FltMul.o [4]
+__aeabi_fsub            0x000093e7         Code  Gb  FltAddSub.o [4]
+__aeabi_i2d             0x00009511         Code  Gb  I32ToDbl.o [4]
+__aeabi_i2f             0x0000981d         Code  Gb  I32ToFlt.o [4]
+__aeabi_idiv            0x000098ef         Code  Gb  I32DivModFast.o [5]
+__aeabi_idiv0           0x0000b035         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x000098ef         Code  Gb  I32DivModFast.o [5]
+__aeabi_ldiv0           0x0000da0d         Code  Gb  I64DivZer.o [5]
+__aeabi_memclr4         0x0000c48d         Code  Gb  ABImemset.o [5]
+__aeabi_memclr8         0x0000c48d         Code  Gb  ABImemset.o [5]
+__aeabi_memcpy          0x0000c401         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x0000c429         Code  Wk  ABImemcpy.o [5]
+__aeabi_ui2d            0x00009525         Code  Gb  I32ToDbl.o [4]
+__aeabi_ui2f            0x00009835         Code  Gb  I32ToFlt.o [4]
+__aeabi_uidiv           0x000098f5         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidivmod        0x000098f5         Code  Gb  I32DivModFast.o [5]
+__aeabi_uldivmod        0x0000d7bb         Code  Gb  I64DivMod.o [5]
+__cmain                 0x00012459         Code  Gb  cmain.o [5]
+__exit                  0x0001248d   0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x0000d825   0x44  Code  Gb  xdnorm.o [4]
+__iar_Dscale            0x0000d869  0x11c  Code  Gb  xdscale.o [4]
+__iar_Locale_lconv_init
+                        0x0000d985   0x32  Code  Gb  localeconv.o [3]
+__iar_Memchr            0x0000d7a3   0x18  Code  Gb  memchr.o [5]
+__iar_Memset4_word      0x0000c45d         Code  Gb  ABImemset.o [5]
+__iar_Stdout            0x1fffe904   0x40  Data  Gb  xfiles.o [3]
+__iar_Strchr            0x0000d77f   0x14  Code  Gb  strchr.o [5]
+__iar_d2uiz             0x0000b009         Code  Gb  DblToI32.o [4]
+__iar_data_init3        0x000123c5   0x28  Code  Gb  data_init.o [5]
+__iar_dlib_perthread_access
+                        0x0000da0f    0x2  Code  Gb  xtls.o [3]
+__iar_program_start     0x0001256d         Code  Gb  cstartup_M.o [5]
+__iar_ui2d              0x00009529         Code  Gb  I32ToDbl.o [4]
+__iar_ui2f              0x00009839         Code  Gb  I32ToFlt.o [4]
+__iar_zero_init3        0x00009497   0x2a  Code  Gb  zero_init3.o [5]
+__low_level_init        0x00012473    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00005000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x00012465         Code  Gb  cmain.o [5]
+_exit                   0x00012481         Code  Gb  cexit.o [5]
+_main                   0x0001246f         Code  Gb  cmain.o [5]
+abs                     0x0001075d    0x8  Code  Gb  abs.o [3]
+adc_init                0x0000b491  0x138  Code  Gb  MKL_adc.o [1]
+adc_once                0x0000b5c9   0x5a  Code  Gb  MKL_adc.o [1]
+adc_start               0x0000b623   0x48  Code  Lc  MKL_adc.o [1]
+angle_err               0x1fffecb8    0x4  Data  Lc  control.o [1]
+assert_failed           0x0000c2d5   0x12  Code  Gb  MKL_conf.o [1]
+bus_clk_khz             0x1ffff3cc    0x4  Data  Gb  system_MKL.o [1]
+common_startup          0x000120b3   0x92  Code  Gb  system_MKL.o [1]
+core_clk_khz            0x1ffff3c4    0x4  Data  Gb  system_MKL.o [1]
+core_clk_mhz            0x1ffff3c8    0x4  Data  Gb  system_MKL.o [1]
+curve_to_cross          0x1ffff45c    0x1  Data  Gb  Search.o [1]
+default_isr             0x0000c2fd   0x1c  Code  Gb  MKL_conf.o [1]
+delay200ns              0x000110f1   0x16  Code  Gb  CCD.o [1]
+div                     0x0000d9ed   0x20  Code  Gb  div.o [3]
+dt                      0x1fffe428    0x4  Data  Lc  control.o [1]
+exit                    0x00012477    0x8  Code  Gb  exit.o [3]
+flag_100ms              0x1ffff46e    0x1  Data  Gb  SmartCar.o [1]
+flag_record             0x1ffff46f    0x1  Data  Gb  SmartCar.o [1]
+flash_cmd               0x1fffe945   0x22  Code  Gb  MKL_flash.o [1]
+flash_erase_sector      0x1fffe979   0x54  Code  Gb  MKL_flash.o [1]
+flash_init              0x1fffe967   0x12  Code  Gb  MKL_flash.o [1]
+flash_write             0x1fffe9cd   0x66  Code  Gb  MKL_flash.o [1]
+flash_write_buf         0x1fffea33   0x82  Code  Gb  MKL_flash.o [1]
+fputc                   0x0000c2e7   0x14  Code  Gb  MKL_conf.o [1]
+gpio_init               0x0000bfe5   0xce  Code  Gb  MKL_gpio.o [1]
+gpio_set                0x0000c0b3   0x86  Code  Gb  MKL_gpio.o [1]
+gpio_turn               0x0000c139   0x40  Code  Gb  MKL_gpio.o [1]
+leftfind                0x1ffff050    0x4  Data  Gb  Search.o [1]
+light_tower_detected    0x1ffff43c    0x1  Data  Gb  debug.o [1]
+localeconv              0x0000d9b7   0x18  Code  Gb  localeconv.o [3]
+lptmr_pulse_clean       0x000113b5   0x1a  Code  Gb  MKL_lptmr.o [1]
+lptmr_pulse_get         0x000113a7    0xe  Code  Gb  MKL_lptmr.o [1]
+lptmr_pulse_init        0x00011329   0x7e  Code  Gb  MKL_lptmr.o [1]
+main                    0x000107fd  0x10a  Code  Gb  SmartCar.o [1]
+mcg_cfg                 0x1fffe890   0x34  Data  Gb  MKL_mcg.o [1]
+mcg_div                 0x1fffe8c4    0x4  Data  Gb  MKL_mcg.o [1]
+mcg_div_count           0x00011925  0x222  Code  Gb  MKL_mcg.o [1]
+obuf                    0x1ffff3d0   0x50  Data  Lc  xfiles.o [3]
+pit_delay               0x0000c1fb   0xc8  Code  Gb  MKL_PIT.o [1]
+pit_init                0x0000c181   0x7a  Code  Gb  MKL_PIT.o [1]
+pll_clk_mhz             0x1ffff3c0    0x4  Data  Gb  system_MKL.o [1]
+pll_init                0x00011b5d   0xc6  Code  Gb  MKL_mcg.o [1]
+port_init               0x0000c329   0x50  Code  Gb  MKL_port.o [1]
+port_init_NoALT         0x0000c379   0x7a  Code  Gb  MKL_port.o [1]
+printf                  0x0000c491   0x24  Code  Gb  printf.o [3]
+putchar                 0x000124d1   0x10  Code  Gb  putchar.o [3]
+q_bias                  0x1fffecb4    0x4  Data  Lc  control.o [1]
+read_buff               0x1fffee28   0x18  Data  Gb  I2C.o [1]
+reserve                 0x1fffede4    0x4  Data  Gb  debug.o [1]
+reverse                 0x1ffff448    0x1  Data  Gb  oled.o [1]
+rightfind               0x1ffff054    0x4  Data  Gb  Search.o [1]
+set_vector_handler      0x000110c1   0x24  Code  Gb  misc.o [1]
+spi_init                0x00010685   0xc4  Code  Gb  MKL_spi.o [1]
+spi_set_baud            0x00010589   0xfc  Code  Gb  MKL_spi.o [1]
+start                   0x00012035   0x18  Code  Gb  system_MKL.o [1]
+start_check             0x0000c2fb    0x2  Code  Gb  MKL_conf.o [1]
+state_change            0x1ffff44e    0x1  Data  Gb  Search.o [1]
+strlen                  0x0000d793   0x10  Code  Gb  strlen.o [5]
+sysinit                 0x0001204d   0x66  Code  Gb  system_MKL.o [1]
+t_0                     0x1fffecd0    0x4  Data  Lc  control.o [1]
+t_1                     0x1fffecd4    0x4  Data  Lc  control.o [1]
+tpm_port_mux            0x0000b67d   0xf4  Code  Gb  MKL_TPM.o [1]
+tpm_pulse_clean         0x0000badd   0x10  Code  Gb  MKL_TPM.o [1]
+tpm_pulse_get           0x0000baf1   0x10  Code  Gb  MKL_TPM.o [1]
+tpm_pulse_init          0x0000b9d9   0xfc  Code  Gb  MKL_TPM.o [1]
+tpm_pwm_duty            0x0000b8ed   0xda  Code  Gb  MKL_TPM.o [1]
+tpm_pwm_init            0x0000b771  0x178  Code  Gb  MKL_TPM.o [1]
+uart_getchar            0x0000c783   0x38  Code  Gb  MKL_uart.o [1]
+uart_init               0x0000c4c3  0x2c0  Code  Gb  MKL_uart.o [1]
+uart_putchar            0x0000c7e5   0x34  Code  Gb  MKL_uart.o [1]
+uart_query              0x0000c819   0x2e  Code  Gb  MKL_uart.o [1]
+uart_rx_irq_en          0x0000c855   0x2c  Code  Gb  MKL_uart.o [1]
+vector_str              0x1fffe6c0  0x1bc  Data  Gb  MKL_conf.o [1]
+wdog_cfg                0x1fffee40    0x4  Data  Lc  MKL_wdog.o [1]
+wdog_disable            0x00012185   0x16  Code  Gb  MKL_wdog.o [1]
+write_vtor              0x000110a1   0x20  Code  Gb  misc.o [1]
+
+
+[1] = D:\Backup\桌面\kl26\SmartCar\Prj\IAR\Debug\Obj
+[2] = command line
+[3] = dl6M_tlf.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  50 496 bytes of readonly  code memory
+     408 bytes of readwrite code memory
+   4 352 bytes of readonly  data memory
+   3 925 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

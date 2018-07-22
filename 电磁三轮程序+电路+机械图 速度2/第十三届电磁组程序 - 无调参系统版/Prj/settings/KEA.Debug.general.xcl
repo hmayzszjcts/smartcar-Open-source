@@ -1,14 +1,14 @@
-"E:\IAR\arm\bin\armproc.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armproc.dll" 
 
-"E:\IAR\arm\bin\armjlink2.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armjlink2.dll" 
 
-"C:\Users\Administrator\Desktop\´ó¶ş¹ºÂò\µç´ÅÈıÂÖ³ÌĞò+µçÂ·+»úĞµÍ¼ ¹úÒ»ËÙ¶È2.7m\µÚÊ®Èı½ìµç´Å×é³ÌĞò - ÎŞµ÷²ÎÏµÍ³°æ\Prj\Debug\Exe\KEA.out" 
+"C:\Users\11918\Desktop\smartcar-Open-source\ç”µç£ä¸‰è½®ç¨‹åº+ç”µè·¯+æœºæ¢°å›¾ é€Ÿåº¦2\ç¬¬åä¸‰å±Šç”µç£ç»„ç¨‹åº - æ— è°ƒå‚ç³»ç»Ÿç‰ˆ\Prj\Debug\Exe\KEA.out" 
 
---plugin "E:\IAR\arm\bin\armbat.dll" 
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\bin\armbat.dll" 
 
---device_macro "E:\IAR\arm\config\debugger\NXP\KExx.dmac" 
+--device_macro "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\config\debugger\NXP\KExx.dmac" 
 
---flash_loader "E:\IAR\arm\config\flashloader\NXP\FlashKE04Z128_4.board" 
+--flash_loader "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\config\flashloader\NXP\FlashKE04Z128_4.board" 
 
 
 
